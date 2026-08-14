@@ -407,6 +407,13 @@
   .sponsor-stat { background: rgba(0,0,0,0.18); padding: 1.5rem 1rem; text-align: center; }
   .sponsor-stat .num { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700; color: var(--gold-light); line-height: 1; }
   .sponsor-stat .lbl { font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.6; margin-top: 0.4rem; }
+  .sponsor-spots-label { font-size: 0.9rem; color: rgba(250,246,240,0.85); margin-bottom: 0.5rem; font-weight: 500; }
+  .sponsor-spots-note { font-size: 0.82rem; color: rgba(250,246,240,0.55); max-width: 500px; line-height: 1.8; margin-bottom: 1.5rem; }
+  .sponsor-spots { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem; margin-bottom: 3.5rem; }
+  .sponsor-spot { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem; aspect-ratio: 1; border: 1.5px dashed rgba(200,151,58,0.4); border-radius: 4px; color: rgba(250,246,240,0.5); text-decoration: none; font-size: 0.68rem; letter-spacing: 0.06em; text-transform: uppercase; text-align: center; transition: all 0.25s ease; padding: 0.5rem; }
+  .sponsor-spot .plus { font-size: 1.6rem; color: var(--gold); line-height: 1; font-weight: 300; }
+  .sponsor-spot:hover { border-color: var(--gold); border-style: solid; background: rgba(200,151,58,0.07); color: var(--gold-light); transform: translateY(-3px); }
+  @media (max-width: 700px) { .sponsor-spots { grid-template-columns: repeat(2, 1fr); } }
   .sponsor-tiers { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; align-items: stretch; }
   .sponsor-tier { background: rgba(0,0,0,0.22); border: 1px solid rgba(250,246,240,0.1); border-radius: 4px; padding: 2rem 1.75rem; display: flex; flex-direction: column; transition: transform 0.2s ease, border-color 0.2s ease; }
   .sponsor-tier:hover { transform: translateY(-3px); border-color: rgba(200,151,58,0.35); }
@@ -832,6 +839,15 @@
       <div class="sponsor-stat"><div class="num">9</div><div class="lbl">Ticketed Sessions</div></div>
       <div class="sponsor-stat"><div class="num">140</div><div class="lbl">Vendor Booths</div></div>
       <div class="sponsor-stat"><div class="num">8,000+</div><div class="lbl">Target Weekend Guests</div></div>
+    </div>
+    <div class="sponsor-spots-label">5 Founding Sponsor Spots</div>
+    <p class="sponsor-spots-note">We're keeping our first year small: just 5 founding sponsor spots across all tiers. First come, first served. Once they're gone, they're gone until 2027.</p>
+    <div class="sponsor-spots">
+      <a href="mailto:info@hfxchristmasmarket.ca?subject=Sponsorship%20Inquiry%20-%20Halifax%20Christmas%20Market" class="sponsor-spot"><span class="plus">+</span>Spot Available</a>
+      <a href="mailto:info@hfxchristmasmarket.ca?subject=Sponsorship%20Inquiry%20-%20Halifax%20Christmas%20Market" class="sponsor-spot"><span class="plus">+</span>Spot Available</a>
+      <a href="mailto:info@hfxchristmasmarket.ca?subject=Sponsorship%20Inquiry%20-%20Halifax%20Christmas%20Market" class="sponsor-spot"><span class="plus">+</span>Spot Available</a>
+      <a href="mailto:info@hfxchristmasmarket.ca?subject=Sponsorship%20Inquiry%20-%20Halifax%20Christmas%20Market" class="sponsor-spot"><span class="plus">+</span>Spot Available</a>
+      <a href="mailto:info@hfxchristmasmarket.ca?subject=Sponsorship%20Inquiry%20-%20Halifax%20Christmas%20Market" class="sponsor-spot"><span class="plus">+</span>Spot Available</a>
     </div>
     <div class="sponsor-tiers">
       <div class="sponsor-tier">
