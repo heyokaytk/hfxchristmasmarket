@@ -184,6 +184,16 @@
   .btn-ticket { display: block; text-align: center; background: var(--gold); color: var(--charcoal); padding: 0.75rem; border-radius: 2px; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; transition: background 0.2s; }
   .btn-ticket:hover { background: var(--gold-light); }
   .ticket-note { text-align: center; margin-top: 2rem; font-size: 0.78rem; color: rgba(250,246,240,0.6); line-height: 1.8; }
+  .notify-form { max-width: 420px; margin: 1.5rem auto 0; }
+  .notify-fields { display: flex; gap: 0.75rem; }
+  .notify-fields input { flex: 1; min-width: 0; background: rgba(255,255,255,0.05); border: 1px solid rgba(250,246,240,0.15); border-radius: 2px; padding: 0.75rem 1rem; color: var(--cream); font-family: 'DM Sans', sans-serif; font-size: 0.85rem; }
+  .notify-fields input::placeholder { color: rgba(250,246,240,0.4); }
+  .notify-fields input:focus { outline: none; border-color: var(--gold); }
+  .notify-fields button { background: var(--gold); color: var(--charcoal); border: none; padding: 0.75rem 1.5rem; border-radius: 2px; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; white-space: nowrap; transition: background 0.2s; font-family: 'DM Sans', sans-serif; }
+  .notify-fields button:hover { background: var(--gold-light); }
+  .notify-fields button:disabled { opacity: 0.6; cursor: not-allowed; }
+  .notify-success { display: none; text-align: center; color: var(--gold-light); font-size: 0.85rem; padding: 0.6rem; }
+  @media (max-width: 700px) { .notify-fields { flex-direction: column; } }
 
   /* Tickets not yet on sale — disabled CTA state */
   .btn-disabled { background: #3a3a3a !important; color: rgba(250,246,240,0.4) !important; cursor: not-allowed !important; pointer-events: none; box-shadow: none !important; }
@@ -578,6 +588,13 @@
       </div>
     </div>
     <p class="ticket-note">Ticket sales opening soon.<br>All tickets available via Bloom &middot; No gate sales guaranteed</p>
+    <div class="notify-form">
+      <div class="notify-success" id="notify-success">You're on the list. We'll email you the moment tickets go live.</div>
+      <div class="notify-fields" id="notify-fields">
+        <input type="email" id="notify-email" placeholder="Your email address">
+        <button onclick="submitNotify()">Notify Me</button>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1039,6 +1056,43 @@
       submitBtn.disabled = false;
       submitBtn.textContent = 'Submit Application';
       alert('Something went wrong submitting your application. Please email us directly at info@hfxchristmasmarket.ca.');
+    });
+  }
+
+  function submitNotify() {
+    var email = document.getElementById('notify-email').value.trim();
+    if (!email || email.indexOf('@') === -1) {
+      alert('Please enter a valid email address.');
+      return;
+    }
+
+    var btn = document.querySelector('#notify-fields button');
+    btn.disabled = true;
+    btn.textContent = 'Submitting...';
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({
+        access_key: '769ab91c-f7a6-4e96-bfd6-65999765179b',
+        subject: 'Ticket Notify Signup - Halifax Christmas Market',
+        from_name: 'Halifax Christmas Market Website',
+        email: email,
+        message: 'New "notify me when tickets go on sale" signup: ' + email
+      })
+    }).then(function(res) { return res.json(); }).then(function(data) {
+      if (data.success) {
+        document.getElementById('notify-fields').style.display = 'none';
+        document.getElementById('notify-success').style.display = 'block';
+      } else {
+        btn.disabled = false;
+        btn.textContent = 'Notify Me';
+        alert('Something went wrong. Please try again or email us at info@hfxchristmasmarket.ca.');
+      }
+    }).catch(function() {
+      btn.disabled = false;
+      btn.textContent = 'Notify Me';
+      alert('Something went wrong. Please try again or email us at info@hfxchristmasmarket.ca.');
     });
   }
 
