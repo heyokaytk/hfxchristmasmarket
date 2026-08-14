@@ -999,6 +999,8 @@
       'About the business:\n' + desc
     );
     window.location.href = 'mailto:info@hfxchristmasmarket.ca?subject=' + subject + '&body=' + body;
+    document.getElementById('vendor-form').style.display = 'none';
+    document.getElementById('form-success').style.display = 'block';
   }
 
   // --- NEW DYNAMIC HOVER LOGIC ---
