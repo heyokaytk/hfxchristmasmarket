@@ -987,20 +987,42 @@
       alert('Please fill in all required fields before submitting.');
       return;
     }
-    var subject = encodeURIComponent('Vendor Application - Halifax Christmas Market 2026');
-    var body = encodeURIComponent(
-      'Business Name: ' + biz + '\n' +
-      'Contact Name: ' + name + '\n' +
-      'Phone: ' + document.getElementById('phone').value + '\n' +
-      'Category: ' + cat + '\n' +
-      'Booth Size: ' + document.getElementById('booth-size').value + '\n' +
-      'Preferred Booth #: ' + document.getElementById('preferred-booth').value + '\n' +
-      'Website/Instagram: ' + document.getElementById('website').value + '\n\n' +
-      'About the business:\n' + desc
-    );
-    window.location.href = 'mailto:info@hfxchristmasmarket.ca?subject=' + subject + '&body=' + body;
-    document.getElementById('vendor-form').style.display = 'none';
-    document.getElementById('form-success').style.display = 'block';
+
+    var submitBtn = document.querySelector('#vendor-form .btn-submit');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Submitting...';
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({
+        access_key: '769ab91c-f7a6-4e96-bfd6-65999765179b',
+        subject: 'Vendor Application - Halifax Christmas Market 2026',
+        from_name: 'Halifax Christmas Market Website',
+        email: email,
+        'Business Name': biz,
+        'Contact Name': name,
+        'Phone': document.getElementById('phone').value,
+        'Category': cat,
+        'Booth Size': document.getElementById('booth-size').value,
+        'Preferred Booth #': document.getElementById('preferred-booth').value,
+        'Website/Instagram': document.getElementById('website').value,
+        'About the Business': desc
+      })
+    }).then(function(res) { return res.json(); }).then(function(data) {
+      if (data.success) {
+        document.getElementById('vendor-form').style.display = 'none';
+        document.getElementById('form-success').style.display = 'block';
+      } else {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Submit Application';
+        alert('Something went wrong submitting your application. Please email us directly at info@hfxchristmasmarket.ca.');
+      }
+    }).catch(function() {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Submit Application';
+      alert('Something went wrong submitting your application. Please email us directly at info@hfxchristmasmarket.ca.');
+    });
   }
 
   // --- NEW DYNAMIC HOVER LOGIC ---
