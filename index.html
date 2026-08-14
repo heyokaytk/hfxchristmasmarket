@@ -107,14 +107,14 @@
   .snow-container { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
   .snowflake { position: absolute; top: -10px; color: rgba(255,255,255,0.6); animation: fall linear infinite; }
   @keyframes fall { to { transform: translateY(110vh) rotate(360deg); opacity: 0; } }
-  .hero-eyebrow { font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 1rem; animation: fadeUp 0.8s ease both; }
+  .hero-eyebrow { font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: center; gap: 1rem; animation: fadeUp 0.8s ease both; }
   .hero-eyebrow::before, .hero-eyebrow::after { content: ''; display: block; width: 40px; height: 1px; background: var(--gold); opacity: 0.5; }
   .hero-wordmark { text-align: center; margin-bottom: 0.5rem; animation: fadeUp 0.9s ease 0.1s both; }
   .hero-wordmark .the { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.6rem; color: var(--cream); opacity: 0.7; display: block; margin-bottom: -0.3rem; }
   .hero-wordmark h1 { font-family: 'Playfair Display', serif; font-size: clamp(3.2rem, 8vw, 6rem); font-weight: 700; color: var(--white); line-height: 1; }
   .hero-wordmark h1 em { color: var(--gold); font-style: normal; }
   .hero-wordmark .market { font-family: 'Playfair Display', serif; font-size: clamp(1.4rem, 4vw, 2.6rem); font-weight: 400; color: var(--cream); opacity: 0.85; display: block; letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.2rem; }
-  .hero-divider { display: flex; align-items: center; gap: 1rem; margin: 1.8rem 0; animation: fadeUp 1s ease 0.2s both; }
+  .hero-divider { display: flex; align-items: center; justify-content: center; gap: 1rem; margin: 1.8rem 0; animation: fadeUp 1s ease 0.2s both; }
   .hero-divider span { color: var(--gold); }
   .hero-divider::before, .hero-divider::after { content: ''; flex: 1; max-width: 80px; height: 1px; background: var(--border); }
   .hero-date { font-size: 0.85rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--cream); opacity: 0.8; text-align: center; line-height: 2; animation: fadeUp 1s ease 0.25s both; }
@@ -336,6 +336,9 @@
   .footer-links a:hover { opacity: 0.9; }
   .footer-copy { font-size: 0.7rem; opacity: 0.25; }
   
+  /* Hamburger button */
+  .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+
   @media (max-width: 700px) {
     nav { padding: 1rem 1.25rem; }
     .nav-links { display: none; }
@@ -347,15 +350,13 @@
     section { padding: 4rem 1.25rem; }
   }
 
-  /* Hamburger button */
-  .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
   .nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--cream); border-radius: 2px; transition: all 0.3s; }
   .nav-hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
   .nav-hamburger.open span:nth-child(2) { opacity: 0; }
   .nav-hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 
   /* Mobile nav overlay */
-  .mobile-nav { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(26,26,26,0.97); z-index: 99; flex-direction: column; align-items: center; justify-content: center; gap: 2rem; }
+  .mobile-nav { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(26,26,26,0.97); z-index: 101; flex-direction: column; align-items: center; justify-content: center; gap: 2rem; }
   .mobile-nav.open { display: flex; }
   .mobile-nav a { font-size: 1.2rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--cream); text-decoration: none; opacity: 0.75; transition: color 0.2s, opacity 0.2s; }
   .mobile-nav a:hover { color: var(--gold); opacity: 1; }
