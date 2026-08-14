@@ -304,6 +304,10 @@
   .price-tag { flex: 1; background: #111; border: 1px solid #333; border-radius: 3px; padding: 1rem; text-align: center; }
   .price-tag .sz { font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.3rem; }
   .price-tag .pr { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 600; }
+  .vendor-urgency { font-size: 0.72rem; letter-spacing: 0.08em; color: var(--gold-light); margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.5rem; }
+  .deposit-note { background: rgba(200,151,58,0.08); border-left: 2px solid var(--gold); border-radius: 2px; padding: 1rem 1.25rem; margin-bottom: 1.5rem; }
+  .deposit-note p { font-size: 0.78rem; line-height: 1.75; color: rgba(250,246,240,0.75); margin: 0; }
+  .deposit-note strong { color: var(--gold-light); }
   .form-group { margin-bottom: 1rem; }
   .form-group input, .form-group select, .form-group textarea { width: 100%; background: #111; border: 1px solid #333; border-radius: 2px; padding: 0.75rem 1rem; color: var(--cream); font-family: 'DM Sans', sans-serif; font-size: 0.83rem; outline: none; transition: border-color 0.2s; }
   .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(250,246,240,0.3); }
@@ -572,6 +576,7 @@
     <div class="sitemap-legend">
         <div class="legend-item"><div class="legend-box" style="background:#3d7a5e;"></div> 8&times;7 Booth ($625)</div>
         <div class="legend-item"><div class="legend-box" style="background:var(--mid-green);"></div> 8&times;8 Booth ($675)</div>
+        <div class="legend-item"><div class="legend-box" style="background:#444;opacity:0.6;"></div> Booth Claimed</div>
         <div class="legend-item"><div class="legend-box" style="background:var(--gold);"></div> Lounge &amp; Bar</div>
         <div class="legend-item"><div class="legend-box" style="border:2px solid var(--red);"></div> Washrooms &amp; Office</div>
         <div class="legend-item"><div class="legend-box" style="background:#b0b0b0;"></div> Structural Walls</div>
@@ -624,7 +629,7 @@
 
             <!-- Top Wall Booths (26) -->
             <div class="b-row" style="top: 15px; left: 190px;">
-                <div class="bth">1</div><div class="bth">2</div><div class="bth">3</div><div class="bth">4</div><div class="bth">5</div><div class="bth">6</div><div class="bth">7</div><div class="bth">8</div><div class="bth">9</div><div class="bth">10</div><div class="bth">11</div><div class="bth">12</div><div class="bth">13</div><div class="bth">14</div><div class="bth">15</div><div class="bth">16</div><div class="bth">17</div><div class="bth">18</div><div class="bth">19</div><div class="bth">20</div><div class="bth">21</div><div class="bth">22</div><div class="bth">23</div><div class="bth">24</div><div class="bth">25</div><div class="bth">26</div>
+                <div class="bth">1</div><div class="bth">2</div><div class="bth">3</div><div class="bth">4</div><div class="bth">5</div><div class="bth">6</div><div class="bth">7</div><div class="bth">8</div><div class="bth">9</div><div class="bth">10</div><div class="bth">11</div><div class="bth">12</div><div class="bth">13</div><div class="bth sold">14</div><div class="bth">15</div><div class="bth">16</div><div class="bth">17</div><div class="bth">18</div><div class="bth">19</div><div class="bth">20</div><div class="bth">21</div><div class="bth">22</div><div class="bth">23</div><div class="bth">24</div><div class="bth">25</div><div class="bth">26</div>
             </div>
             
             <!-- Top Left Vertical (2) -->
@@ -644,12 +649,12 @@
 
             <!-- Main Upper Island Top Side (24) -->
             <div class="b-row" style="top: 90px; left: 215px;">
-                <div class="bth">35</div><div class="bth">36</div><div class="bth">37</div><div class="bth">38</div><div class="bth">39</div><div class="bth">40</div><div class="bth">41</div><div class="bth">42</div><div class="bth">43</div><div class="bth">44</div><div class="bth">45</div><div class="bth">46</div><div class="bth">47</div><div class="bth">48</div><div class="bth">49</div><div class="bth">50</div><div class="bth">51</div><div class="bth">52</div><div class="bth">53</div><div class="bth">54</div><div class="bth">55</div><div class="bth">56</div><div class="bth">57</div><div class="bth">58</div>
+                <div class="bth">35</div><div class="bth">36</div><div class="bth">37</div><div class="bth">38</div><div class="bth">39</div><div class="bth">40</div><div class="bth">41</div><div class="bth">42</div><div class="bth">43</div><div class="bth">44</div><div class="bth">45</div><div class="bth">46</div><div class="bth sold">47</div><div class="bth">48</div><div class="bth">49</div><div class="bth">50</div><div class="bth">51</div><div class="bth">52</div><div class="bth">53</div><div class="bth">54</div><div class="bth">55</div><div class="bth">56</div><div class="bth">57</div><div class="bth">58</div>
             </div>
             
             <!-- Main Upper Island Bottom Side (24) -->
             <div class="b-row" style="top: 118px; left: 215px;">
-                <div class="bth">59</div><div class="bth">60</div><div class="bth">61</div><div class="bth">62</div><div class="bth">63</div><div class="bth">64</div><div class="bth">65</div><div class="bth">66</div><div class="bth">67</div><div class="bth">68</div><div class="bth">69</div><div class="bth">70</div><div class="bth">71</div><div class="bth">72</div><div class="bth">73</div><div class="bth">74</div><div class="bth">75</div><div class="bth">76</div><div class="bth">77</div><div class="bth">78</div><div class="bth">79</div><div class="bth">80</div><div class="bth">81</div><div class="bth">82</div>
+                <div class="bth">59</div><div class="bth">60</div><div class="bth">61</div><div class="bth">62</div><div class="bth">63</div><div class="bth">64</div><div class="bth">65</div><div class="bth">66</div><div class="bth">67</div><div class="bth">68</div><div class="bth">69</div><div class="bth">70</div><div class="bth sold">71</div><div class="bth">72</div><div class="bth">73</div><div class="bth">74</div><div class="bth">75</div><div class="bth">76</div><div class="bth">77</div><div class="bth">78</div><div class="bth">79</div><div class="bth">80</div><div class="bth">81</div><div class="bth">82</div>
             </div>
 
             <!-- Washrooms Top (5) -->
@@ -669,7 +674,7 @@
 
             <!-- Right Mid Island Top (11) - Shifted Down -->
             <div class="b-row" style="top: 263px; left: 515px;">
-                <div class="bth">94</div><div class="bth">95</div><div class="bth">96</div><div class="bth">97</div><div class="bth">98</div><div class="bth">99</div><div class="bth">100</div><div class="bth">101</div><div class="bth">102</div><div class="bth">103</div><div class="bth">104</div>
+                <div class="bth">94</div><div class="bth">95</div><div class="bth">96</div><div class="bth">97</div><div class="bth">98</div><div class="bth">99</div><div class="bth">100</div><div class="bth">101</div><div class="bth sold">102</div><div class="bth">103</div><div class="bth">104</div>
             </div>
             
             <!-- Right Mid Island Bottom (11) - Shifted Down -->
@@ -679,7 +684,7 @@
 
             <!-- Bottom Row Right Side (15) -->
             <div class="b-row" style="bottom: 40px; left: 460px;">
-                <div class="bth">116</div><div class="bth">117</div><div class="bth">118</div><div class="bth">119</div><div class="bth">120</div><div class="bth">121</div><div class="bth">122</div><div class="bth">123</div><div class="bth">124</div><div class="bth">125</div><div class="bth">126</div><div class="bth">127</div><div class="bth">128</div><div class="bth">129</div><div class="bth">130</div>
+                <div class="bth">116</div><div class="bth">117</div><div class="bth">118</div><div class="bth">119</div><div class="bth">120</div><div class="bth">121</div><div class="bth">122</div><div class="bth">123</div><div class="bth">124</div><div class="bth">125</div><div class="bth">126</div><div class="bth">127</div><div class="bth sold">128</div><div class="bth">129</div><div class="bth">130</div>
             </div>
 
             <!-- Inner Right Vertical near exit (3) -->
@@ -731,7 +736,7 @@
     <h2 class="section-title">Be part of Halifax's<br>newest Christmas show.</h2>
     <div class="vendors-intro">
       <div>
-        <p style="font-size:0.88rem;line-height:1.9;color:rgba(250,246,240,0.6);margin-bottom:2rem">We curate every vendor spot with care, so no two vendors sell the same thing. If you make it, grow it, bake it, or craft it in Nova Scotia, we want to hear from you.</p>
+        <p style="font-size:0.88rem;line-height:1.9;color:rgba(250,246,240,0.6);margin-bottom:2rem">We're keeping this intentionally small: 140 hand-selected spots, minimal category overlap. If you're in, you're the only one doing what you do in the room. If you make it, grow it, bake it, or craft it in Nova Scotia, we want to hear from you.</p>
         <div class="section-label" style="margin-bottom:1rem">Categories We're Looking For</div>
         <div class="vendor-cats">
           <div class="vcat"><span class="vcat-dot"></span>Bakery &amp; Sweets</div>
@@ -750,7 +755,8 @@
       </div>
       <div class="vendor-apply">
         <h3>Apply for a Booth</h3>
-        <p>Applications are reviewed on a rolling basis. Acceptance is based on product quality and category fit. We'll be in touch within 5&ndash;7 business days.</p>
+        <div class="vendor-urgency">&#10022; A few booths have already been claimed &mdash; see the map above</div>
+        <p>Applications are reviewed on a rolling basis. Acceptance is based on product quality and category fit. We'll be in touch within 5&ndash;7 business days. There's no obligation until you're accepted and choose to move forward.</p>
         <div class="vendor-includes">
           <div class="vi">Table + 2 chairs included</div>
           <div class="vi">Wi-Fi internet access</div>
@@ -760,6 +766,9 @@
         <div class="price-row">
           <div class="price-tag"><div class="sz">8 x 7 Booth</div><div class="pr">$625</div><div style="font-size:0.68rem;color:rgba(250,246,240,0.35);margin-top:0.35rem;letter-spacing:0.05em"><span style="color:#E8B85A;font-weight:500">55</span> spots available</div></div>
           <div class="price-tag"><div class="sz">8 x 8 Booth</div><div class="pr">$675</div><div style="font-size:0.68rem;color:rgba(250,246,240,0.35);margin-top:0.35rem;letter-spacing:0.05em"><span style="color:#E8B85A;font-weight:500">85</span> spots available</div></div>
+        </div>
+        <div class="deposit-note">
+          <p>Once accepted, we only ask for a <strong>fully refundable $150 hold</strong> to confirm your spot &mdash; applied in full toward your booth fee. The rest isn't due until <strong>September 1, 2026</strong>.</p>
         </div>
         <div id="vendor-form">
           <div class="form-row">
