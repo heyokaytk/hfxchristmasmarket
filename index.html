@@ -145,6 +145,8 @@
   .why-card:hover { border-color: var(--gold); background: #fdfaf4; transform: translateY(-5px); box-shadow: 0 14px 28px rgba(28,58,43,0.1); z-index: 2; }
   .why-icon { font-size: 1.6rem; margin-bottom: 1rem; display: inline-block; transition: transform 0.35s ease; }
   .why-card:hover .why-icon { transform: scale(1.18) rotate(-6deg); }
+  .why-card::after { content: '\2726'; position: absolute; top: 1rem; right: 1.1rem; font-size: 0.85rem; color: var(--gold); opacity: 0; transform: scale(0.3) rotate(-20deg); transition: opacity 0.5s ease, transform 0.5s ease; pointer-events: none; }
+  .why-card:hover::after { opacity: 1; transform: scale(1) rotate(0deg); }
   .why-card h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--charcoal); }
   .why-card p { font-size: 0.85rem; line-height: 1.7; color: #555; }
   @media (max-width: 960px) { .why-grid { grid-template-columns: repeat(2, 1fr); } }
@@ -415,8 +417,10 @@
   .sponsor-spot:hover { border-color: var(--gold); border-style: solid; background: rgba(200,151,58,0.07); color: var(--gold-light); transform: translateY(-3px); }
   @media (max-width: 700px) { .sponsor-spots { grid-template-columns: repeat(2, 1fr); } }
   .sponsor-tiers { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; align-items: stretch; }
-  .sponsor-tier { background: rgba(0,0,0,0.22); border: 1px solid rgba(250,246,240,0.1); border-radius: 4px; padding: 2rem 1.75rem; display: flex; flex-direction: column; transition: transform 0.2s ease, border-color 0.2s ease; }
+  .sponsor-tier { background: rgba(0,0,0,0.22); border: 1px solid rgba(250,246,240,0.1); border-radius: 4px; padding: 2rem 1.75rem; display: flex; flex-direction: column; transition: transform 0.2s ease, border-color 0.2s ease; position: relative; }
   .sponsor-tier:hover { transform: translateY(-3px); border-color: rgba(200,151,58,0.35); }
+  .sponsor-tier::after { content: '\2726'; position: absolute; top: 1.1rem; right: 1.25rem; font-size: 0.85rem; color: var(--gold); opacity: 0; transform: scale(0.3) rotate(-20deg); transition: opacity 0.5s ease, transform 0.5s ease; pointer-events: none; }
+  .sponsor-tier:hover::after { opacity: 1; transform: scale(1) rotate(0deg); }
   .sponsor-tier.featured { border-color: var(--gold); background: rgba(200,151,58,0.07); position: relative; }
   .sponsor-tier.featured::before { content: 'Suggested Fit'; position: absolute; top: -0.7rem; left: 1.75rem; background: var(--gold); color: var(--charcoal); font-size: 0.62rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.25rem 0.7rem; border-radius: 100px; }
   .sponsor-tier-name { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; color: var(--cream); margin-bottom: 0.35rem; }
