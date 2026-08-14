@@ -76,7 +76,7 @@
       { "@type": "Question", "name": "How are vendors selected?", "acceptedAnswer": { "@type": "Answer", "text": "Every vendor is hand-reviewed for product quality and category fit. We cap each category to prevent overlap. Applications are reviewed on a rolling basis." } },
       { "@type": "Question", "name": "Can I bring my kids?", "acceptedAnswer": { "@type": "Answer", "text": "Of course! Children are always free. We also have Meet Santa on-site, so bring the camera." } },
       { "@type": "Question", "name": "Is there food and drink at the event?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We have an on-site lounge and bar with warm drinks, hot chocolate, and a place to sit and rest. Your Welcome Kit also includes a coffee or tea voucher." } },
-      { "@type": "Question", "name": "Where do you recommend staying if I'm coming from out of town?", "acceptedAnswer": { "@type": "Answer", "text": "We recommend the Westin Nova Scotia, just steps from Pavilion 22 and a perfect home base whether you're a vendor arriving early for setup or a guest making a weekend of it. The hotel is located on the Halifax waterfront, putting you close to great restaurants, the boardwalk, and everything the city has to offer in December. Vendors: reach out to the Westin directly and mention The Halifax Christmas Market, since group rates may be available." } }
+      { "@type": "Question", "name": "Where do you recommend staying if I'm coming from out of town?", "acceptedAnswer": { "@type": "Answer", "text": "We recommend the Westin Nova Scotia, just steps from Pavilion 22 and a great home base for the weekend. It's right on the Halifax waterfront, close to good restaurants and the boardwalk. Vendors arriving early for setup: reach out to the Westin directly and mention The Halifax Christmas Market, since group rates may be available." } }
     ]
   }
 ]
@@ -333,9 +333,9 @@
   .faq-q { padding: 1.25rem 1.5rem; font-size: 0.9rem; font-weight: 500; cursor: pointer; display: flex; justify-content: space-between; align-items: center; user-select: none; }
   .faq-q::after { content: '+'; color: var(--gold); font-size: 1.2rem; font-weight: 300; transition: transform 0.3s; }
   .faq-item.open .faq-q::after { transform: rotate(45deg); }
-  .faq-a { display: grid; grid-template-rows: 0fr; overflow: hidden; transition: grid-template-rows 0.4s ease; }
-  .faq-item.open .faq-a { grid-template-rows: 1fr; }
-  .faq-a-inner { min-height: 0; padding: 0 1.5rem 1.25rem; font-size: 0.83rem; line-height: 1.8; color: rgba(250,246,240,0.65); }
+  .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+  .faq-item.open .faq-a { max-height: 500px; }
+  .faq-a-inner { padding: 0 1.5rem 1.25rem; font-size: 0.83rem; line-height: 1.8; color: rgba(250,246,240,0.65); }
   
   footer { background: #0a0a0a; padding: 3rem 2rem; text-align: center; border-top: 1px solid #1a1a1a; }
   .footer-logo-mark { width: 56px; height: 56px; border-radius: 50%; margin: 0 auto 1rem; display: block; }
@@ -385,7 +385,6 @@
   .bth.sz-87:hover { background: var(--gold); color: var(--charcoal); }
 
   /* Preferred booth input (read-only, clickable from map) */
-  #preferred-booth { cursor: pointer; }
   #preferred-booth.filled { border-color: var(--gold); color: var(--gold-light); }
 
   /* FEATURED VENDORS (category preview — real vendor lineup TBA) */
@@ -762,7 +761,7 @@
       </div>
       <div class="vendor-apply">
         <h3>Apply for a Booth</h3>
-        <div class="vendor-urgency">&#10022; A few booths have already been claimed &mdash; see the map above</div>
+        <div class="vendor-urgency">&#10022; A few booths have already been claimed. See the map above.</div>
         <p>Applications are reviewed on a rolling basis. Acceptance is based on product quality and category fit. We'll be in touch within 5&ndash;7 business days. There's no obligation until you're accepted and choose to move forward.</p>
         <div class="vendor-includes">
           <div class="vi">Table + 2 chairs included</div>
@@ -775,7 +774,7 @@
           <div class="price-tag"><div class="sz">8 x 8 Booth</div><div class="pr">$675</div><div style="font-size:0.68rem;color:rgba(250,246,240,0.35);margin-top:0.35rem;letter-spacing:0.05em"><span style="color:#E8B85A;font-weight:500">82</span> spots available</div></div>
         </div>
         <div class="deposit-note">
-          <p>Once accepted, we only ask for a <strong>fully refundable $150 hold</strong> to confirm your spot &mdash; applied in full toward your booth fee. The rest isn't due until <strong>October 1, 2026</strong>.</p>
+          <p>Once accepted, we only ask for a <strong>fully refundable $150 hold</strong> to confirm your spot, applied in full toward your booth fee. The rest isn't due until <strong>October 1, 2026</strong>.</p>
         </div>
         <div id="vendor-form">
           <div class="form-row">
@@ -811,7 +810,7 @@
               <option>No preference</option>
             </select>
           </div>
-          <div class="form-group"><input type="text" placeholder="Preferred booth # (or click a booth on the map above)" id="preferred-booth" readonly></div>
+          <div class="form-group"><input type="text" placeholder="Preferred booth # (or click a booth on the map above)" id="preferred-booth"></div>
           <div class="form-group"><textarea placeholder="Tell us about your business and what you sell..." id="description"></textarea></div>
           <div class="form-group"><input type="url" placeholder="Website or Instagram URL (optional)" id="website"></div>
           <button class="btn-submit" onclick="submitForm()">Submit Application</button>
@@ -885,7 +884,7 @@
       <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How are vendors selected?</div><div class="faq-a"><div class="faq-a-inner">Every vendor is hand-reviewed for product quality and category fit. We cap each category to prevent overlap. Applications are reviewed on a rolling basis.</div></div></div>
       <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Can I bring my kids?</div><div class="faq-a"><div class="faq-a-inner">Of course! Children are always free. We also have Meet Santa on-site, so bring the camera.</div></div></div>
       <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Is there food and drink at the event?</div><div class="faq-a"><div class="faq-a-inner">Yes. We have an on-site lounge and bar with warm drinks, hot chocolate, and a place to sit and rest. Your Welcome Kit also includes a coffee or tea voucher.</div></div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Where do you recommend staying if I'm coming from out of town?</div><div class="faq-a"><div class="faq-a-inner">We recommend the Westin Nova Scotia, just steps from Pavilion 22 and a perfect home base whether you're a vendor arriving early for setup or a guest making a weekend of it. The hotel is located on the Halifax waterfront, putting you close to great restaurants, the boardwalk, and everything the city has to offer in December. Vendors: reach out to the Westin directly and mention The Halifax Christmas Market, since group rates may be available.</div></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Where do you recommend staying if I'm coming from out of town?</div><div class="faq-a"><div class="faq-a-inner">We recommend the Westin Nova Scotia, just steps from Pavilion 22 and a great home base for the weekend. It's right on the Halifax waterfront, close to good restaurants and the boardwalk. Vendors arriving early for setup: reach out to the Westin directly and mention The Halifax Christmas Market, since group rates may be available.</div></div></div>
     </div>
   </div>
 </section>
@@ -1039,7 +1038,7 @@
         tooltip.innerHTML = `
           <div class="tooltip-title">Booth #${boothNum}</div>
           <div style="color: #E8B85A; font-weight: 600; margin-top: 4px;">Booth Claimed</div>
-          <div style="opacity: 0.7; font-size: 0.68rem; margin-top: 4px;">Not available &mdash; check other open booths on the map.</div>
+          <div style="opacity: 0.7; font-size: 0.68rem; margin-top: 4px;">Not available. Check other open booths on the map.</div>
         `;
         tooltip.style.display = 'block';
         tooltip.style.left = (e.pageX + 15) + 'px';
