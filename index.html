@@ -336,6 +336,10 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
     cursor: not-allowed !important;
     opacity: 0.4;
   }
+  .bth.pending {
+    border: 2px solid var(--gold-light);
+    box-shadow: 0 0 0 2px rgba(232,184,90,0.25);
+  }
   .vendors { background: #1a1a1a; }
   .vendors-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
   .vendor-cats { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-top: 2.5rem; }
@@ -642,6 +646,7 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
         <div class="legend-item"><div class="legend-box" style="background:#3d7a5e;"></div> 8&times;7 Booth ($625)</div>
         <div class="legend-item"><div class="legend-box" style="background:var(--mid-green);"></div> 8&times;8 Booth ($675)</div>
         <div class="legend-item"><div class="legend-box" style="background:#444;opacity:0.6;"></div> Booth Claimed</div>
+        <div class="legend-item"><div class="legend-box" style="background:var(--mid-green);border:2px solid var(--gold-light);"></div> Pending Interest</div>
         <div class="legend-item"><div class="legend-box" style="background:var(--gold);"></div> Lounge</div>
         <div class="legend-item"><div class="legend-box" style="border:2px solid var(--red);"></div> Washrooms &amp; Office</div>
         <div class="legend-item"><div class="legend-box" style="background:#b0b0b0;"></div> Structural Walls</div>
@@ -704,22 +709,22 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
 
             <!-- Below Office Horizontal (4) -->
             <div class="b-row" style="top: 105px; left: 55px;">
-                <div class="bth">29</div><div class="bth">30</div><div class="bth">31</div><div class="bth">32</div>
+                <div class="bth">29</div><div class="bth">30</div><div class="bth">31</div><div class="bth pending">32</div>
             </div>
 
             <!-- Far Left Vertical (2) -->
             <div class="b-col" style="top: 160px; left: 15px;">
-                <div class="bth">33</div><div class="bth">34</div>
+                <div class="bth">33</div><div class="bth pending">34</div>
             </div>
 
             <!-- Main Upper Island Top Side (24) -->
             <div class="b-row" style="top: 90px; left: 215px;">
-                <div class="bth">35</div><div class="bth">36</div><div class="bth">37</div><div class="bth">38</div><div class="bth">39</div><div class="bth">40</div><div class="bth">41</div><div class="bth">42</div><div class="bth">43</div><div class="bth">44</div><div class="bth">45</div><div class="bth">46</div><div class="bth sold">47</div><div class="bth">48</div><div class="bth">49</div><div class="bth">50</div><div class="bth">51</div><div class="bth">52</div><div class="bth">53</div><div class="bth">54</div><div class="bth">55</div><div class="bth">56</div><div class="bth">57</div><div class="bth">58</div>
+                <div class="bth pending">35</div><div class="bth">36</div><div class="bth">37</div><div class="bth">38</div><div class="bth">39</div><div class="bth">40</div><div class="bth">41</div><div class="bth">42</div><div class="bth">43</div><div class="bth">44</div><div class="bth">45</div><div class="bth">46</div><div class="bth sold">47</div><div class="bth">48</div><div class="bth">49</div><div class="bth">50</div><div class="bth">51</div><div class="bth">52</div><div class="bth">53</div><div class="bth">54</div><div class="bth">55</div><div class="bth">56</div><div class="bth">57</div><div class="bth pending">58</div>
             </div>
             
             <!-- Main Upper Island Bottom Side (24) -->
             <div class="b-row" style="top: 118px; left: 215px;">
-                <div class="bth">59</div><div class="bth">60</div><div class="bth">61</div><div class="bth">62</div><div class="bth">63</div><div class="bth">64</div><div class="bth">65</div><div class="bth">66</div><div class="bth">67</div><div class="bth">68</div><div class="bth">69</div><div class="bth">70</div><div class="bth sold">71</div><div class="bth">72</div><div class="bth">73</div><div class="bth">74</div><div class="bth">75</div><div class="bth">76</div><div class="bth">77</div><div class="bth">78</div><div class="bth">79</div><div class="bth">80</div><div class="bth">81</div><div class="bth">82</div>
+                <div class="bth pending">59</div><div class="bth pending">60</div><div class="bth">61</div><div class="bth">62</div><div class="bth">63</div><div class="bth">64</div><div class="bth">65</div><div class="bth">66</div><div class="bth">67</div><div class="bth">68</div><div class="bth">69</div><div class="bth">70</div><div class="bth sold">71</div><div class="bth">72</div><div class="bth">73</div><div class="bth">74</div><div class="bth">75</div><div class="bth">76</div><div class="bth">77</div><div class="bth">78</div><div class="bth">79</div><div class="bth">80</div><div class="bth">81</div><div class="bth">82</div>
             </div>
 
             <!-- Washrooms Top (5) -->
@@ -1247,6 +1252,10 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
         price = "$675";
       }
 
+      const pendingNote = booth.classList.contains('pending')
+        ? `<div style="color: #E8B85A; font-weight: 600; margin: 6px 0; padding-top: 6px; border-top: 1px solid rgba(200,151,58,0.2);">&#9670; Interest already received</div>`
+        : '';
+
       tooltip.innerHTML = `
         <div class="tooltip-title">Booth #${boothNum}</div>
         <div class="tooltip-price">${price}</div>
@@ -1257,8 +1266,9 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
           • Area will be draped<br>
           • Vendor Wi-Fi Included
         </div>
+        ${pendingNote}
       `;
-      
+
       tooltip.style.display = 'block';
       tooltip.style.left = (e.pageX + 15) + 'px';
       tooltip.style.top = (e.pageY + 15) + 'px';
