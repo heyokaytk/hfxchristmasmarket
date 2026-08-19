@@ -869,7 +869,7 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
               <option>No preference</option>
             </select>
           </div>
-          <div class="form-group"><input type="text" placeholder="Preferred booth # (or click a booth on the map above)" id="preferred-booth"></div>
+          <div class="form-group"><input type="text" placeholder="Preferred booth # (click a booth above, or type &quot;No preference&quot;)" id="preferred-booth"></div>
           <div class="form-group"><textarea placeholder="Tell us about your business and what you sell..." id="description"></textarea></div>
           <div class="form-group"><input type="url" placeholder="Website or Instagram URL (optional)" id="website"></div>
           <button class="btn-submit" onclick="submitForm()">Submit Application</button>
@@ -1089,9 +1089,11 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
     var name = document.getElementById('contact-name').value.trim();
     var email = document.getElementById('email').value.trim();
     var cat = document.getElementById('category').value;
+    var boothSize = document.getElementById('booth-size').value;
+    var preferredBooth = document.getElementById('preferred-booth').value.trim();
     var desc = document.getElementById('description').value.trim();
-    if (!biz || !name || !email || !cat || !desc) {
-      alert('Please fill in all required fields before submitting.');
+    if (!biz || !name || !email || !cat || !boothSize || !preferredBooth || !desc) {
+      alert('Please fill in all required fields before submitting, including preferred booth size and booth # (or type "No preference").');
       return;
     }
 
@@ -1111,8 +1113,8 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
         'Contact Name': name,
         'Phone': document.getElementById('phone').value,
         'Category': cat,
-        'Booth Size': document.getElementById('booth-size').value,
-        'Preferred Booth #': document.getElementById('preferred-booth').value,
+        'Booth Size': boothSize,
+        'Preferred Booth #': preferredBooth,
         'Website/Instagram': document.getElementById('website').value,
         'About the Business': desc
       })
