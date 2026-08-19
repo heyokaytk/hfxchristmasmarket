@@ -126,8 +126,10 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
   .nav-links { display: flex; gap: 2rem; align-items: center; }
   .nav-links a { font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--cream); text-decoration: none; opacity: 0.75; transition: opacity 0.2s; }
   .nav-links a:hover { opacity: 1; }
-  .nav-cta { background: var(--gold); color: var(--charcoal); padding: 0.5rem 1.25rem; border-radius: 2px; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; transition: background 0.2s; }
+  .nav-cta { position: relative; overflow: hidden; background: var(--gold); color: var(--charcoal); padding: 0.5rem 1.25rem; border-radius: 2px; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; transition: background 0.2s; }
   .nav-cta:hover { background: var(--gold-light); opacity: 1 !important; }
+  .nav-cta::after { content: ''; position: absolute; top: 0; left: -75%; width: 50%; height: 100%; background: linear-gradient(115deg, transparent, rgba(255,255,255,0.65), transparent); transform: skewX(-20deg); animation: navShimmer 3.2s ease-in-out infinite; pointer-events: none; }
+  @keyframes navShimmer { 0% { left: -75%; } 22% { left: 130%; } 100% { left: 130%; } }
   
   .hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; overflow: hidden; padding: 8rem 2rem 4rem; background: linear-gradient(160deg, #0e1f17 0%, #1C3A2B 45%, #0f1a10 100%); }
   .hero > div { width: 100%; max-width: 100%; }
