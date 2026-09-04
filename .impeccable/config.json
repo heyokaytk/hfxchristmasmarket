@@ -1,0 +1,35 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "codex-grid-background",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-09-04T14:03:56.705Z",
+        "reason": "Line 242 is .sitemap-board, the literal venue floor-plan/booth map (blueprint-style graph paper grid on a cream background, labeled 'Outer Structural Building Wall' / 'Perimeters & Structural Walls'). This is the domain-appropriate exception the rule itself names (canvas/map/blueprint surface), not decorative AI-slop."
+      },
+      {
+        "rule": "layout-transition",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-09-04T14:03:58.313Z",
+        "reason": "Line 380 is .faq-a max-height transition, the standard CSS-only FAQ accordion open/close technique (no JS-measured height available). Click-triggered only on one small element at a time, not continuous/scroll-driven animation -- negligible layout-thrash impact in practice."
+      },
+      {
+        "rule": "repeating-stripes-gradient",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-09-04T14:13:50.378Z",
+        "reason": "Only remaining instance is .zone-stairs (line ~299) inside the venue floor-plan/sitemap board -- repeating diagonal hatch lines are the standard cartographic convention for stairs on a floor plan, not decorative surface texture. The other instance (.hero-bg-pattern, a purely decorative 4%-opacity grid texture on the hero section) was removed outright rather than suppressed."
+      }
+    ]
+  }
+}
