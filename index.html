@@ -124,7 +124,7 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
   nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.2rem 3rem; background: rgba(26,26,26,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
   .nav-logo { display: flex; align-items: center; gap: 0.7rem; font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--gold); letter-spacing: 0.04em; }
   .nav-logo img { width: 34px; height: 34px; border-radius: 50%; flex-shrink: 0; }
-  .nav-logo span { display: block; font-size: 0.6rem; font-family: 'DM Sans', sans-serif; font-weight: 300; letter-spacing: 0.2em; text-transform: uppercase; color: var(--cream); opacity: 0.7; margin-top: 1px; }
+  .nav-logo span { display: block; font-size: 0.7rem; font-family: 'DM Sans', sans-serif; font-weight: 300; letter-spacing: 0.05em; color: var(--cream); opacity: 0.7; margin-top: 1px; }
   .nav-links { display: flex; gap: 2rem; align-items: center; }
   .nav-links a { font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--cream); text-decoration: none; opacity: 0.75; transition: opacity 0.2s; }
   .nav-links a:hover { opacity: 1; }
@@ -138,7 +138,7 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
   .snow-container { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
   .snowflake { position: absolute; top: -10px; color: rgba(255,255,255,0.6); animation: fall linear infinite; }
   @keyframes fall { to { transform: translateY(110vh) rotate(360deg); opacity: 0; } }
-  .hero-eyebrow { font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: center; gap: 1rem; animation: fadeUp 0.8s ease both; }
+  .hero-eyebrow { font-size: 0.8rem; letter-spacing: 0.04em; color: var(--gold); margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: center; gap: 1rem; animation: fadeUp 0.8s ease both; }
   .hero-eyebrow::before, .hero-eyebrow::after { content: ''; display: block; width: 40px; height: 1px; background: var(--gold); opacity: 0.5; }
   .hero-wordmark { text-align: center; margin-bottom: 0.5rem; animation: fadeUp 0.9s ease 0.1s both; }
   .hero-wordmark .the { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.6rem; color: var(--cream); opacity: 0.7; display: block; margin-bottom: -0.3rem; }
@@ -148,7 +148,7 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
   .hero-divider { display: flex; align-items: center; justify-content: center; gap: 1rem; margin: 1.8rem 0; animation: fadeUp 1s ease 0.2s both; }
   .hero-divider span { color: var(--gold); }
   .hero-divider::before, .hero-divider::after { content: ''; flex: 1; max-width: 80px; height: 1px; background: var(--border); }
-  .hero-date { font-size: 0.85rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--cream); opacity: 0.8; text-align: center; line-height: 2; animation: fadeUp 1s ease 0.25s both; }
+  .hero-date { font-size: 0.95rem; letter-spacing: 0.04em; color: var(--cream); opacity: 0.8; text-align: center; line-height: 2; animation: fadeUp 1s ease 0.25s both; }
   .hero-date strong { color: var(--gold-light); font-weight: 500; }
   .hero-buttons { display: flex; gap: 1rem; margin-top: 2.5rem; flex-wrap: wrap; justify-content: center; animation: fadeUp 1s ease 0.4s both; }
   .btn-primary { background: var(--gold); color: var(--charcoal); padding: 0.9rem 2.2rem; border-radius: 2px; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; transition: all 0.2s; border: none; cursor: pointer; display: inline-block; }
@@ -158,13 +158,13 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
   .hero-pills { display: flex; gap: 0.75rem; margin-top: 2rem; flex-wrap: wrap; justify-content: center; animation: fadeUp 1s ease 0.5s both; }
   .pill { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 100px; padding: 0.35rem 1rem; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--cream); opacity: 0.8; }
   @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-  .scroll-hint { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 0.5rem; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.4; }
+  .scroll-hint { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 0.5rem; font-size: 0.6875rem; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.4; }
   .scroll-hint::after { content: ''; display: block; width: 1px; height: 30px; background: var(--cream); animation: pulse 2s ease infinite; }
   @keyframes pulse { 0%,100%{opacity:0.3} 50%{opacity:1} }
   
   section { padding: 6rem 2rem; }
   .section-inner { max-width: 1100px; margin: 0 auto; }
-  .section-label { font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+  .section-label { font-size: 0.6875rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
   .section-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 600; line-height: 1.15; margin-bottom: 1.25rem; }
 
   .why { background: var(--cream); color: var(--charcoal); }
@@ -185,7 +185,7 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
   .exp-list { list-style: none; display: flex; flex-direction: column; gap: 1.25rem; }
   .exp-list li { display: flex; gap: 1rem; align-items: flex-start; }
   .exp-bullet { color: var(--gold); font-size: 1rem; margin-top: 2px; flex-shrink: 0; }
-  .exp-list h4 { font-size: 0.95rem; font-weight: 500; margin-bottom: 0.2rem; }
+  .exp-list h3 { font-size: 0.95rem; font-weight: 500; margin-bottom: 0.2rem; }
   .exp-list p { font-size: 0.8rem; color: rgba(250,246,240,0.6); line-height: 1.6; }
   .exp-visual { background: rgba(0,0,0,0.25); border: 1px solid var(--border); border-radius: 4px; padding: 2.5rem; text-align: center; font-family: 'Playfair Display', serif; }
   .exp-visual .big-num { font-size: 4rem; font-weight: 700; color: var(--gold); line-height: 1; }
@@ -193,15 +193,15 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
   .exp-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; margin-top: 1px; }
   .exp-stat { background: rgba(0,0,0,0.2); padding: 1.25rem; text-align: center; }
   .exp-stat .num { font-size: 1.8rem; font-weight: 700; color: var(--gold-light); font-family: 'Playfair Display', serif; }
-  .exp-stat .lbl { font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; opacity: 0.55; margin-top: 0.2rem; }
+  .exp-stat .lbl { font-size: 0.6875rem; letter-spacing: 0.15em; text-transform: uppercase; opacity: 0.55; margin-top: 0.2rem; }
   
   .tickets { background: var(--charcoal); }
   .tickets-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
   .ticket-card { background: #222; border: 1px solid #333; border-radius: 4px; padding: 2rem; position: relative; overflow: hidden; transition: transform 0.2s, border-color 0.2s; }
   .ticket-card:hover { transform: translateY(-3px); border-color: var(--gold); }
   .ticket-card.featured { border-color: var(--gold); background: linear-gradient(135deg, #222 0%, #1c2818 100%); }
-  .ticket-card.featured::before { content: 'Most Popular'; position: absolute; top: 1rem; right: 1rem; background: var(--gold); color: var(--charcoal); font-size: 0.6rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.2rem 0.6rem; border-radius: 2px; }
-  .ticket-day { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
+  .ticket-card.featured::before { content: 'Most Popular'; position: absolute; top: 1rem; right: 1rem; background: var(--gold); color: var(--charcoal); font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.2rem 0.6rem; border-radius: 2px; }
+  .ticket-day { font-size: 0.6875rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
   .ticket-price { font-family: 'Playfair Display', serif; font-size: 2.8rem; font-weight: 700; line-height: 1; }
   .ticket-price sup { font-size: 1.2rem; vertical-align: super; margin-right: 2px; }
   .ticket-sub { font-size: 0.75rem; color: rgba(250,246,240,0.5); margin-top: 0.35rem; margin-bottom: 1.5rem; }
@@ -209,7 +209,7 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
   .ticket-slot { display: flex; justify-content: space-between; font-size: 0.78rem; padding: 0.5rem 0; border-bottom: 1px solid #333; }
   .ticket-slot:last-child { border: none; }
   .slot-time { color: var(--cream); opacity: 0.7; }
-  .slot-avail { color: var(--gold); font-size: 0.65rem; letter-spacing: 0.08em; }
+  .slot-avail { color: var(--gold); font-size: 0.6875rem; letter-spacing: 0.08em; }
   .btn-ticket { display: block; text-align: center; background: var(--gold); color: var(--charcoal); padding: 0.75rem; border-radius: 2px; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; transition: background 0.2s; }
   .btn-ticket:hover { background: var(--gold-light); }
   .ticket-note { text-align: center; margin-top: 2rem; font-size: 0.78rem; color: rgba(250,246,240,0.6); line-height: 1.8; }
@@ -294,8 +294,8 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
   .col-box.col-7 { top: 285px; left: 655px; }
 
   /* Amenity Zones */
-  .zone-office { position: absolute; top: 15px; left: 15px; width: 140px; height: 65px; border: 2px solid var(--red); display: flex; align-items: center; justify-content: center; color: var(--red); font-size: 0.65rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; text-align: center; border-radius: 2px; background: rgba(184, 50, 50, 0.05); z-index: 5; }
-  .zone-washrooms { position: absolute; bottom: 80px; left: 280px; width: 100px; height: 100px; border: 2px solid var(--red); display: flex; align-items: center; justify-content: center; color: var(--red); font-size: 0.65rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; text-align: center; border-radius: 2px; background: rgba(184, 50, 50, 0.05); z-index: 5; }
+  .zone-office { position: absolute; top: 15px; left: 15px; width: 140px; height: 65px; border: 2px solid var(--red); display: flex; align-items: center; justify-content: center; color: var(--red); font-size: 0.6875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; text-align: center; border-radius: 2px; background: rgba(184, 50, 50, 0.05); z-index: 5; }
+  .zone-washrooms { position: absolute; bottom: 80px; left: 280px; width: 100px; height: 100px; border: 2px solid var(--red); display: flex; align-items: center; justify-content: center; color: var(--red); font-size: 0.6875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; text-align: center; border-radius: 2px; background: rgba(184, 50, 50, 0.05); z-index: 5; }
   .zone-stairs { position: absolute; bottom: 80px; left: 385px; width: 35px; height: 100px; border: 1px solid rgba(0,0,0,0.2); background: repeating-linear-gradient(0deg, transparent, transparent 5px, rgba(0,0,0,0.1) 5px, rgba(0,0,0,0.1) 6px); }
   
   /* Lounge nudged leftwards */
@@ -310,7 +310,7 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
   /* Numbered Booths */
   .b-row { display: flex; gap: 4px; position: absolute; z-index: 10; }
   .b-col { display: flex; flex-direction: column; gap: 4px; position: absolute; z-index: 10; }
-  .bth { width: 22px; height: 22px; background: var(--mid-green); border-radius: 2px; transition: all 0.2s ease; cursor: crosshair; display: flex; align-items: center; justify-content: center; color: var(--cream); font-size: 0.55rem; font-weight: 600; letter-spacing: -0.5px; }
+  .bth { width: 22px; height: 22px; background: var(--mid-green); border-radius: 2px; transition: all 0.2s ease; cursor: crosshair; display: flex; align-items: center; justify-content: center; color: var(--cream); font-size: 0.6875rem; font-weight: 600; letter-spacing: -0.7px; }
   .bth:hover { transform: scale(1.3); background: var(--gold); z-index: 20; box-shadow: 0 2px 5px rgba(0,0,0,0.2); color: var(--charcoal); }
 
   /* --- NEW TOOLTIP & SOLD STYLES --- */
@@ -333,7 +333,7 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
   
   .bth.sold {
     background: #444 !important;
-    color: #666 !important;
+    color: #bbb !important;
     cursor: not-allowed !important;
     opacity: 0.4;
   }
@@ -350,9 +350,9 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
   .vi::before { content: '✓'; color: var(--gold); font-weight: 700; }
   .price-row { display: flex; gap: 1rem; margin-bottom: 1.5rem; }
   .price-tag { flex: 1; background: #111; border: 1px solid #333; border-radius: 3px; padding: 1rem; text-align: center; }
-  .price-tag .sz { font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.3rem; }
+  .price-tag .sz { font-size: 0.6875rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.3rem; }
   .price-tag .pr { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 600; }
-  .vendor-urgency { font-size: 0.72rem; letter-spacing: 0.08em; color: var(--gold-light); margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.5rem; }
+  .vendor-urgency { font-size: 0.78rem; letter-spacing: 0.03em; color: var(--gold-light); margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.5rem; }
   .deposit-note { background: rgba(200,151,58,0.08); border-radius: 3px; padding: 1rem 1.25rem; margin-bottom: 1.5rem; }
   .deposit-note p { font-size: 0.78rem; line-height: 1.75; color: rgba(250,246,240,0.75); margin: 0; }
   .deposit-note strong { color: var(--gold-light); }
@@ -383,7 +383,7 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
   footer { background: #0a0a0a; padding: 3rem 2rem; text-align: center; border-top: 1px solid #1a1a1a; }
   .footer-logo-mark { width: 56px; height: 56px; border-radius: 50%; margin: 0 auto 1rem; display: block; }
   .footer-logo { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--gold); margin-bottom: 0.5rem; }
-  .footer-sub { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.35; margin-bottom: 1.5rem; }
+  .footer-sub { font-size: 0.8rem; letter-spacing: 0.04em; opacity: 0.4; margin-bottom: 1.5rem; }
   .footer-links { display: flex; justify-content: center; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap; }
   .footer-links a { font-size: 0.75rem; color: var(--cream); opacity: 0.45; text-decoration: none; letter-spacing: 0.1em; text-transform: uppercase; transition: opacity 0.2s; }
   .footer-links a:hover { opacity: 0.9; }
@@ -432,7 +432,7 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
 
   /* FEATURED VENDORS (category preview — real vendor lineup TBA) */
   .featured-vendors { background: #1a1a1a; }
-  .fv-badge { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(200,151,58,0.1); border: 1px solid rgba(200,151,58,0.3); border-radius: 100px; padding: 0.4rem 1rem 0.4rem 0.6rem; font-size: 0.72rem; letter-spacing: 0.08em; color: var(--gold-light); margin: 1.5rem 0 0; }
+  .fv-badge { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(200,151,58,0.1); border: 1px solid rgba(200,151,58,0.3); border-radius: 100px; padding: 0.4rem 1rem 0.4rem 0.6rem; font-size: 0.78rem; letter-spacing: 0.03em; color: var(--gold-light); margin: 1.5rem 0 0; }
   .fv-badge-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
   .fv-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1px; margin-top: 3rem; background: #2a2a2a; }
   .fv-tile { background: #1a1a1a; padding: 1.75rem 1.5rem; transition: background 0.25s ease; }
@@ -449,11 +449,11 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
   .sponsor-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1px; margin: 3rem 0 3.5rem; background: rgba(0,0,0,0.2); }
   .sponsor-stat { background: rgba(0,0,0,0.18); padding: 1.5rem 1rem; text-align: center; }
   .sponsor-stat .num { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700; color: var(--gold-light); line-height: 1; }
-  .sponsor-stat .lbl { font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.6; margin-top: 0.4rem; }
+  .sponsor-stat .lbl { font-size: 0.6875rem; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.6; margin-top: 0.4rem; }
   .sponsor-spots-label { font-size: 0.9rem; color: rgba(250,246,240,0.85); margin-bottom: 0.5rem; font-weight: 500; }
   .sponsor-spots-note { font-size: 0.82rem; color: rgba(250,246,240,0.55); max-width: 500px; line-height: 1.8; margin-bottom: 1.5rem; }
   .sponsor-spots { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem; margin-bottom: 3.5rem; }
-  .sponsor-spot { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem; aspect-ratio: 1; border: 1.5px dashed rgba(200,151,58,0.4); border-radius: 4px; color: rgba(250,246,240,0.5); text-decoration: none; font-size: 0.68rem; letter-spacing: 0.06em; text-transform: uppercase; text-align: center; transition: all 0.25s ease; padding: 0.5rem; }
+  .sponsor-spot { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem; aspect-ratio: 1; border: 1.5px dashed rgba(200,151,58,0.4); border-radius: 4px; color: rgba(250,246,240,0.5); text-decoration: none; font-size: 0.6875rem; letter-spacing: 0.06em; text-transform: uppercase; text-align: center; transition: all 0.25s ease; padding: 0.5rem; }
   .sponsor-spot .plus { font-size: 1.6rem; color: var(--gold); line-height: 1; font-weight: 300; }
   .sponsor-spot:hover { border-color: var(--gold); border-style: solid; background: rgba(200,151,58,0.07); color: var(--gold-light); transform: translateY(-3px); }
   @media (max-width: 700px) { .sponsor-spots { grid-template-columns: repeat(2, 1fr); } }
@@ -463,7 +463,7 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
   .sponsor-tier::after { content: '\2726'; position: absolute; top: 1.1rem; right: 1.25rem; font-size: 0.85rem; color: var(--gold); opacity: 0; transform: scale(0.3) rotate(-20deg); transition: opacity 0.5s ease, transform 0.5s ease; pointer-events: none; }
   .sponsor-tier:hover::after { opacity: 1; transform: scale(1) rotate(0deg); }
   .sponsor-tier.featured { border-color: var(--gold); background: rgba(200,151,58,0.07); position: relative; }
-  .sponsor-tier.featured::before { content: 'Suggested Fit'; position: absolute; top: -0.7rem; left: 1.75rem; background: var(--gold); color: var(--charcoal); font-size: 0.62rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.25rem 0.7rem; border-radius: 100px; }
+  .sponsor-tier.featured::before { content: 'Suggested Fit'; position: absolute; top: -0.7rem; left: 1.75rem; background: var(--gold); color: var(--charcoal); font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.25rem 0.7rem; border-radius: 100px; }
   .sponsor-tier-name { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; color: var(--cream); margin-bottom: 0.35rem; }
   .sponsor-tier-tagline { font-size: 0.78rem; color: rgba(250,246,240,0.5); margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid rgba(250,246,240,0.1); }
   .sponsor-tier-list { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; flex: 1; }
@@ -562,8 +562,8 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
     <h2 class="section-title">Big enough to impress.<br>Curated enough to matter.</h2>
     <div class="exp-grid">
       <ul class="exp-list">
-        <li><span class="exp-bullet">&#10022;</span><div><h4>Free vendor map at entry</h4><p>Grab a printed map on your way in so you can plan your route and find your favourite categories fast.</p></div></li>
-        <li><span class="exp-bullet">&#10022;</span><div><h4>Christmas d&eacute;cor throughout</h4><p>The full venue gets transformed with LED lighting, festive signage, themed zones, and a warm immersive atmosphere.</p></div></li>
+        <li><span class="exp-bullet">&#10022;</span><div><h3>Free vendor map at entry</h3><p>Grab a printed map on your way in so you can plan your route and find your favourite categories fast.</p></div></li>
+        <li><span class="exp-bullet">&#10022;</span><div><h3>Christmas d&eacute;cor throughout</h3><p>The full venue gets transformed with LED lighting, festive signage, themed zones, and a warm immersive atmosphere.</p></div></li>
       </ul>
       <div>
         <div class="exp-visual">
