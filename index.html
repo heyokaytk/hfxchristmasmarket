@@ -199,8 +199,6 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
   .tickets-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
   .ticket-card { background: #222; border: 1px solid #333; border-radius: 4px; padding: 2rem; position: relative; overflow: hidden; transition: transform 0.2s, border-color 0.2s; }
   .ticket-card:hover { transform: translateY(-3px); border-color: var(--gold); }
-  .ticket-card.featured { border-color: var(--gold); background: linear-gradient(135deg, #222 0%, #1c2818 100%); }
-  .ticket-card.featured::before { content: 'Most Popular'; position: absolute; top: 1rem; right: 1rem; background: var(--gold); color: var(--charcoal); font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.2rem 0.6rem; border-radius: 2px; }
   .ticket-day { font-size: 0.6875rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
   .ticket-price { font-family: 'Playfair Display', serif; font-size: 2.8rem; font-weight: 700; line-height: 1; }
   .ticket-price sup { font-size: 1.2rem; vertical-align: super; margin-right: 2px; }
@@ -599,7 +597,7 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
         </div>
         <a href="#" class="btn-ticket btn-disabled">Coming Soon</a>
       </div>
-      <div class="ticket-card featured">
+      <div class="ticket-card">
         <div class="ticket-day">Saturday, December 5</div>
         <div class="ticket-price"><s class="ticket-was">$12</s><sup>$</sup>7</div>
         <div class="ticket-sub">Founding-year rate &middot; per adult &middot; kids always free</div>
