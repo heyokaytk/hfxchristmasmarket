@@ -384,7 +384,19 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
   .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
   .faq-item.open .faq-a { max-height: 500px; }
   .faq-a-inner { padding: 0 1.5rem 1.25rem; font-size: 0.83rem; line-height: 1.8; color: rgba(250,246,240,0.65); }
-  
+
+  .contact { background: #1a1a1a; }
+  .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1px; margin-top: 2.5rem; background: rgba(0,0,0,0.2); }
+  .contact-item { background: rgba(0,0,0,0.18); padding: 1.75rem 1.5rem; }
+  .contact-label { font-size: 0.6875rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
+  .contact-value { font-size: 1rem; color: var(--cream); }
+  .contact-value a { color: var(--cream); text-decoration: none; border-bottom: 1px solid rgba(250,246,240,0.25); transition: border-color 0.2s, color 0.2s; }
+  .contact-value a:hover { color: var(--gold-light); border-color: var(--gold-light); }
+  .contact-note { font-size: 0.75rem; color: rgba(250,246,240,0.5); margin-top: 0.5rem; line-height: 1.6; }
+  .contact-footnote { margin-top: 2rem; font-size: 0.82rem; color: rgba(250,246,240,0.5); }
+  .contact-footnote a { color: var(--gold-light); text-decoration: none; border-bottom: 1px solid rgba(200,151,58,0.35); }
+  .contact-footnote a:hover { border-color: var(--gold-light); }
+
   footer { background: #0a0a0a; padding: 3rem 2rem; text-align: center; border-top: 1px solid #1a1a1a; }
   .footer-logo-mark { width: 56px; height: 56px; border-radius: 50%; margin: 0 auto 1rem; display: block; }
   .footer-logo { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--gold); margin-bottom: 0.5rem; }
@@ -988,6 +1000,31 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
       <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Where do you recommend staying if I'm coming from out of town?</div><div class="faq-a"><div class="faq-a-inner">We recommend the Westin Nova Scotia, just steps from Pavilion 22 and a great home base for the weekend. It's right on the Halifax waterfront, close to good restaurants and the boardwalk.</div></div></div>
       <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Is info@hfxchristmasmarket.ca the same as hfxchristmasmarket@gmail.com?</div><div class="faq-a"><div class="faq-a-inner">Yes. Both addresses reach the same inbox and the same team, so use whichever is easiest for you. You'll always hear back from us at info@hfxchristmasmarket.ca.</div></div></div>
     </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="section-inner">
+    <div class="section-label" style="color:var(--gold-light)">Contact</div>
+    <h2 class="section-title">Real people. Real answers.</h2>
+    <p style="font-size:0.9rem;color:rgba(250,246,240,0.55);max-width:560px;line-height:1.8">This is a first-year event run by a small local team &mdash; happy to answer anything before you buy a ticket or apply for a booth. Here's every way to reach us.</p>
+    <div class="contact-grid">
+      <div class="contact-item">
+        <div class="contact-label">Phone</div>
+        <div class="contact-value"><a href="tel:+19024970006">902-497-0006</a></div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-label">Email</div>
+        <div class="contact-value"><a href="mailto:info@hfxchristmasmarket.ca">info@hfxchristmasmarket.ca</a></div>
+        <div class="contact-note">Also reachable at hfxchristmasmarket@gmail.com &mdash; same inbox, same team, either works.</div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-label">Location</div>
+        <div class="contact-value">Halifax, Nova Scotia</div>
+        <div class="contact-note">Event held at Pavilion 22, Halifax Waterfront &mdash; see the map above.</div>
+      </div>
+    </div>
+    <p class="contact-footnote">Want the details on how we handle your information? Read our <a href="/privacy.html">Privacy Policy</a>.</p>
   </div>
 </section>
 
