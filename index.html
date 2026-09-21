@@ -337,9 +337,10 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
     cursor: not-allowed !important;
   }
   .bth.accepted {
-    background: #333 !important;
-    color: #bbb !important;
+    background: var(--gold) !important;
+    color: var(--charcoal) !important;
     cursor: not-allowed !important;
+    box-shadow: 0 0 6px rgba(200,151,58,0.7) !important;
   }
   .bth.review:hover, .bth.accepted:hover { transform: none; box-shadow: none; }
   .vendors { background: #1a1a1a; }
@@ -463,6 +464,16 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
   .fv-footnote { margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid #2a2a2a; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; }
   .fv-footnote p { font-size: 0.85rem; color: rgba(250,246,240,0.5); line-height: 1.7; max-width: 480px; }
   .fv-footnote strong { color: var(--cream); font-weight: 500; }
+  .vd-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1px; margin-top: 2.5rem; background: #2a2a2a; }
+  .vd-card { background: #1a1a1a; padding: 1.5rem 1.5rem 1.35rem; transition: background 0.25s ease; }
+  .vd-card:hover { background: #222; }
+  .vd-booth { display: inline-block; font-size: 0.68rem; letter-spacing: 0.08em; color: var(--charcoal); background: var(--gold); font-weight: 700; padding: 0.15rem 0.5rem; border-radius: 2px; margin-bottom: 0.75rem; }
+  .vd-card h3 { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 600; margin-bottom: 0.3rem; color: var(--cream); }
+  .vd-cat { font-size: 0.78rem; color: rgba(250,246,240,0.55); margin-bottom: 0.9rem; }
+  .vd-links { display: flex; flex-direction: column; gap: 0.4rem; }
+  .vd-links a { font-size: 0.75rem; color: var(--gold-light); text-decoration: none; display: inline-flex; align-items: center; }
+  .vd-links a:hover { text-decoration: underline; }
+  .vd-empty { font-size: 0.8rem; color: rgba(250,246,240,0.4); font-style: italic; }
 
   /* SPONSORS */
   .sponsors { background: linear-gradient(160deg, #0e1f17 0%, #1C3A2B 55%, #14261c 100%); }
@@ -665,7 +676,7 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
         <div class="legend-item"><div class="legend-box" style="background:#3D6B8C;"></div> 8&times;7 Booth ($625) &middot; #1&ndash;58, 88&ndash;90</div>
         <div class="legend-item"><div class="legend-box" style="background:var(--mid-green);"></div> 8&times;8 Booth ($675) &middot; #59&ndash;87, 91&ndash;140</div>
         <div class="legend-item"><div class="legend-box" style="background:#cfcfcf;"></div> Under Review</div>
-        <div class="legend-item"><div class="legend-box" style="background:#333;"></div> Accepted</div>
+        <div class="legend-item"><div class="legend-box" style="background:var(--gold);"></div> Accepted</div>
         <div class="legend-item"><div class="legend-box" style="background:var(--gold);"></div> Lounge</div>
         <div class="legend-item"><div class="legend-box" style="border:2px solid var(--red);"></div> Washrooms &amp; Office</div>
         <div class="legend-item"><div class="legend-box" style="background:#b0b0b0;"></div> Structural Walls</div>
@@ -718,12 +729,12 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
 
             <!-- Top Wall Booths (26) -->
             <div class="b-row" style="top: 15px; left: 190px;">
-                <div class="bth review">1</div><div class="bth review">2</div><div class="bth">3</div><div class="bth">4</div><div class="bth review">5</div><div class="bth review">6</div><div class="bth review">7</div><div class="bth review">8</div><div class="bth">9</div><div class="bth">10</div><div class="bth">11</div><div class="bth">12</div><div class="bth">13</div><div class="bth review">14</div><div class="bth">15</div><div class="bth">16</div><div class="bth">17</div><div class="bth">18</div><div class="bth">19</div><div class="bth review">20</div><div class="bth">21</div><div class="bth review">22</div><div class="bth">23</div><div class="bth">24</div><div class="bth">25</div><div class="bth review">26</div>
+                <div class="bth accepted">1</div><div class="bth review">2</div><div class="bth">3</div><div class="bth">4</div><div class="bth review">5</div><div class="bth review">6</div><div class="bth review">7</div><div class="bth review">8</div><div class="bth">9</div><div class="bth">10</div><div class="bth">11</div><div class="bth">12</div><div class="bth accepted">13</div><div class="bth review">14</div><div class="bth">15</div><div class="bth">16</div><div class="bth">17</div><div class="bth">18</div><div class="bth">19</div><div class="bth review">20</div><div class="bth">21</div><div class="bth review">22</div><div class="bth">23</div><div class="bth">24</div><div class="bth">25</div><div class="bth accepted">26</div>
             </div>
             
             <!-- Top Left Vertical (2) -->
             <div class="b-col" style="top: 50px; left: 175px;">
-                <div class="bth review">27</div><div class="bth review">28</div>
+                <div class="bth accepted">27</div><div class="bth review">28</div>
             </div>
 
             <!-- Below Office Horizontal (4) -->
@@ -738,12 +749,12 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
 
             <!-- Main Upper Island Top Side (24) -->
             <div class="b-row" style="top: 90px; left: 215px;">
-                <div class="bth review">35</div><div class="bth">36</div><div class="bth">37</div><div class="bth">38</div><div class="bth">39</div><div class="bth">40</div><div class="bth">41</div><div class="bth">42</div><div class="bth">43</div><div class="bth">44</div><div class="bth">45</div><div class="bth review">46</div><div class="bth review">47</div><div class="bth">48</div><div class="bth">49</div><div class="bth">50</div><div class="bth">51</div><div class="bth">52</div><div class="bth">53</div><div class="bth">54</div><div class="bth">55</div><div class="bth">56</div><div class="bth">57</div><div class="bth review">58</div>
+                <div class="bth accepted">35</div><div class="bth">36</div><div class="bth">37</div><div class="bth">38</div><div class="bth">39</div><div class="bth">40</div><div class="bth">41</div><div class="bth">42</div><div class="bth">43</div><div class="bth">44</div><div class="bth">45</div><div class="bth accepted">46</div><div class="bth review">47</div><div class="bth">48</div><div class="bth">49</div><div class="bth">50</div><div class="bth">51</div><div class="bth">52</div><div class="bth">53</div><div class="bth">54</div><div class="bth">55</div><div class="bth">56</div><div class="bth">57</div><div class="bth review">58</div>
             </div>
             
             <!-- Main Upper Island Bottom Side (24) -->
             <div class="b-row" style="top: 118px; left: 215px;">
-                <div class="bth review">59</div><div class="bth review">60</div><div class="bth review">61</div><div class="bth review">62</div><div class="bth review">63</div><div class="bth review">64</div><div class="bth review">65</div><div class="bth review">66</div><div class="bth">67</div><div class="bth">68</div><div class="bth">69</div><div class="bth review">70</div><div class="bth review">71</div><div class="bth">72</div><div class="bth">73</div><div class="bth">74</div><div class="bth">75</div><div class="bth review">76</div><div class="bth">77</div><div class="bth">78</div><div class="bth">79</div><div class="bth">80</div><div class="bth">81</div><div class="bth review">82</div>
+                <div class="bth review">59</div><div class="bth review">60</div><div class="bth review">61</div><div class="bth accepted">62</div><div class="bth review">63</div><div class="bth review">64</div><div class="bth review">65</div><div class="bth accepted">66</div><div class="bth">67</div><div class="bth">68</div><div class="bth">69</div><div class="bth review">70</div><div class="bth review">71</div><div class="bth">72</div><div class="bth">73</div><div class="bth">74</div><div class="bth">75</div><div class="bth review">76</div><div class="bth">77</div><div class="bth">78</div><div class="bth">79</div><div class="bth">80</div><div class="bth">81</div><div class="bth review">82</div>
             </div>
 
             <!-- Washrooms Top (5) -->
@@ -758,7 +769,7 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
 
             <!-- Stairs Right (3) -->
             <div class="b-col" style="bottom: 85px; left: 450px;">
-                <div class="bth review">91</div><div class="bth review">92</div><div class="bth">93</div>
+                <div class="bth accepted">91</div><div class="bth review">92</div><div class="bth">93</div>
             </div>
 
             <!-- Right Mid Island Top (11) - Shifted Down -->
@@ -791,6 +802,16 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
   </div>
 </section>
 <!-- END SITE MAP SECTION -->
+
+<section class="vendor-directory" id="vendor-directory">
+  <div class="section-inner">
+    <div class="section-label" style="color:var(--gold-light)">Meet the lineup</div>
+    <h2 class="section-title">Confirmed vendors.</h2>
+    <p style="font-size:0.9rem;color:rgba(250,246,240,0.55);max-width:560px;line-height:1.8">These vendors have paid their deposit and secured their spot. More get added as booths are confirmed — check back closer to the event.</p>
+    <div class="fv-badge" id="vd-count-badge"></div>
+    <div class="vd-grid" id="vd-grid"></div>
+  </div>
+</section>
 
 <section class="featured-vendors" id="featured-vendors">
   <div class="section-inner">
@@ -1272,10 +1293,115 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
   tooltip.className = 'booth-tooltip';
   document.body.appendChild(tooltip);
 
+  // Confirmed vendor info, shown on hover once a booth is marked "accepted" below.
+  // instagram: handle only (no @, no URL). website: full URL, optional.
+  const vendorData = {
+    1: {
+      name: "Sootstock",
+      category: "Leatherwork & Jewelry",
+      instagram: "",
+      website: ""
+    },
+    13: {
+      name: "Preserved Oddities",
+      category: "Giftware",
+      instagram: "preserved.oddities",
+      website: ""
+    },
+    26: {
+      name: "Tiny Owlery",
+      category: "Home & Decor",
+      instagram: "tinyowlery",
+      website: ""
+    },
+    27: {
+      name: "East Coast Freeze Dried",
+      category: "Specialty Foods & Sauces",
+      instagram: "",
+      website: "https://www.eastcoastfreezedried.com"
+    },
+    35: {
+      name: "Clay Play by Sherry",
+      category: "Jewelry & Accessories",
+      instagram: "sherrysclayplay",
+      website: ""
+    },
+    46: {
+      name: "Smitten with Mittens",
+      category: "Apparel & Textiles",
+      instagram: "",
+      website: ""
+    },
+    62: {
+      name: "Halifax Tides",
+      category: "Apparel & Textiles",
+      instagram: "",
+      website: "https://www.tidesfc.ca"
+    },
+    66: {
+      name: "Grand East Impressions",
+      category: "Candles & Scents",
+      instagram: "grand.east.impressions",
+      website: ""
+    },
+    91: {
+      name: "Saney Gifts & Novelties",
+      category: "Jewelry & Accessories",
+      instagram: "",
+      website: ""
+    }
+  };
+  const igIcon = '<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" style="vertical-align:-1.5px;margin-right:4px"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1"/></svg>';
+
+  // Build the "Confirmed vendors" directory directly from vendorData.
+  const vdGrid = document.getElementById('vd-grid');
+  if (vdGrid) {
+    const boothNums = Object.keys(vendorData).map(Number).sort((a, b) => a - b);
+    const countBadge = document.getElementById('vd-count-badge');
+    if (countBadge) {
+      countBadge.innerHTML = '<span class="fv-badge-dot"></span>' + boothNums.length + ' of 140 booths confirmed so far';
+    }
+    if (boothNums.length === 0) {
+      vdGrid.innerHTML = '<div class="vd-empty">Vendor lineup coming soon.</div>';
+    } else {
+      vdGrid.innerHTML = boothNums.map(function(num) {
+        const v = vendorData[num];
+        const links = [];
+        if (v.instagram) links.push('<a href="https://www.instagram.com/' + v.instagram + '/" target="_blank" rel="noopener">' + igIcon + '@' + v.instagram + '</a>');
+        if (v.website) links.push('<a href="' + v.website + '" target="_blank" rel="noopener">' + v.website.replace(/^https?:\/\//, '') + '</a>');
+        return `
+          <div class="vd-card">
+            <div class="vd-booth">Booth #${num}</div>
+            <h3>${v.name}</h3>
+            <div class="vd-cat">${v.category}</div>
+            <div class="vd-links">${links.join('') || '<span class="vd-empty">No socials yet</span>'}</div>
+          </div>
+        `;
+      }).join('');
+    }
+  }
+
   document.querySelectorAll('.bth').forEach(booth => {
     booth.addEventListener('mousemove', (e) => {
       const boothNum = parseInt(booth.innerText);
       if (isNaN(boothNum)) return;
+
+      if (booth.classList.contains('accepted') && vendorData[boothNum]) {
+        var v = vendorData[boothNum];
+        tooltip.innerHTML = `
+          <div class="tooltip-title">Booth #${boothNum}</div>
+          <div style="color: #E8B85A; font-weight: 700; margin-top: 4px;">${v.name}</div>
+          <div style="opacity: 0.75; margin-bottom: 8px;">${v.category}</div>
+          <div style="font-size: 0.68rem; line-height: 1.7;">
+            ${v.instagram ? `<div>${igIcon}@${v.instagram}</div>` : ''}
+            ${v.website ? `<div style="opacity:0.85">${v.website}</div>` : ''}
+          </div>
+        `;
+        tooltip.style.display = 'block';
+        tooltip.style.left = (e.pageX + 15) + 'px';
+        tooltip.style.top = (e.pageY + 15) + 'px';
+        return;
+      }
 
       if (booth.classList.contains('review') || booth.classList.contains('accepted')) {
         var statusLabel = booth.classList.contains('accepted') ? 'Accepted' : 'Under Review';
