@@ -464,7 +464,12 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
   .fv-footnote { margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid #2a2a2a; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; }
   .fv-footnote p { font-size: 0.85rem; color: rgba(250,246,240,0.5); line-height: 1.7; max-width: 480px; }
   .fv-footnote strong { color: var(--cream); font-weight: 500; }
-  .vd-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1px; margin-top: 2.5rem; background: #2a2a2a; }
+  .vd-filters { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1.75rem; }
+  .vd-filter { background: transparent; border: 1px solid rgba(250,246,240,0.2); color: rgba(250,246,240,0.65); font-size: 0.78rem; letter-spacing: 0.03em; padding: 0.45rem 1rem; border-radius: 100px; cursor: pointer; transition: all 0.2s ease; font-family: 'DM Sans', sans-serif; }
+  .vd-filter:hover { border-color: var(--gold); color: var(--gold-light); }
+  .vd-filter.active { background: var(--gold); border-color: var(--gold); color: var(--charcoal); font-weight: 600; }
+  .vd-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1px; margin-top: 1.75rem; background: #2a2a2a; }
+  .vd-card.vd-hidden { display: none; }
   .vd-card { background: #1a1a1a; padding: 1.5rem 1.5rem 1.35rem; transition: background 0.25s ease; }
   .vd-card:hover { background: #222; }
   .vd-booth { display: inline-block; font-size: 0.68rem; letter-spacing: 0.08em; color: var(--charcoal); background: var(--gold); font-weight: 700; padding: 0.15rem 0.5rem; border-radius: 2px; margin-bottom: 0.75rem; }
@@ -739,7 +744,7 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
 
             <!-- Below Office Horizontal (4) -->
             <div class="b-row" style="top: 105px; left: 55px;">
-                <div class="bth review">29</div><div class="bth">30</div><div class="bth review">31</div><div class="bth review">32</div>
+                <div class="bth review">29</div><div class="bth review">30</div><div class="bth review">31</div><div class="bth review">32</div>
             </div>
 
             <!-- Far Left Vertical (2) -->
@@ -809,6 +814,7 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
     <h2 class="section-title">Confirmed vendors.</h2>
     <p style="font-size:0.9rem;color:rgba(250,246,240,0.55);max-width:560px;line-height:1.8">These vendors have paid their deposit and secured their spot. More get added as booths are confirmed — check back closer to the event.</p>
     <div class="fv-badge" id="vd-count-badge"></div>
+    <div class="vd-filters" id="vd-filters"></div>
     <div class="vd-grid" id="vd-grid"></div>
   </div>
 </section>
@@ -1370,7 +1376,7 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
         if (v.instagram) links.push('<a href="https://www.instagram.com/' + v.instagram + '/" target="_blank" rel="noopener">' + igIcon + '@' + v.instagram + '</a>');
         if (v.website) links.push('<a href="' + v.website + '" target="_blank" rel="noopener">' + v.website.replace(/^https?:\/\//, '') + '</a>');
         return `
-          <div class="vd-card">
+          <div class="vd-card" data-category="${v.category}">
             <div class="vd-booth">Booth #${num}</div>
             <h3>${v.name}</h3>
             <div class="vd-cat">${v.category}</div>
@@ -1378,6 +1384,31 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
           </div>
         `;
       }).join('');
+
+      // Category filter chips — "All" plus one per unique category, in order of first appearance.
+      const vdFilters = document.getElementById('vd-filters');
+      if (vdFilters) {
+        const categories = [];
+        boothNums.forEach(function(num) {
+          const cat = vendorData[num].category;
+          if (categories.indexOf(cat) === -1) categories.push(cat);
+        });
+        const allChips = ['All'].concat(categories);
+        vdFilters.innerHTML = allChips.map(function(cat, i) {
+          return '<button type="button" class="vd-filter' + (i === 0 ? ' active' : '') + '" data-filter="' + cat + '">' + cat + '</button>';
+        }).join('');
+        vdFilters.querySelectorAll('.vd-filter').forEach(function(chip) {
+          chip.addEventListener('click', function() {
+            vdFilters.querySelectorAll('.vd-filter').forEach(function(c) { c.classList.remove('active'); });
+            chip.classList.add('active');
+            const filter = chip.getAttribute('data-filter');
+            vdGrid.querySelectorAll('.vd-card').forEach(function(card) {
+              const match = filter === 'All' || card.getAttribute('data-category') === filter;
+              card.classList.toggle('vd-hidden', !match);
+            });
+          });
+        });
+      }
     }
   }
 
