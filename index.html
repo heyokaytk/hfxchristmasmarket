@@ -806,9 +806,7 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
   <div class="section-inner">
     <div class="section-label" style="color:var(--gold-light)">Meet the lineup</div>
     <h2 class="section-title">The lineup is coming together.</h2>
-    <p style="font-size:0.9rem;color:rgba(250,246,240,0.55);max-width:560px;line-height:1.8">Vendors are confirming their spots now. We'll introduce them here once we've got a fuller lineup to show off &mdash; check back soon.</p>
-    <div class="fv-badge" id="vd-count-badge"></div>
-    <div class="vd-grid" id="vd-grid"></div>
+    <p style="font-size:0.9rem;color:rgba(250,246,240,0.55);max-width:560px;line-height:1.8">Vendors are confirming their spots now. We'll introduce them here once we've got a fuller lineup to show off. Check back soon.</p>
   </div>
 </section>
 
@@ -1366,7 +1364,10 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
   const fbIcon = '<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" style="vertical-align:-1.5px;margin-right:4px"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M14 8h-1.5C11.1 8 10 9.1 10 10.5V12H8v3h2v5h3v-5h2.2l.5-3H13v-1.2c0-.5.3-.8.8-.8H15V8Z" stroke-linejoin="round"/></svg>';
 
   // Build the "Confirmed vendors" directory directly from vendorData.
-  // Flip to true once there's a fuller lineup worth showing off publicly.
+  // #vd-count-badge and #vd-grid were removed from the vendor-directory section in
+  // index.html so the section shows nothing but its intro paragraph for now. This
+  // block safely no-ops (vdGrid is null) until both containers are added back and
+  // SHOW_VENDOR_DIRECTORY is flipped to true, once there's a fuller lineup to show.
   const SHOW_VENDOR_DIRECTORY = false;
   const vdGrid = document.getElementById('vd-grid');
   if (vdGrid) {
