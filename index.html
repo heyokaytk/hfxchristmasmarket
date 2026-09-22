@@ -340,7 +340,6 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
     background: var(--gold) !important;
     color: var(--charcoal) !important;
     cursor: not-allowed !important;
-    box-shadow: 0 0 6px rgba(200,151,58,0.7) !important;
   }
   .bth.review:hover, .bth.accepted:hover { transform: none; box-shadow: none; }
   .vendors { background: #1a1a1a; }
@@ -759,7 +758,7 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
             
             <!-- Main Upper Island Bottom Side (24) -->
             <div class="b-row" style="top: 118px; left: 215px;">
-                <div class="bth review">59</div><div class="bth review">60</div><div class="bth review">61</div><div class="bth accepted">62</div><div class="bth review">63</div><div class="bth review">64</div><div class="bth review">65</div><div class="bth accepted">66</div><div class="bth">67</div><div class="bth">68</div><div class="bth">69</div><div class="bth review">70</div><div class="bth review">71</div><div class="bth">72</div><div class="bth">73</div><div class="bth">74</div><div class="bth">75</div><div class="bth review">76</div><div class="bth">77</div><div class="bth">78</div><div class="bth">79</div><div class="bth">80</div><div class="bth">81</div><div class="bth review">82</div>
+                <div class="bth review">59</div><div class="bth review">60</div><div class="bth review">61</div><div class="bth accepted">62</div><div class="bth">63</div><div class="bth review">64</div><div class="bth review">65</div><div class="bth accepted">66</div><div class="bth">67</div><div class="bth">68</div><div class="bth">69</div><div class="bth">70</div><div class="bth review">71</div><div class="bth">72</div><div class="bth">73</div><div class="bth">74</div><div class="bth">75</div><div class="bth review">76</div><div class="bth">77</div><div class="bth">78</div><div class="bth">79</div><div class="bth">80</div><div class="bth">81</div><div class="bth review">82</div>
             </div>
 
             <!-- Washrooms Top (5) -->
@@ -807,17 +806,6 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
   </div>
 </section>
 <!-- END SITE MAP SECTION -->
-
-<section class="vendor-directory" id="vendor-directory">
-  <div class="section-inner">
-    <div class="section-label" style="color:var(--gold-light)">Meet the lineup</div>
-    <h2 class="section-title">Confirmed vendors.</h2>
-    <p style="font-size:0.9rem;color:rgba(250,246,240,0.55);max-width:560px;line-height:1.8">These vendors have paid their deposit and secured their spot. More get added as booths are confirmed — check back closer to the event.</p>
-    <div class="fv-badge" id="vd-count-badge"></div>
-    <div class="vd-filters" id="vd-filters"></div>
-    <div class="vd-grid" id="vd-grid"></div>
-  </div>
-</section>
 
 <section class="featured-vendors" id="featured-vendors">
   <div class="section-inner">
@@ -874,14 +862,17 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
         <div class="vendor-urgency">&#10022; A number of booths are already spoken for &mdash; see the map above.</div>
         <p>Applications are reviewed on a rolling basis. Acceptance is based on product quality and category fit. We'll be in touch within 5&ndash;7 business days. There's no obligation until you're accepted and choose to move forward.</p>
         <div class="vendor-includes">
-          <div class="vi">Table + 2 chairs included</div>
-          <div class="vi">Wi-Fi internet access</div>
-          <div class="vi">Power source included</div>
-          <div class="vi">Area will be draped</div>
+          <div class="vi">Table with draping</div>
+          <div class="vi">2 chairs</div>
+          <div class="vi">Power source</div>
+          <div class="vi">Vendor-protected Wi-Fi</div>
+          <div class="vi">Featured on our vendor directory</div>
+          <div class="vi">Placed on the interactive vendor map</div>
+          <div class="vi">Highlighted on our social media</div>
         </div>
         <div class="price-row">
-          <div class="price-tag"><div class="sz">8 x 7 Booth</div><div class="pr">$625</div><div style="font-size:0.76rem;color:rgba(250,246,240,0.55);margin-top:0.5rem;letter-spacing:0.05em"><span style="background:rgba(200,151,58,0.15);color:#E8B85A;font-weight:700;padding:0.15rem 0.5rem;border-radius:3px;">40</span> spots available</div></div>
-          <div class="price-tag"><div class="sz">8 x 8 Booth</div><div class="pr">$675</div><div style="font-size:0.76rem;color:rgba(250,246,240,0.55);margin-top:0.5rem;letter-spacing:0.05em"><span style="background:rgba(200,151,58,0.15);color:#E8B85A;font-weight:700;padding:0.15rem 0.5rem;border-radius:3px;">51</span> spots available</div></div>
+          <div class="price-tag"><div class="sz">8 x 7 Booth</div><div class="pr">$625</div></div>
+          <div class="price-tag"><div class="sz">8 x 8 Booth</div><div class="pr">$675</div></div>
         </div>
         <div class="deposit-note">
           <p>Once accepted, we only ask for a <strong>fully refundable $150 hold</strong> to confirm your spot, applied in full toward your booth fee. The rest isn't due until <strong>October 1, 2026</strong>.</p>
@@ -1300,80 +1291,97 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
   document.body.appendChild(tooltip);
 
   // Confirmed vendor info, shown on hover once a booth is marked "accepted" below.
-  // instagram: handle only (no @, no URL). website: full URL, optional.
+  // instagram/facebook: handle only (no @, no URL). website: full URL, optional.
   const vendorData = {
     1: {
       name: "Sootstock",
       category: "Leatherwork & Jewelry",
       instagram: "",
+      facebook: "",
       website: ""
     },
     13: {
       name: "Preserved Oddities",
       category: "Giftware",
       instagram: "preserved.oddities",
+      facebook: "",
       website: ""
     },
     26: {
       name: "Tiny Owlery",
       category: "Home & Decor",
       instagram: "tinyowlery",
+      facebook: "",
       website: ""
     },
     27: {
       name: "East Coast Freeze Dried",
       category: "Specialty Foods & Sauces",
       instagram: "",
+      facebook: "",
       website: "https://www.eastcoastfreezedried.com"
     },
     35: {
       name: "Clay Play by Sherry",
       category: "Jewelry & Accessories",
       instagram: "sherrysclayplay",
+      facebook: "",
       website: ""
     },
     46: {
       name: "Smitten with Mittens",
       category: "Apparel & Textiles",
       instagram: "",
+      facebook: "smittenwithmitten",
       website: ""
     },
     62: {
       name: "Halifax Tides",
       category: "Apparel & Textiles",
       instagram: "",
+      facebook: "",
       website: "https://www.tidesfc.ca"
     },
     66: {
       name: "Grand East Impressions",
       category: "Candles & Scents",
       instagram: "grand.east.impressions",
+      facebook: "",
       website: ""
     },
     91: {
       name: "Saney Gifts & Novelties",
       category: "Jewelry & Accessories",
       instagram: "",
+      facebook: "",
       website: ""
     }
   };
   const igIcon = '<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" style="vertical-align:-1.5px;margin-right:4px"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1"/></svg>';
+  const fbIcon = '<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" style="vertical-align:-1.5px;margin-right:4px"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M14 8h-1.5C11.1 8 10 9.1 10 10.5V12H8v3h2v5h3v-5h2.2l.5-3H13v-1.2c0-.5.3-.8.8-.8H15V8Z" stroke-linejoin="round"/></svg>';
 
   // Build the "Confirmed vendors" directory directly from vendorData.
+  // #vd-count-badge, #vd-filters and #vd-grid were removed from the vendor-directory
+  // section in index.html so the section shows nothing but its intro paragraph for
+  // now. This block safely no-ops (vdGrid is null) until all three containers are
+  // added back and SHOW_VENDOR_DIRECTORY is flipped to true, once there's a fuller
+  // lineup to show. Category filter chips (in #vd-filters) are ready to go too.
+  const SHOW_VENDOR_DIRECTORY = false;
   const vdGrid = document.getElementById('vd-grid');
   if (vdGrid) {
     const boothNums = Object.keys(vendorData).map(Number).sort((a, b) => a - b);
     const countBadge = document.getElementById('vd-count-badge');
-    if (countBadge) {
+    if (countBadge && SHOW_VENDOR_DIRECTORY) {
       countBadge.innerHTML = '<span class="fv-badge-dot"></span>' + boothNums.length + ' of 140 booths confirmed so far';
     }
-    if (boothNums.length === 0) {
-      vdGrid.innerHTML = '<div class="vd-empty">Vendor lineup coming soon.</div>';
+    if (!SHOW_VENDOR_DIRECTORY || boothNums.length === 0) {
+      vdGrid.innerHTML = '<div class="vd-empty">Vendor profiles will appear here as more booths are confirmed &mdash; check back soon.</div>';
     } else {
       vdGrid.innerHTML = boothNums.map(function(num) {
         const v = vendorData[num];
         const links = [];
         if (v.instagram) links.push('<a href="https://www.instagram.com/' + v.instagram + '/" target="_blank" rel="noopener">' + igIcon + '@' + v.instagram + '</a>');
+        if (v.facebook) links.push('<a href="https://www.facebook.com/' + v.facebook + '/" target="_blank" rel="noopener">' + fbIcon + 'Facebook</a>');
         if (v.website) links.push('<a href="' + v.website + '" target="_blank" rel="noopener">' + v.website.replace(/^https?:\/\//, '') + '</a>');
         return `
           <div class="vd-card" data-category="${v.category}">
@@ -1425,6 +1433,7 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
           <div style="opacity: 0.75; margin-bottom: 8px;">${v.category}</div>
           <div style="font-size: 0.68rem; line-height: 1.7;">
             ${v.instagram ? `<div>${igIcon}@${v.instagram}</div>` : ''}
+            ${v.facebook ? `<div>${fbIcon}Facebook</div>` : ''}
             ${v.website ? `<div style="opacity:0.85">${v.website}</div>` : ''}
           </div>
         `;
@@ -1469,10 +1478,12 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
         <div class="tooltip-price">${price}</div>
         <div style="opacity: 0.8; margin-bottom: 8px;">Size: ${size}</div>
         <div style="font-size: 0.65rem; color: #E8B85A; line-height: 1.4;">
-          • Table w/ Linens included<br>
-          • 2 Chairs & Power Access<br>
-          • Area will be draped<br>
-          • Vendor Wi-Fi Included
+          • Table with draping<br>
+          • 2 chairs &amp; power<br>
+          • Vendor-protected Wi-Fi<br>
+          • Featured on vendor directory<br>
+          • Placed on interactive map<br>
+          • Highlighted on social media
         </div>
       `;
 
