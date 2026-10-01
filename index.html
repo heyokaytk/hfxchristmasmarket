@@ -106,7 +106,6 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
       { "@type": "Question", "name": "How are vendors selected?", "acceptedAnswer": { "@type": "Answer", "text": "We review applications for product quality, originality, and category fit. Our first year is capped at 100 vendors, with careful attention to variety and limited overlap between similar products. Applications are reviewed on a rolling basis." } },
       { "@type": "Question", "name": "How much does a vendor booth cost?", "acceptedAnswer": { "@type": "Answer", "text": "An 8x7 booth is $475 and an 8x8 booth is $525 for the full three-day market. Both prices include HST." } },
       { "@type": "Question", "name": "Do the new prices apply if I've already booked?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. The revised prices apply to existing and new vendors. Fully paid vendors will receive a refund of the difference, and vendors who have paid a deposit will receive an adjusted remaining balance. If you previously secured a lower rate, you keep it. We'll contact affected vendors directly." } },
-      { "@type": "Question", "name": "Can I choose my booth location?", "acceptedAnswer": { "@type": "Answer", "text": "We're updating the floor plan for our 100-vendor cap. You can select your preferred booth size when applying, and we'll confirm your booth location directly once the revised layout is finalized." } },
       { "@type": "Question", "name": "Can I bring my kids?", "acceptedAnswer": { "@type": "Answer", "text": "Of course! Children are always free. We're also hoping to bring in a Meet Santa experience this year, so keep an eye on our socials closer to the date." } },
       { "@type": "Question", "name": "Is there food and drink at the event?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We have an on-site lounge with warm drinks, hot chocolate, and a place to sit and rest." } },
       { "@type": "Question", "name": "Where do you recommend staying if I'm coming from out of town?", "acceptedAnswer": { "@type": "Answer", "text": "We recommend the Westin Nova Scotia, just steps from Pavilion 22 and a great home base for the weekend. It's right on the Halifax waterfront, close to good restaurants and the boardwalk." } },
@@ -236,7 +235,9 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
   /* CSS SITE MAP */
   .sitemap { background: #111; border-top: 1px solid #1a1a1a; }
   .sitemap-legend { display: flex; gap: 1.5rem; margin-bottom: 2rem; flex-wrap: wrap; }
-  .legend-item { display: flex; align-items: center; gap: 0.5rem; font-size: 0.75rem; color: var(--cream); letter-spacing: 0.02em; }
+  .legend-item { display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; color: var(--cream); letter-spacing: 0.02em; }
+  @keyframes goldPulse { 0%, 100% { box-shadow: 0 0 6px rgba(200,151,58,0.25); } 50% { box-shadow: 0 0 20px rgba(200,151,58,0.65); } }
+  .legend-item-pulse { padding: 0.35rem 0.7rem; border-radius: 4px; animation: goldPulse 2.5s ease-in-out infinite; }
   .legend-box { width: 14px; height: 14px; border-radius: 2px; }
   .sitemap-wrapper { width: 100%; overflow-x: auto; background: #1a1a1a; padding: 2.5rem; border-radius: 4px; border: 1px solid #2a2a2a; }
   
@@ -358,7 +359,7 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
   .vi { font-size: 0.78rem; color: rgba(250,246,240,0.6); display: flex; align-items: center; gap: 0.6rem; }
   .vi::before { content: '✓'; color: var(--gold); font-weight: 700; }
   .price-row { display: flex; gap: 1rem; margin-bottom: 1.5rem; }
-  .price-tag { flex: 1; background: #111; border: 1px solid #333; border-radius: 3px; padding: 1rem; text-align: center; }
+  .price-tag { flex: 1; background: #111; border: 1px solid rgba(200,151,58,0.45); border-radius: 3px; padding: 1rem; text-align: center; box-shadow: 0 0 20px rgba(200,151,58,0.25); }
   .price-tag .sz { font-size: 0.6875rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.3rem; }
   .price-tag .pr { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 600; }
   .vendor-urgency { font-size: 0.78rem; letter-spacing: 0.03em; color: var(--gold-light); margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.5rem; }
@@ -366,6 +367,7 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
   /* Reusable "new lower pricing" badge + strikethrough old price — used on every booth price display */
   .price-badge { display: inline-block; background: var(--gold); color: var(--charcoal); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.25rem 0.65rem; border-radius: 100px; }
   .price-tag .price-badge, .vp-card .price-badge { margin-bottom: 0.6rem; }
+  .year-alert { display: inline-block; border: 1px solid var(--gold); color: var(--gold-light); background: transparent; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.2rem 0.55rem; border-radius: 100px; }
   .price-old { text-decoration: line-through; opacity: 0.5; font-size: 0.6em; font-weight: 400; margin-right: 0.4em; }
 
   /* Bigger vendor pricing block, placed above the floor plan section */
@@ -374,7 +376,7 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
   .vp-body { font-size: 0.88rem; line-height: 1.9; color: rgba(250,246,240,0.6); max-width: 640px; }
   .vp-body + .vp-body { margin-top: 0.75rem; }
   .vp-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; margin: 2rem 0 1.5rem; }
-  .vp-card { background: #111; border: 1px solid #333; border-radius: 4px; padding: 2rem 1.5rem; text-align: center; }
+  .vp-card { background: #111; border: 1px solid rgba(200,151,58,0.45); border-radius: 4px; padding: 2rem 1.5rem; text-align: center; box-shadow: 0 0 30px rgba(200,151,58,0.3); }
   .vp-card h4 { font-family: 'Playfair Display', serif; font-size: 1.1rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--gold); margin: 0 0 0.75rem; }
   .vp-price { font-family: 'Playfair Display', serif; font-weight: 700; font-size: clamp(2rem, 5vw, 3.2rem); color: var(--cream); line-height: 1.1; margin-bottom: 0.5rem; }
   .vp-sub { font-size: 0.78rem; color: rgba(250,246,240,0.55); }
@@ -386,6 +388,7 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
   .security-note p { font-size: 0.78rem; line-height: 1.75; color: rgba(250,246,240,0.75); margin: 0; }
   .security-note strong { color: var(--cream); }
   .form-group { margin-bottom: 1rem; }
+  #preferred-booth.filled { border-color: var(--gold); color: var(--gold-light); }
   .form-group input, .form-group select, .form-group textarea { width: 100%; background: #111; border: 1px solid #333; border-radius: 2px; padding: 0.75rem 1rem; color: var(--cream); font-family: 'DM Sans', sans-serif; font-size: 0.83rem; outline: none; transition: border-color 0.2s; }
   .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(250,246,240,0.3); }
   .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--gold); }
@@ -587,6 +590,7 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
     <a href="#vendor-form" class="btn-secondary">Apply as a Vendor</a>
   </div>
   <div class="hero-pills">
+    <span class="pill">Locally Owned &amp; Operated in Nova Scotia</span>
     <span class="pill">Up to 100 Vendors</span>
     <span class="pill">Kids Free</span>
     <span class="pill">Parking</span>
@@ -717,14 +721,11 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
   <div class="section-inner">
     <div class="section-label" style="color:var(--gold-light)">Floor plan</div>
     <h2 class="section-title">Navigate Pavilion 22</h2>
-    <p style="font-size:0.85rem;color:rgba(250,246,240,0.5);max-width:550px;line-height:1.8;margin-bottom:2rem">We're updating the floor plan for a market capped at 100 vendors. The revised layout and booth availability will be published here once finalized.</p>
+    <p style="font-size:0.85rem;color:rgba(250,246,240,0.5);max-width:550px;line-height:1.8;margin-bottom:2rem">Explore our vendor booths, capped at 100 for our first year. Take a break at the lounge, and find all amenities marked below.</p>
 
-    <!-- Interactive map hidden from the public until the revised 100-vendor floor plan is ready.
-         All existing booth data, vendor assignments, and numbering (including #101-140) are preserved
-         below, untouched, so nothing needs to be re-entered once this is switched back on. -->
-    <div class="sitemap-legend" style="display:none">
-        <div class="legend-item"><div class="legend-box" style="background:#3D6B8C;"></div> 8&times;7 Booth &middot; <span class="price-badge">New lower pricing</span> <span class="price-old">$625</span>$475 &middot; #1&ndash;58, 88&ndash;90</div>
-        <div class="legend-item"><div class="legend-box" style="background:var(--mid-green);"></div> 8&times;8 Booth &middot; <span class="price-badge">New lower pricing</span> <span class="price-old">$675</span>$525 &middot; #59&ndash;87, 91&ndash;140</div>
+    <div class="sitemap-legend">
+        <div class="legend-item legend-item-pulse"><div class="legend-box" style="background:#3D6B8C;"></div> 8&times;7 Booth &middot; <span class="price-badge">New lower pricing</span> <span class="price-old">$625</span>$475 &middot; <span class="year-alert">1-Year Pricing</span> &middot; #1&ndash;58, 88&ndash;90</div>
+        <div class="legend-item legend-item-pulse"><div class="legend-box" style="background:var(--mid-green);"></div> 8&times;8 Booth &middot; <span class="price-badge">New lower pricing</span> <span class="price-old">$675</span>$525 &middot; <span class="year-alert">1-Year Pricing</span> &middot; #59&ndash;87, 91&ndash;140</div>
         <div class="legend-item"><div class="legend-box" style="background:#cfcfcf;"></div> Under Review</div>
         <div class="legend-item"><div class="legend-box" style="background:var(--gold);"></div> Accepted</div>
         <div class="legend-item"><div class="legend-box" style="background:#C97B84;"></div> Lounge</div>
@@ -732,7 +733,7 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
         <div class="legend-item"><div class="legend-box" style="background:#b0b0b0;"></div> Structural Walls</div>
     </div>
 
-    <div class="sitemap-wrapper" style="display:none">
+    <div class="sitemap-wrapper">
         <div class="sitemap-board">
             
             <!-- Structural Walls (Spines) -->
@@ -925,7 +926,7 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
           <p style="margin-top:0.75rem">After the $150 deposit, your remaining balance is <strong>$325</strong> for an 8x7 booth or <strong>$375</strong> for an 8x8 booth.</p>
         </div>
         <div class="security-note">
-          <p>&#128274; <strong>Payment security:</strong> only send vendor payments following instructions received from info@hfxchristmasmarket.ca or hfxchristmasmarket@gmail.com. When in doubt, contact us before sending payment.</p>
+          <p>&#128274; <strong>Payment security:</strong> only send vendor payments following instructions received from info@hfxchristmasmarket.ca or hfxchristmasmarket@gmail.com. When in doubt, contact us or call us before sending payment: 902-497-0006.</p>
         </div>
         <div id="vendor-form">
           <div class="form-row">
@@ -960,7 +961,7 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
               <option>8x8 Booth &middot; $525 including HST</option>
             </select>
           </div>
-          <p style="font-size:0.78rem;line-height:1.6;color:rgba(250,246,240,0.55);margin:-0.5rem 0 1.25rem">You can select your preferred booth size when applying. We'll confirm your booth location directly as the revised floor plan is finalized.</p>
+          <div class="form-group"><input type="text" placeholder="Preferred booth # (type a number or click a booth on the map above)" id="preferred-booth"></div>
           <div class="form-group"><textarea placeholder="Tell us about your business and what you sell..." id="description"></textarea></div>
           <div class="form-group"><input type="url" placeholder="Website or Instagram URL (optional)" id="website"></div>
           <button class="btn-submit" onclick="submitForm()">Submit Application</button>
@@ -1070,7 +1071,6 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
       <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How are vendors selected?</div><div class="faq-a"><div class="faq-a-inner">We review applications for product quality, originality, and category fit. Our first year is capped at 100 vendors, with careful attention to variety and limited overlap between similar products. Applications are reviewed on a rolling basis.</div></div></div>
       <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How much does a vendor booth cost?</div><div class="faq-a"><div class="faq-a-inner">An 8x7 booth is $475 and an 8x8 booth is $525 for the full three-day market. Both prices include HST.</div></div></div>
       <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Do the new prices apply if I've already booked?</div><div class="faq-a"><div class="faq-a-inner">Yes. The revised prices apply to existing and new vendors. Fully paid vendors will receive a refund of the difference, and vendors who have paid a deposit will receive an adjusted remaining balance. If you previously secured a lower rate, you keep it. We'll contact affected vendors directly.</div></div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Can I choose my booth location?</div><div class="faq-a"><div class="faq-a-inner">We're updating the floor plan for our 100-vendor cap. You can select your preferred booth size when applying, and we'll confirm your booth location directly once the revised layout is finalized.</div></div></div>
       <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Can I bring my kids?</div><div class="faq-a"><div class="faq-a-inner">Of course! Children are always free. We're also hoping to bring in a Meet Santa experience this year, so keep an eye on our socials closer to the date.</div></div></div>
       <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Is there food and drink at the event?</div><div class="faq-a"><div class="faq-a-inner">Yes. We have an on-site lounge with warm drinks, hot chocolate, and a place to sit and rest.</div></div></div>
       <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Where do you recommend staying if I'm coming from out of town?</div><div class="faq-a"><div class="faq-a-inner">We recommend the Westin Nova Scotia, just steps from Pavilion 22 and a great home base for the weekend. It's right on the Halifax waterfront, close to good restaurants and the boardwalk.</div></div></div>
@@ -1170,14 +1170,18 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
     }
   });
 
-  // Booth click → pre-fill booth size dropdown + scroll to form
-  // (dormant while the public map is hidden per the 100-vendor floor plan update; booth-number
-  // selection is intentionally disabled for now, so this no longer sets a preferred booth #.)
+  // Booth click → pre-fill preferred booth field + booth size dropdown + scroll to form
   document.querySelectorAll('.bth').forEach(function(booth) {
     booth.addEventListener('click', function() {
       if (booth.classList.contains('review') || booth.classList.contains('accepted')) return;
       var n = parseInt(booth.innerText.trim());
       var is87 = (n >= 1 && n <= 58) || (n >= 88 && n <= 90);
+
+      var field = document.getElementById('preferred-booth');
+      if (field) {
+        field.value = 'Booth #' + n;
+        field.classList.add('filled');
+      }
 
       var sizeSelect = document.getElementById('booth-size');
       if (sizeSelect) {
@@ -1206,9 +1210,12 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
     var email = document.getElementById('email').value.trim();
     var cat = document.getElementById('category').value;
     var boothSize = document.getElementById('booth-size').value;
+    var preferredBooth = document.getElementById('preferred-booth').value.trim();
     var desc = document.getElementById('description').value.trim();
-    if (!biz || !name || !email || !cat || !boothSize || !desc) {
-      alert('Please fill in all required fields before submitting.');
+    var boothNumMatch = preferredBooth.match(/\d+/);
+    var boothNum = boothNumMatch ? parseInt(boothNumMatch[0], 10) : NaN;
+    if (!biz || !name || !email || !cat || !boothSize || !desc || isNaN(boothNum) || boothNum < 1 || boothNum > 140) {
+      alert('Please fill in all required fields before submitting, including a specific preferred booth # (type a number or click a booth on the map above).');
       return;
     }
 
@@ -1229,7 +1236,7 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
         'Phone': document.getElementById('phone').value,
         'Category': cat,
         'Booth Size': boothSize,
-        'Preferred Booth #': 'To be assigned once the revised floor plan is finalized',
+        'Preferred Booth #': preferredBooth,
         'Website/Instagram': document.getElementById('website').value,
         'About the Business': desc
       })
