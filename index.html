@@ -147,8 +147,6 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
   .snow-container { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
   .snowflake { position: absolute; top: -10px; color: rgba(255,255,255,0.6); animation: fall linear infinite; }
   @keyframes fall { to { transform: translateY(110vh) rotate(360deg); opacity: 0; } }
-  .hero-eyebrow { font-size: 0.8rem; letter-spacing: 0.04em; color: var(--gold); margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: center; gap: 1rem; animation: fadeUp 0.8s ease both; }
-  .hero-eyebrow::before, .hero-eyebrow::after { content: ''; display: block; width: 40px; height: 1px; background: var(--gold); opacity: 0.5; }
   .hero-wordmark { text-align: center; margin-bottom: 0.5rem; animation: fadeUp 0.9s ease 0.1s both; }
   .hero-wordmark .the { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.6rem; color: var(--cream); opacity: 0.7; display: block; margin-bottom: -0.3rem; }
   .hero-wordmark h1 { font-family: 'Playfair Display', serif; font-size: clamp(3.2rem, 8vw, 6rem); font-weight: 700; color: var(--white); line-height: 1; }
@@ -163,8 +161,9 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
   .btn-primary { position: relative; overflow: hidden; background: var(--gold); color: var(--charcoal); padding: 0.9rem 2.2rem; border-radius: 2px; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; transition: all 0.2s; border: none; cursor: pointer; display: inline-block; }
   .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
   .btn-primary::after { content: ''; position: absolute; top: 0; left: -75%; width: 50%; height: 100%; background: linear-gradient(115deg, transparent, rgba(255,255,255,0.65), transparent); transform: skewX(-20deg); animation: navShimmer 3.2s ease-in-out infinite; pointer-events: none; }
-  .btn-secondary { background: transparent; color: var(--cream); padding: 0.9rem 2.2rem; border-radius: 2px; font-size: 0.8rem; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; transition: all 0.2s; border: 1px solid rgba(250,246,240,0.25); cursor: pointer; display: inline-block; }
+  .btn-secondary { position: relative; overflow: hidden; background: transparent; color: var(--cream); padding: 0.9rem 2.2rem; border-radius: 2px; font-size: 0.8rem; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; transition: all 0.2s; border: 1px solid rgba(250,246,240,0.25); cursor: pointer; display: inline-block; }
   .btn-secondary:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-1px); }
+  .btn-secondary::after { content: ''; position: absolute; top: 0; left: -75%; width: 50%; height: 100%; background: linear-gradient(115deg, transparent, rgba(255,255,255,0.65), transparent); transform: skewX(-20deg); animation: navShimmer 3.2s ease-in-out infinite; pointer-events: none; }
   .hero-pills { display: flex; gap: 0.75rem; margin-top: 2rem; flex-wrap: wrap; justify-content: center; animation: fadeUp 1s ease 0.5s both; }
   .pill { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 100px; padding: 0.35rem 1rem; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--cream); opacity: 0.8; }
   @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
@@ -554,7 +553,7 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
 <body>
 
 <nav>
-  <div class="nav-logo"><img src="/IMAGES/HFXCHRISTMASMARKET-LOGO.png" alt="Halifax Christmas Market"><div>Halifax Christmas Market<span>Halifax Waterfront · December 2026</span></div></div>
+  <div class="nav-logo"><img src="/IMAGES/HFXCHRISTMASMARKET-LOGO.png" alt="Halifax Christmas Market"><div>Halifax Christmas Market<span>Pavilion 22 · Halifax Waterfront · December 2026</span></div></div>
   <div class="nav-links">
     <a href="#experience">Experience</a>
     <a href="#tickets">Tickets</a>
@@ -591,12 +590,12 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
     <h1>Halifax <em>Christmas</em></h1>
     <span class="market">Market</span>
   </div>
-  <div class="hero-eyebrow">Pavilion 22 &middot; Halifax Waterfront &middot; Parking</div>
   <div class="hero-divider"><span>&#10022;</span></div>
   <div class="hero-date">
     <strong>December 4th, 5th, &amp; 6th, 2026</strong><br>
     Friday &middot; Saturday &middot; Sunday<br>
-    Timed Entry: 9am &ndash; 12pm &nbsp;|&nbsp; 1pm &ndash; 4pm &nbsp;|&nbsp; 5pm &ndash; 8pm
+    Timed Entry: 9am &ndash; 12pm &nbsp;|&nbsp; 1pm &ndash; 4pm &nbsp;|&nbsp; 5pm &ndash; 8pm<br>
+    Pavilion 22 &middot; Halifax Waterfront
   </div>
   <div class="hero-buttons">
     <a href="#tickets" class="btn-primary btn-disabled">Tickets Coming Soon</a>
