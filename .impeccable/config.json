@@ -38,6 +38,15 @@
         ],
         "createdAt": "2026-09-04T14:45:22.333Z",
         "reason": "Manually audited every rule declaring a solid var(--gold)/var(--gold-light) background in this file (nav-cta, btn-primary, btn-ticket, btn-submit, notify button, float-ticket, zone-lounge, bth hover, sponsor-tier badge, ticket-card badge) -- every one explicitly sets color:var(--charcoal), giving correct high-contrast charcoal-on-gold text in the real browser. Could not find any element where cream text actually renders on a solid gold background. Likely explanation: the static css-cascade analyzer computes :hover-state color independently of the concurrently-matching base (non-hover) rule that supplies color, and/or attributes an adjacent decorative swatch's background (e.g. .legend-box, .vcat-dot) to a sibling text node instead of the text's real ancestor background. Not installing Puppeteer to verify visually given the scope of this pass; suppressing on the strength of the manual CSS audit rather than leaving a phantom finding open."
+      },
+      {
+        "rule": "dark-glow",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-02T02:58:44.182Z",
+        "reason": "user confirmed 2026-10-01: Tristan built the price-badge pulse/glow styling himself on his desktop VS Code and explicitly wants to keep it, not a leftover AI-slop default."
       }
     ]
   }
