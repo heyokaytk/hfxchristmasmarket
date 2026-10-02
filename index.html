@@ -241,7 +241,8 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
 
   /* CSS SITE MAP */
   .sitemap { background: #111; border-top: 1px solid #1a1a1a; }
-  .sitemap-legend { display: flex; gap: 1.5rem; margin-bottom: 2rem; flex-wrap: wrap; }
+  .sitemap-legend { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+  .sitemap-legend + .sitemap-legend { margin-top: 0.75rem; margin-bottom: 2rem; }
   .legend-item { display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; color: var(--cream); letter-spacing: 0.02em; }
   @keyframes goldPulse { 0%, 100% { box-shadow: 0 0 6px rgba(200,151,58,0.25); } 50% { box-shadow: 0 0 20px rgba(200,151,58,0.65); } }
   .legend-item-pulse { padding: 0.35rem 0.7rem; border-radius: 4px; animation: goldPulse 2.5s ease-in-out infinite; }
@@ -739,6 +740,8 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
     <div class="sitemap-legend">
         <div class="legend-item legend-item-pulse"><div class="legend-box" style="background:#3D6B8C;"></div> 8&times;7 Booth &middot; <span class="price-badge">New lower pricing</span> <span class="price-old">$625</span>$475 &middot; <span class="year-alert">1-Year Pricing</span> &middot; #1&ndash;58, 88&ndash;90</div>
         <div class="legend-item legend-item-pulse"><div class="legend-box" style="background:var(--mid-green);"></div> 8&times;8 Booth &middot; <span class="price-badge">New lower pricing</span> <span class="price-old">$675</span>$525 &middot; <span class="year-alert">1-Year Pricing</span> &middot; #59&ndash;87, 91&ndash;140</div>
+    </div>
+    <div class="sitemap-legend">
         <div class="legend-item"><div class="legend-box" style="background:#cfcfcf;"></div> Under Review</div>
         <div class="legend-item"><div class="legend-box" style="background:var(--gold);"></div> Accepted</div>
         <div class="legend-item"><div class="legend-box" style="background:#C97B84;"></div> Lounge</div>
