@@ -104,6 +104,7 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
       { "@type": "Question", "name": "Is there parking?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Pavilion 22 on the Halifax Waterfront has ample parking right on-site. No stress." } },
       { "@type": "Question", "name": "Is the event accessible?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. The layout is designed with wide aisles, clear turning radiuses for wheelchairs and strollers, and clutter-free pathways throughout." } },
       { "@type": "Question", "name": "How are vendors selected?", "acceptedAnswer": { "@type": "Answer", "text": "We review applications for product quality, originality, and category fit. Our first year is intentionally limited, with careful attention to variety and limited overlap between similar products. Applications are reviewed on a rolling basis." } },
+      { "@type": "Question", "name": "Do you offer booths for charities or nonprofits?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We set aside a limited number of complimentary booths for local charities and nonprofit organizations doing meaningful community work. If this is you, email us at info@hfxchristmasmarket.ca with a bit about your organization and we'll follow up." } },
       { "@type": "Question", "name": "How much does a vendor booth cost?", "acceptedAnswer": { "@type": "Answer", "text": "An 8x7 booth is $475 and an 8x8 booth is $525 for the full three-day market. Both prices include HST." } },
       { "@type": "Question", "name": "Do the new prices apply if I've already booked?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. The revised prices apply to existing and new vendors. Fully paid vendors will receive a refund of the difference, and vendors who have paid a deposit will receive an adjusted remaining balance. If you previously secured a lower rate, you keep it. We'll contact affected vendors directly." } },
       { "@type": "Question", "name": "Can I bring my kids?", "acceptedAnswer": { "@type": "Answer", "text": "Of course! Children are always free. We're also hoping to bring in a Meet Santa experience this year, so keep an eye on our socials closer to the date." } },
@@ -159,8 +160,9 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
   .hero-date { font-size: 0.95rem; letter-spacing: 0.04em; color: var(--cream); opacity: 0.8; text-align: center; line-height: 2; animation: fadeUp 1s ease 0.25s both; }
   .hero-date strong { color: var(--gold-light); font-weight: 500; }
   .hero-buttons { display: flex; gap: 1rem; margin-top: 2.5rem; flex-wrap: wrap; justify-content: center; animation: fadeUp 1s ease 0.4s both; }
-  .btn-primary { background: var(--gold); color: var(--charcoal); padding: 0.9rem 2.2rem; border-radius: 2px; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; transition: all 0.2s; border: none; cursor: pointer; display: inline-block; }
+  .btn-primary { position: relative; overflow: hidden; background: var(--gold); color: var(--charcoal); padding: 0.9rem 2.2rem; border-radius: 2px; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; transition: all 0.2s; border: none; cursor: pointer; display: inline-block; }
   .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+  .btn-primary::after { content: ''; position: absolute; top: 0; left: -75%; width: 50%; height: 100%; background: linear-gradient(115deg, transparent, rgba(255,255,255,0.65), transparent); transform: skewX(-20deg); animation: navShimmer 3.2s ease-in-out infinite; pointer-events: none; }
   .btn-secondary { background: transparent; color: var(--cream); padding: 0.9rem 2.2rem; border-radius: 2px; font-size: 0.8rem; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; transition: all 0.2s; border: 1px solid rgba(250,246,240,0.25); cursor: pointer; display: inline-block; }
   .btn-secondary:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-1px); }
   .hero-pills { display: flex; gap: 0.75rem; margin-top: 2rem; flex-wrap: wrap; justify-content: center; animation: fadeUp 1s ease 0.5s both; }
@@ -392,6 +394,9 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
   .security-note { background: rgba(184,50,50,0.08); border: 1px solid rgba(184,50,50,0.25); border-radius: 3px; padding: 1rem 1.25rem; margin-bottom: 1.5rem; }
   .security-note p { font-size: 0.78rem; line-height: 1.75; color: rgba(250,246,240,0.75); margin: 0; }
   .security-note strong { color: var(--cream); }
+  .charity-note { background: rgba(45,94,69,0.2); border: 1px solid rgba(45,94,69,0.45); border-radius: 3px; padding: 1rem 1.25rem; margin-bottom: 1.5rem; }
+  .charity-note p { font-size: 0.78rem; line-height: 1.75; color: rgba(250,246,240,0.75); margin: 0; }
+  .charity-note strong { color: var(--cream); }
   .form-group { margin-bottom: 1rem; }
   #preferred-booth.filled { border-color: var(--gold); color: var(--gold-light); }
   .form-group input, .form-group select, .form-group textarea { width: 100%; background: #111; border: 1px solid #333; border-radius: 2px; padding: 0.75rem 1rem; color: var(--cream); font-family: 'DM Sans', sans-serif; font-size: 0.83rem; outline: none; transition: border-color 0.2s; }
@@ -601,7 +606,7 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
     <span class="pill">Hand-Picked Vendors</span>
     <span class="pill">Kids Free</span>
     <span class="pill">Parking</span>
-    <span class="pill">Lounge</span>
+    <span class="pill">On-Site Lounge &amp; Bar</span>
   </div>
   <div class="scroll-hint">Scroll</div>
 </section>
@@ -610,7 +615,7 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
   <div class="section-inner">
     <div class="section-label">Why Halifax Christmas Market</div>
     <h2 class="section-title" style="color:var(--charcoal)">A Christmas experience<br><em style="color:var(--mid-green)">done right!</em></h2>
-    <p style="font-size:0.9rem;color:#555;max-width:560px;line-height:1.8">We listened to what Halifax shoppers and vendors have been asking for: more space, less stress, and a whole lot more Christmas magic.</p>
+    <p style="font-size:0.9rem;color:#555;max-width:560px;line-height:1.8">We listened to what Halifax shoppers and vendors have been asking for: more space, less stress, and room to breathe.</p>
     <div class="why-grid">
       <div class="why-card"><div class="why-icon">&#9200;</div><h3>Timed arrival slots</h3><p>Choose your 3-hour session and arrive when it suits you.</p></div>
       <div class="why-card"><div class="why-icon">&#129528;</div><h3>Kids are always free</h3><p>Bring the whole family. Children get in at no cost, always, because Christmas is for everyone.</p></div>
@@ -729,7 +734,7 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
   <div class="section-inner">
     <div class="section-label" style="color:var(--gold-light)">Floor plan</div>
     <h2 class="section-title">Navigate Pavilion 22</h2>
-    <p style="font-size:0.85rem;color:rgba(250,246,240,0.5);max-width:550px;line-height:1.8;margin-bottom:2rem">Explore our hand-picked vendor booths. Take a break at the lounge, and find all amenities marked below.</p>
+    <p style="font-size:0.85rem;color:rgba(250,246,240,0.5);max-width:550px;line-height:1.8;margin-bottom:2rem">Explore our hand-picked vendor booths and find all amenities marked below.</p>
 
     <div class="sitemap-legend">
         <div class="legend-item legend-item-pulse"><div class="legend-box" style="background:#3D6B8C;"></div> 8&times;7 Booth &middot; <span class="price-badge">New lower pricing</span> <span class="price-old">$625</span>$475 &middot; <span class="year-alert">1-Year Pricing</span> &middot; #1&ndash;58, 88&ndash;90</div>
@@ -916,7 +921,7 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
       <div class="vendor-apply">
         <h3>Apply for a Booth</h3>
         <div class="vendor-urgency">&#10022; A number of booths are already spoken for.</div>
-        <p>Applications are reviewed on a rolling basis. Acceptance is based on product quality and category fit. We'll be in touch within 5&ndash;7 business days. There's no obligation until you're accepted and choose to move forward.</p>
+        <p>Applications are reviewed on a rolling basis. Acceptance is based on product quality and category fit. We'll be in touch within 24 hours, so keep an eye on your inbox. There's no obligation until you're accepted and choose to move forward.</p>
         <div class="vendor-includes">
           <div class="vi">Table with draping</div>
           <div class="vi">2 chairs</div>
@@ -935,7 +940,10 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
           <p style="margin-top:0.75rem">After the $150 deposit, your remaining balance is <strong>$325</strong> for an 8x7 booth or <strong>$375</strong> for an 8x8 booth.</p>
         </div>
         <div class="security-note">
-          <p>&#128274; <strong>Payment security:</strong> only send vendor payments following instructions received from info@hfxchristmasmarket.ca or hfxchristmasmarket@gmail.com. When in doubt, contact us or call us before sending payment: 902-497-0006.</p>
+          <p>&#128274; <strong>Payment security:</strong> only send vendor payments following instructions received from <strong>info@hfxchristmasmarket.ca</strong> or <strong>hfxchristmasmarket@gmail.com</strong>. When in doubt, contact us or call us before sending payment: <strong>902-497-0006</strong>. We do <strong>NOT</strong> send out vendor forms within our e-mails.</p>
+        </div>
+        <div class="charity-note">
+          <p>&#128154; <strong>Community &amp; charity booths:</strong> we set aside a limited number of complimentary booths (5) for local charities and nonprofit organizations doing meaningful community work. If that's you, just fill out the vendor information below and we'll get you sorted out.</p>
         </div>
         <div id="vendor-form">
           <div class="form-row">
@@ -977,7 +985,7 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
         </div>
         <div class="form-success" id="form-success">
           <p>Application received!</p>
-          <small>We'll review your submission and be in touch within 5-7 business days.</small>
+          <small>We'll review your submission and be in touch within 24 hours &mdash; keep an eye on your inbox.</small>
         </div>
       </div>
     </div>
@@ -1078,6 +1086,7 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
       <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Is there parking?</div><div class="faq-a"><div class="faq-a-inner">Yes. Pavilion 22 on the Halifax Waterfront has ample parking right on-site. No stress.</div></div></div>
       <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Is the event accessible?</div><div class="faq-a"><div class="faq-a-inner">Yes. The layout is designed with wide aisles, clear turning radiuses for wheelchairs and strollers, and clutter-free pathways throughout.</div></div></div>
       <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How are vendors selected?</div><div class="faq-a"><div class="faq-a-inner">We review applications for product quality, originality, and category fit. Our first year is intentionally limited, with careful attention to variety and limited overlap between similar products. Applications are reviewed on a rolling basis.</div></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Do you offer booths for charities or nonprofits?</div><div class="faq-a"><div class="faq-a-inner">Yes. We set aside a limited number of complimentary booths for local charities and nonprofit organizations doing meaningful community work. If this is you, email us at info@hfxchristmasmarket.ca with a bit about your organization and we'll follow up.</div></div></div>
       <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How much does a vendor booth cost?</div><div class="faq-a"><div class="faq-a-inner">An 8x7 booth is $475 and an 8x8 booth is $525 for the full three-day market. Both prices include HST.</div></div></div>
       <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Do the new prices apply if I've already booked?</div><div class="faq-a"><div class="faq-a-inner">Yes. The revised prices apply to existing and new vendors. Fully paid vendors will receive a refund of the difference, and vendors who have paid a deposit will receive an adjusted remaining balance. If you previously secured a lower rate, you keep it. We'll contact affected vendors directly.</div></div></div>
       <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Can I bring my kids?</div><div class="faq-a"><div class="faq-a-inner">Of course! Children are always free. We're also hoping to bring in a Meet Santa experience this year, so keep an eye on our socials closer to the date.</div></div></div>
