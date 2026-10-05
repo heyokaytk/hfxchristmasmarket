@@ -344,8 +344,8 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
   .booth-tooltip .price-badge { margin-top: 6px; }
   
   .bth.review {
-    background: #cfcfcf !important;
-    color: #555 !important;
+    background: #D97706 !important;
+    color: var(--charcoal) !important;
     cursor: not-allowed !important;
   }
   .bth.accepted {
@@ -500,14 +500,15 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
   .vd-filter { background: transparent; border: 1px solid rgba(250,246,240,0.2); color: rgba(250,246,240,0.65); font-size: 0.78rem; letter-spacing: 0.03em; padding: 0.45rem 1rem; border-radius: 100px; cursor: pointer; transition: all 0.2s ease; font-family: 'DM Sans', sans-serif; }
   .vd-filter:hover { border-color: var(--gold); color: var(--gold-light); }
   .vd-filter.active { background: var(--gold); border-color: var(--gold); color: var(--charcoal); font-weight: 600; }
-  .vd-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1px; margin-top: 1.75rem; background: #2a2a2a; }
+  .vd-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1px; margin-top: 1.75rem; background: #2a2a2a; }
   .vd-card.vd-hidden { display: none; }
-  .vd-card { background: #1a1a1a; padding: 1.5rem 1.5rem 1.35rem; transition: background 0.25s ease; }
-  .vd-card:hover { background: #222; }
-  .vd-booth { display: inline-block; font-size: 0.68rem; letter-spacing: 0.08em; color: var(--charcoal); background: var(--gold); font-weight: 700; padding: 0.15rem 0.5rem; border-radius: 2px; margin-bottom: 0.75rem; }
-  .vd-card h3 { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 600; margin-bottom: 0.3rem; color: var(--cream); }
-  .vd-cat { font-size: 0.78rem; color: rgba(250,246,240,0.55); margin-bottom: 0.9rem; }
-  .vd-links { display: flex; flex-direction: column; gap: 0.4rem; }
+  .vd-card { background: #111; padding: 1.5rem 1.375rem; display: flex; flex-direction: column; gap: 0.6rem; transition: background 0.25s ease; }
+  .vd-card:hover { background: #171717; }
+  .vd-booth { display: inline-block; align-self: flex-start; font-size: 0.68rem; letter-spacing: 0.08em; color: var(--charcoal); background: var(--gold); font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 100px; text-transform: uppercase; }
+  .vd-card h3 { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 700; color: var(--cream); }
+  .vd-cat { font-size: 0.72rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--gold-light); }
+  .vd-desc { font-size: 0.8rem; line-height: 1.7; color: rgba(250,246,240,0.65); }
+  .vd-links { display: flex; flex-wrap: wrap; gap: 0.5rem 0.9rem; margin-top: 0.3rem; padding-top: 0.85rem; border-top: 1px solid #262626; }
   .vd-links a { font-size: 0.75rem; color: var(--gold-light); text-decoration: none; display: inline-flex; align-items: center; }
   .vd-links a:hover { text-decoration: underline; }
   .vd-empty { font-size: 0.8rem; color: rgba(250,246,240,0.4); font-style: italic; }
@@ -742,7 +743,7 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
         <div class="legend-item legend-item-pulse"><div class="legend-box" style="background:var(--mid-green);"></div> 8&times;8 Booth &middot; <span class="price-badge">New lower pricing</span> <span class="price-old">$675</span>$525 &middot; <span class="year-alert">1-Year Pricing</span> &middot; #59&ndash;87, 91&ndash;140</div>
     </div>
     <div class="sitemap-legend">
-        <div class="legend-item"><div class="legend-box" style="background:#cfcfcf;"></div> Under Review</div>
+        <div class="legend-item"><div class="legend-box" style="background:#D97706;"></div> Spoken For</div>
         <div class="legend-item"><div class="legend-box" style="background:var(--gold);"></div> Accepted</div>
         <div class="legend-item"><div class="legend-box" style="background:#C97B84;"></div> Lounge</div>
         <div class="legend-item"><div class="legend-box" style="border:2px solid var(--red);"></div> Washrooms &amp; Office</div>
@@ -801,7 +802,7 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
             
             <!-- Top Left Vertical (2) -->
             <div class="b-col" style="top: 50px; left: 175px;">
-                <div class="bth accepted">27</div><div class="bth review">28</div>
+                <div class="bth accepted">27</div><div class="bth accepted">28</div>
             </div>
 
             <!-- Below Office Horizontal (4) -->
@@ -1399,6 +1400,13 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
       facebook: "",
       website: "https://www.eastcoastfreezedried.com"
     },
+    28: {
+      name: "Nutri-3 by NutrieEasy Inc.",
+      category: "Specialty Foods & Sauces",
+      instagram: "nutrieeasy",
+      facebook: "",
+      website: "https://nutri-3.ca"
+    },
     29: {
       name: "SD Arts and Crafts",
       category: "Art & Photography",
@@ -1544,11 +1552,14 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
   const fbIcon = '<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" style="vertical-align:-1.5px;margin-right:4px"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M14 8h-1.5C11.1 8 10 9.1 10 10.5V12H8v3h2v5h3v-5h2.2l.5-3H13v-1.2c0-.5.3-.8.8-.8H15V8Z" stroke-linejoin="round"/></svg>';
 
   // Build the "Confirmed vendors" directory directly from vendorData.
-  // #vd-count-badge, #vd-filters and #vd-grid were removed from the vendor-directory
-  // section in index.html so the section shows nothing but its intro paragraph for
-  // now. This block safely no-ops (vdGrid is null) until all three containers are
-  // added back and SHOW_VENDOR_DIRECTORY is flipped to true, once there's a fuller
-  // lineup to show. Category filter chips (in #vd-filters) are ready to go too.
+  // #vd-count-badge, #vd-filters and #vd-grid are intentionally left out of
+  // index.html for now -- the card design (Concept 1, drafted and approved) is
+  // ready, but the section's visual treatment still needs another pass before
+  // it goes public. This block safely no-ops (vdGrid is null) until the three
+  // containers are added back and SHOW_VENDOR_DIRECTORY is flipped to true.
+  // Add an optional "description" field to any vendor's entry above to show it on
+  // their card — most don't have one yet since applications only email that text
+  // to us rather than saving it here, so it's left out of the entries for now.
   const SHOW_VENDOR_DIRECTORY = false;
   const vdGrid = document.getElementById('vd-grid');
   if (vdGrid) {
@@ -1571,6 +1582,7 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
             <div class="vd-booth">Booth #${num}</div>
             <h3>${v.name}</h3>
             <div class="vd-cat">${v.category}</div>
+            ${v.description ? `<div class="vd-desc">${v.description}</div>` : ''}
             <div class="vd-links">${links.join('') || '<span class="vd-empty">No socials yet</span>'}</div>
           </div>
         `;
@@ -1627,10 +1639,10 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
       }
 
       if (booth.classList.contains('review') || booth.classList.contains('accepted')) {
-        var statusLabel = booth.classList.contains('accepted') ? 'Accepted' : 'Under Review';
+        var statusLabel = booth.classList.contains('accepted') ? 'Accepted' : 'Spoken For';
         var statusNote = booth.classList.contains('accepted')
           ? 'This booth is confirmed. Check other open booths on the map.'
-          : 'An application is in for this booth. Check other open booths on the map.';
+          : 'An application is already in for this booth. Check other open booths on the map.';
         tooltip.innerHTML = `
           <div class="tooltip-title">Booth #${boothNum}</div>
           <div style="color: #E8B85A; font-weight: 600; margin-top: 4px;">${statusLabel}</div>
