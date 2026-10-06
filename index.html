@@ -500,17 +500,24 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
   .vd-filter { background: transparent; border: 1px solid rgba(250,246,240,0.2); color: rgba(250,246,240,0.65); font-size: 0.78rem; letter-spacing: 0.03em; padding: 0.45rem 1rem; border-radius: 100px; cursor: pointer; transition: all 0.2s ease; font-family: 'DM Sans', sans-serif; }
   .vd-filter:hover { border-color: var(--gold); color: var(--gold-light); }
   .vd-filter.active { background: var(--gold); border-color: var(--gold); color: var(--charcoal); font-weight: 600; }
-  .vd-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1px; margin-top: 1.75rem; background: #2a2a2a; }
+  .vendor-directory { background: linear-gradient(160deg, #0e1f17 0%, #1C3A2B 55%, #14261c 100%); }
+  .vd-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0.9rem; margin-top: 1.75rem; }
   .vd-card.vd-hidden { display: none; }
-  .vd-card { background: #111; padding: 1.5rem 1.375rem; display: flex; flex-direction: column; gap: 0.6rem; transition: background 0.25s ease; }
-  .vd-card:hover { background: #171717; }
-  .vd-booth { display: inline-block; align-self: flex-start; font-size: 0.68rem; letter-spacing: 0.08em; color: var(--charcoal); background: var(--gold); font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 100px; text-transform: uppercase; }
-  .vd-card h3 { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 700; color: var(--cream); }
-  .vd-cat { font-size: 0.72rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--gold-light); }
+  .vd-card { background: rgba(17,17,17,0.55); border: 1px solid rgba(255,255,255,0.06); border-radius: 8px; padding: 1.375rem 1.25rem; display: flex; flex-direction: column; gap: 0.6rem; transition: background 0.25s ease, border-color 0.25s ease; }
+  .vd-card:hover { background: rgba(17,17,17,0.75); border-color: rgba(200,151,58,0.3); }
+  .vd-head { display: flex; align-items: center; gap: 0.75rem; }
+  .vd-icon { width: 44px; height: 44px; flex-shrink: 0; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 1.5px solid var(--gold-light); background: rgba(200,151,58,0.1); color: var(--gold-light); }
+  .vd-card h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--cream); }
+  .vd-cat { font-size: 0.68rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--gold-light); margin-top: 0.15rem; }
   .vd-desc { font-size: 0.8rem; line-height: 1.7; color: rgba(250,246,240,0.65); }
-  .vd-links { display: flex; flex-wrap: wrap; gap: 0.5rem 0.9rem; margin-top: 0.3rem; padding-top: 0.85rem; border-top: 1px solid #262626; }
+  .vd-links { display: flex; flex-wrap: wrap; gap: 0.5rem 0.9rem; margin-top: 0.2rem; padding-top: 0.75rem; border-top: 1px solid rgba(255,255,255,0.08); }
   .vd-links a { font-size: 0.75rem; color: var(--gold-light); text-decoration: none; display: inline-flex; align-items: center; }
   .vd-links a:hover { text-decoration: underline; }
+  .vd-pager { display: flex; align-items: center; justify-content: center; gap: 1.1rem; margin-top: 2rem; }
+  .vd-pager-btn { width: 38px; height: 38px; border-radius: 50%; border: 1px solid rgba(250,246,240,0.25); background: transparent; color: var(--cream); font-size: 1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s ease; }
+  .vd-pager-btn:hover:not(:disabled) { border-color: var(--gold-light); color: var(--gold-light); }
+  .vd-pager-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+  .vd-pager-info { font-size: 0.78rem; letter-spacing: 0.04em; color: rgba(250,246,240,0.55); min-width: 54px; text-align: center; }
   .vd-empty { font-size: 0.8rem; color: rgba(250,246,240,0.4); font-style: italic; }
 
   /* SPONSORS */
@@ -797,7 +804,7 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
 
             <!-- Top Wall Booths (26) -->
             <div class="b-row" style="top: 15px; left: 190px;">
-                <div class="bth accepted">1</div><div class="bth review">2</div><div class="bth">3</div><div class="bth">4</div><div class="bth review">5</div><div class="bth review">6</div><div class="bth review">7</div><div class="bth review">8</div><div class="bth">9</div><div class="bth">10</div><div class="bth">11</div><div class="bth accepted">12</div><div class="bth accepted">13</div><div class="bth review">14</div><div class="bth">15</div><div class="bth">16</div><div class="bth">17</div><div class="bth">18</div><div class="bth">19</div><div class="bth accepted">20</div><div class="bth">21</div><div class="bth review">22</div><div class="bth">23</div><div class="bth">24</div><div class="bth accepted">25</div><div class="bth accepted">26</div>
+                <div class="bth accepted">1</div><div class="bth review">2</div><div class="bth">3</div><div class="bth">4</div><div class="bth review">5</div><div class="bth review">6</div><div class="bth review">7</div><div class="bth review">8</div><div class="bth">9</div><div class="bth">10</div><div class="bth">11</div><div class="bth accepted">12</div><div class="bth accepted">13</div><div class="bth review">14</div><div class="bth">15</div><div class="bth">16</div><div class="bth">17</div><div class="bth">18</div><div class="bth">19</div><div class="bth accepted">20</div><div class="bth">21</div><div class="bth review">22</div><div class="bth">23</div><div class="bth accepted">24</div><div class="bth accepted">25</div><div class="bth accepted">26</div>
             </div>
             
             <!-- Top Left Vertical (2) -->
@@ -817,7 +824,7 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
 
             <!-- Main Upper Island Top Side (24) -->
             <div class="b-row" style="top: 90px; left: 215px;">
-                <div class="bth accepted">35</div><div class="bth">36</div><div class="bth">37</div><div class="bth">38</div><div class="bth">39</div><div class="bth">40</div><div class="bth">41</div><div class="bth">42</div><div class="bth">43</div><div class="bth">44</div><div class="bth">45</div><div class="bth accepted">46</div><div class="bth review">47</div><div class="bth">48</div><div class="bth">49</div><div class="bth">50</div><div class="bth">51</div><div class="bth accepted">52</div><div class="bth">53</div><div class="bth">54</div><div class="bth">55</div><div class="bth">56</div><div class="bth review">57</div><div class="bth accepted">58</div>
+                <div class="bth accepted">35</div><div class="bth review">36</div><div class="bth">37</div><div class="bth">38</div><div class="bth">39</div><div class="bth">40</div><div class="bth">41</div><div class="bth">42</div><div class="bth">43</div><div class="bth">44</div><div class="bth">45</div><div class="bth accepted">46</div><div class="bth review">47</div><div class="bth">48</div><div class="bth">49</div><div class="bth">50</div><div class="bth">51</div><div class="bth accepted">52</div><div class="bth">53</div><div class="bth">54</div><div class="bth">55</div><div class="bth">56</div><div class="bth review">57</div><div class="bth accepted">58</div>
             </div>
             
             <!-- Main Upper Island Bottom Side (24) -->
@@ -842,7 +849,7 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
 
             <!-- Right Mid Island Top (11) - Shifted Down -->
             <div class="b-row" style="top: 263px; left: 515px;">
-                <div class="bth review">94</div><div class="bth accepted">95</div><div class="bth">96</div><div class="bth">97</div><div class="bth">98</div><div class="bth">99</div><div class="bth review">100</div><div class="bth">101</div><div class="bth review">102</div><div class="bth">103</div><div class="bth review">104</div>
+                <div class="bth review">94</div><div class="bth accepted">95</div><div class="bth review">96</div><div class="bth">97</div><div class="bth">98</div><div class="bth">99</div><div class="bth review">100</div><div class="bth">101</div><div class="bth review">102</div><div class="bth">103</div><div class="bth review">104</div>
             </div>
             
             <!-- Right Mid Island Bottom (11) - Shifted Down -->
@@ -1386,6 +1393,13 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
       facebook: "",
       website: "https://www.mckncandleco.com"
     },
+    24: {
+      name: "Souls Harbour Rescue Mission",
+      category: "Community & Charity",
+      instagram: "soulsharbour",
+      facebook: "https://facebook.com/shrm.ca",
+      website: "https://soulsharbour.ca"
+    },
     26: {
       name: "Tiny Owlery",
       category: "Home & Decor",
@@ -1551,12 +1565,35 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
   const igIcon = '<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" style="vertical-align:-1.5px;margin-right:4px"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1"/></svg>';
   const fbIcon = '<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" style="vertical-align:-1.5px;margin-right:4px"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M14 8h-1.5C11.1 8 10 9.1 10 10.5V12H8v3h2v5h3v-5h2.2l.5-3H13v-1.2c0-.5.3-.8.8-.8H15V8Z" stroke-linejoin="round"/></svg>';
 
+  // One small line-icon per vendor category, matched by keyword so new/unusual
+  // categories still get a sensible icon instead of showing nothing.
+  function categoryIcon(category) {
+    const c = (category || '').toLowerCase();
+    const svg = function(inner) {
+      return '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">' + inner + '</svg>';
+    };
+    if (c.includes('candle') || c.includes('scent')) return svg('<path d="M9 3v5c0 1.5-2 2.5-2 5.5A5 5 0 0 0 12 19a5 5 0 0 0 5-5.5C17 10.5 15 9.5 15 8V3"/><path d="M9 21h6"/>');
+    if (c.includes('bakery') || c.includes('sweet')) return svg('<path d="M4 13a8 8 0 0 1 16 0"/><path d="M3 13h18l-1.2 7H4.2z"/><path d="M12 9V5"/><circle cx="12" cy="4" r="1"/>');
+    if (c.includes('food') || c.includes('sauce')) return svg('<rect x="4" y="9" width="16" height="11" rx="1.5"/><path d="M8 9V6a4 4 0 0 1 8 0v3"/>');
+    if (c.includes('alcohol') || c.includes('spirit')) return svg('<path d="M9 2h6v4.5l2.2 3A3 3 0 0 1 18 11.5V20a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-8.5a3 3 0 0 1 .8-2l2.2-3z"/><path d="M9 2v4.5h6V2"/>');
+    if (c.includes('jewel') || c.includes('leatherwork')) return svg('<path d="M12 2l2.2 4.8L19 8l-3.6 3.3L16.4 17 12 14.3 7.6 17l1-5.7L5 8l4.8-1.2z"/>');
+    if (c.includes('home') || c.includes('decor')) return svg('<path d="M4 11l8-7 8 7"/><path d="M6 10v10h12V10"/>');
+    if (c.includes('art') || c.includes('photo')) return svg('<rect x="3" y="7" width="18" height="13" rx="2"/><circle cx="12" cy="13.5" r="3.5"/><path d="M8 7l1.5-2.5h5L16 7"/>');
+    if (c.includes('health') || c.includes('beauty')) return svg('<path d="M12 21s-7-4.35-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6c-2.5 4.65-9.5 9-9.5 9z"/>');
+    if (c.includes('apparel') || c.includes('textile')) return svg('<path d="M8 4l4 2 4-2 3 3-2.5 2.5V20H7V9.5L4.5 7z"/>');
+    if (c.includes('wood')) return svg('<path d="M3 21l6-6"/><path d="M13 3l8 8-3 3-8-8z"/><path d="M8 12l4 4"/>');
+    if (c.includes('toy') || c.includes('book') || c.includes('hobbi')) return svg('<path d="M12 6c-2-1.5-5-2-8-1v13c3-1 6-.5 8 1 2-1.5 5-2 8-1V5c-3-1-6-.5-8 1z"/><path d="M12 6v13"/>');
+    if (c.includes('gift')) return svg('<rect x="4" y="9" width="16" height="11"/><path d="M4 9h16M12 9v11"/><path d="M9 5.5a2.5 2.5 0 0 1 3 3V9H9z"/><path d="M15 5.5a2.5 2.5 0 0 0-3 3V9h3z"/>');
+    if (c.includes('balloon') || c.includes('entertain')) return svg('<circle cx="12" cy="9" r="6"/><path d="M12 15v6l2-2"/>');
+    return svg('<path d="M3 11V3h8l10 10-8 8z"/><circle cx="7.5" cy="7.5" r="1.5"/>'); // generic tag icon fallback
+  }
+
   // Build the "Confirmed vendors" directory directly from vendorData.
-  // #vd-count-badge, #vd-filters and #vd-grid are intentionally left out of
-  // index.html for now -- the card design (Concept 1, drafted and approved) is
-  // ready, but the section's visual treatment still needs another pass before
-  // it goes public. This block safely no-ops (vdGrid is null) until the three
-  // containers are added back and SHOW_VENDOR_DIRECTORY is flipped to true.
+  // #vd-count-badge, #vd-filters, #vd-grid and #vd-pager are intentionally left out
+  // of index.html for now -- the card design, category icons, and pagination are all
+  // built and drafted (Concept 4), just waiting on the go-ahead to publish. This
+  // block safely no-ops (vdGrid is null) until those containers are added back and
+  // SHOW_VENDOR_DIRECTORY is flipped to true.
   // Add an optional "description" field to any vendor's entry above to show it on
   // their card — most don't have one yet since applications only email that text
   // to us rather than saving it here, so it's left out of the entries for now.
@@ -1579,14 +1616,59 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
         if (v.website) links.push('<a href="' + v.website + '" target="_blank" rel="noopener">' + v.website.replace(/^https?:\/\//, '') + '</a>');
         return `
           <div class="vd-card" data-category="${v.category}">
-            <div class="vd-booth">Booth #${num}</div>
-            <h3>${v.name}</h3>
-            <div class="vd-cat">${v.category}</div>
+            <div class="vd-head">
+              <div class="vd-icon">${categoryIcon(v.category)}</div>
+              <div>
+                <h3>${v.name}</h3>
+                <div class="vd-cat">${v.category} &middot; Booth #${num}</div>
+              </div>
+            </div>
             ${v.description ? `<div class="vd-desc">${v.description}</div>` : ''}
             <div class="vd-links">${links.join('') || '<span class="vd-empty">No socials yet</span>'}</div>
           </div>
         `;
       }).join('');
+
+      // Pagination — 6 cards per page within whatever the active filter matches.
+      const VD_PAGE_SIZE = 6;
+      let vdFilter = 'All';
+      let vdPage = 0;
+      const vdPagerEl = document.getElementById('vd-pager');
+
+      function vdScrollToTop() {
+        const section = document.getElementById('vendor-directory');
+        if (section) section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+
+      function vdRenderPage() {
+        const cards = Array.from(vdGrid.querySelectorAll('.vd-card'));
+        const filtered = cards.filter(function(card) {
+          return vdFilter === 'All' || card.getAttribute('data-category') === vdFilter;
+        });
+        const totalPages = Math.max(1, Math.ceil(filtered.length / VD_PAGE_SIZE));
+        if (vdPage >= totalPages) vdPage = totalPages - 1;
+        if (vdPage < 0) vdPage = 0;
+
+        cards.forEach(function(card) { card.classList.add('vd-hidden'); });
+        filtered.slice(vdPage * VD_PAGE_SIZE, vdPage * VD_PAGE_SIZE + VD_PAGE_SIZE).forEach(function(card) {
+          card.classList.remove('vd-hidden');
+        });
+
+        if (vdPagerEl) {
+          if (filtered.length <= VD_PAGE_SIZE) {
+            vdPagerEl.innerHTML = '';
+          } else {
+            vdPagerEl.innerHTML =
+              '<button type="button" class="vd-pager-btn" id="vd-prev"' + (vdPage === 0 ? ' disabled' : '') + ' aria-label="Previous vendors">&lsaquo;</button>' +
+              '<span class="vd-pager-info">' + (vdPage + 1) + ' / ' + totalPages + '</span>' +
+              '<button type="button" class="vd-pager-btn" id="vd-next"' + (vdPage === totalPages - 1 ? ' disabled' : '') + ' aria-label="Next vendors">&rsaquo;</button>';
+            const prevBtn = document.getElementById('vd-prev');
+            const nextBtn = document.getElementById('vd-next');
+            if (prevBtn) prevBtn.addEventListener('click', function() { vdPage--; vdRenderPage(); vdScrollToTop(); });
+            if (nextBtn) nextBtn.addEventListener('click', function() { vdPage++; vdRenderPage(); vdScrollToTop(); });
+          }
+        }
+      }
 
       // Category filter chips — "All" plus one per unique category, in order of first appearance.
       const vdFilters = document.getElementById('vd-filters');
@@ -1604,14 +1686,14 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
           chip.addEventListener('click', function() {
             vdFilters.querySelectorAll('.vd-filter').forEach(function(c) { c.classList.remove('active'); });
             chip.classList.add('active');
-            const filter = chip.getAttribute('data-filter');
-            vdGrid.querySelectorAll('.vd-card').forEach(function(card) {
-              const match = filter === 'All' || card.getAttribute('data-category') === filter;
-              card.classList.toggle('vd-hidden', !match);
-            });
+            vdFilter = chip.getAttribute('data-filter');
+            vdPage = 0;
+            vdRenderPage();
           });
         });
       }
+
+      vdRenderPage();
     }
   }
 
