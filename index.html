@@ -353,7 +353,12 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
     color: var(--charcoal) !important;
     cursor: not-allowed !important;
   }
-  .bth.review:hover, .bth.accepted:hover { transform: none; box-shadow: none; }
+  .bth.charity {
+    background: #2F9E8F !important;
+    color: var(--charcoal) !important;
+    cursor: not-allowed !important;
+  }
+  .bth.review:hover, .bth.accepted:hover, .bth.charity:hover { transform: none; box-shadow: none; }
   .vendors { background: #1a1a1a; }
   .vendors-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
   .vendor-cats { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-top: 2.5rem; }
@@ -631,6 +636,7 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
       <div class="why-card"><div class="why-icon">&#127876;</div><h3>Christmas d&eacute;cor throughout</h3><p>The full venue gets transformed with festive lighting, signage, and themed zones.</p></div>
       <div class="why-card"><div class="why-icon">&#128715;</div><h3>Lounge on-site</h3><p>Our cozy rest zone has seating, warm drinks, and a full bar, so you can recharge and go back for more.</p></div>
       <div class="why-card"><div class="why-icon">&#10022;</div><h3>Hand-picked vendors</h3><p>Every vendor is carefully reviewed for quality and fit, with limited overlap between categories. The best makers Nova Scotia has to offer.</p></div>
+      <div class="why-card"><div class="why-icon">&#128154;</div><h3>Supporting local charities</h3><p>We've set aside complimentary booths for local charities and nonprofits doing meaningful community work &mdash; look for them marked on the map.</p></div>
       <div class="why-card"><div class="why-icon">&#127359;</div><h3>Parking</h3><p>Pavilion 22 comes with plenty of parking right on the Halifax Waterfront. No stress.</p></div>
       <div class="why-card"><div class="why-icon">&#127912;</div><h3>Face painting</h3><p>Free face painting for the kids all weekend long, because every good Christmas market needs a little sparkle.</p></div>
     </div>
@@ -752,6 +758,7 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
     <div class="sitemap-legend">
         <div class="legend-item"><div class="legend-box" style="background:#D97706;"></div> Spoken For</div>
         <div class="legend-item"><div class="legend-box" style="background:var(--gold);"></div> Accepted</div>
+        <div class="legend-item"><div class="legend-box" style="background:#2F9E8F;"></div> Community &amp; Charity</div>
         <div class="legend-item"><div class="legend-box" style="background:#C97B84;"></div> Lounge</div>
         <div class="legend-item"><div class="legend-box" style="border:2px solid var(--red);"></div> Washrooms &amp; Office</div>
         <div class="legend-item"><div class="legend-box" style="background:#b0b0b0;"></div> Structural Walls</div>
@@ -804,7 +811,7 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
 
             <!-- Top Wall Booths (26) -->
             <div class="b-row" style="top: 15px; left: 190px;">
-                <div class="bth accepted">1</div><div class="bth review">2</div><div class="bth">3</div><div class="bth">4</div><div class="bth review">5</div><div class="bth review">6</div><div class="bth review">7</div><div class="bth review">8</div><div class="bth">9</div><div class="bth">10</div><div class="bth">11</div><div class="bth accepted">12</div><div class="bth accepted">13</div><div class="bth review">14</div><div class="bth">15</div><div class="bth">16</div><div class="bth">17</div><div class="bth">18</div><div class="bth">19</div><div class="bth accepted">20</div><div class="bth">21</div><div class="bth review">22</div><div class="bth">23</div><div class="bth accepted">24</div><div class="bth accepted">25</div><div class="bth accepted">26</div>
+                <div class="bth accepted">1</div><div class="bth review">2</div><div class="bth">3</div><div class="bth">4</div><div class="bth review">5</div><div class="bth review">6</div><div class="bth review">7</div><div class="bth review">8</div><div class="bth">9</div><div class="bth">10</div><div class="bth">11</div><div class="bth accepted">12</div><div class="bth accepted">13</div><div class="bth review">14</div><div class="bth">15</div><div class="bth">16</div><div class="bth">17</div><div class="bth">18</div><div class="bth">19</div><div class="bth accepted">20</div><div class="bth">21</div><div class="bth review">22</div><div class="bth">23</div><div class="bth charity">24</div><div class="bth accepted">25</div><div class="bth accepted">26</div>
             </div>
             
             <!-- Top Left Vertical (2) -->
@@ -1202,7 +1209,7 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
   // Booth click → pre-fill preferred booth field + booth size dropdown + scroll to form
   document.querySelectorAll('.bth').forEach(function(booth) {
     booth.addEventListener('click', function() {
-      if (booth.classList.contains('review') || booth.classList.contains('accepted')) return;
+      if (booth.classList.contains('review') || booth.classList.contains('accepted') || booth.classList.contains('charity')) return;
       var n = parseInt(booth.innerText.trim());
       var is87 = (n >= 1 && n <= 58) || (n >= 88 && n <= 90);
 
@@ -1702,11 +1709,14 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
       const boothNum = parseInt(booth.innerText);
       if (isNaN(boothNum)) return;
 
-      if (booth.classList.contains('accepted') && vendorData[boothNum]) {
+      if ((booth.classList.contains('accepted') || booth.classList.contains('charity')) && vendorData[boothNum]) {
         var v = vendorData[boothNum];
+        var isCharity = booth.classList.contains('charity');
+        var accentColor = isCharity ? '#2F9E8F' : '#E8B85A';
         tooltip.innerHTML = `
           <div class="tooltip-title">Booth #${boothNum}</div>
-          <div style="color: #E8B85A; font-weight: 700; margin-top: 4px;">${v.name}</div>
+          ${isCharity ? `<div style="color: ${accentColor}; font-weight: 700; font-size: 0.62rem; letter-spacing: 0.06em; text-transform: uppercase; margin-top: 4px;">Community &amp; Charity Partner</div>` : ''}
+          <div style="color: ${accentColor}; font-weight: 700; margin-top: 4px;">${v.name}</div>
           <div style="opacity: 0.75; margin-bottom: 8px;">${v.category}</div>
           <div style="font-size: 0.68rem; line-height: 1.7;">
             ${v.instagram ? `<div>${igIcon}@${v.instagram}</div>` : ''}
@@ -1720,14 +1730,15 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
         return;
       }
 
-      if (booth.classList.contains('review') || booth.classList.contains('accepted')) {
-        var statusLabel = booth.classList.contains('accepted') ? 'Accepted' : 'Spoken For';
-        var statusNote = booth.classList.contains('accepted')
+      if (booth.classList.contains('review') || booth.classList.contains('accepted') || booth.classList.contains('charity')) {
+        var statusLabel = booth.classList.contains('charity') ? 'Community &amp; Charity' : (booth.classList.contains('accepted') ? 'Accepted' : 'Spoken For');
+        var statusColor = booth.classList.contains('charity') ? '#2F9E8F' : '#E8B85A';
+        var statusNote = (booth.classList.contains('accepted') || booth.classList.contains('charity'))
           ? 'This booth is confirmed. Check other open booths on the map.'
           : 'An application is already in for this booth. Check other open booths on the map.';
         tooltip.innerHTML = `
           <div class="tooltip-title">Booth #${boothNum}</div>
-          <div style="color: #E8B85A; font-weight: 600; margin-top: 4px;">${statusLabel}</div>
+          <div style="color: ${statusColor}; font-weight: 600; margin-top: 4px;">${statusLabel}</div>
           <div style="opacity: 0.7; font-size: 0.68rem; margin-top: 4px;">${statusNote}</div>
         `;
         tooltip.style.display = 'block';
