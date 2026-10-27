@@ -405,6 +405,8 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
   .charity-note strong { color: var(--cream); }
   .form-group { margin-bottom: 1rem; }
   #preferred-booth.filled { border-color: var(--gold); color: var(--gold-light); }
+  #preferred-booth.taken { border-color: var(--red) !important; }
+  .booth-taken-note { font-size: 0.75rem; color: var(--red); margin-top: 0.4rem; line-height: 1.5; }
   .form-group input, .form-group select, .form-group textarea { width: 100%; background: #111; border: 1px solid #333; border-radius: 2px; padding: 0.75rem 1rem; color: var(--cream); font-family: 'DM Sans', sans-serif; font-size: 0.83rem; outline: none; transition: border-color 0.2s; }
   .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(250,246,240,0.3); }
   .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--gold); }
@@ -996,7 +998,10 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
               <option>8x8 Booth &middot; $525 including HST</option>
             </select>
           </div>
-          <div class="form-group"><input type="text" placeholder="Preferred booth # (type a number or click a booth on the map above)" id="preferred-booth"></div>
+          <div class="form-group">
+            <input type="text" placeholder="Preferred booth # (type a number or click a booth on the map above)" id="preferred-booth">
+            <div class="booth-taken-note" id="booth-taken-note" style="display:none"></div>
+          </div>
           <div class="form-group"><textarea placeholder="Tell us about your business and what you sell..." id="description"></textarea></div>
           <div class="form-group"><input type="url" placeholder="Website or Instagram URL (optional)" id="website"></div>
           <button class="btn-submit" onclick="submitForm()">Submit Application</button>
@@ -1240,6 +1245,52 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
     }, 300);
   }
 
+  // Looks up a booth number's current status on the map ('accepted' | 'charity' | 'review' | null for open).
+  function getBoothStatus(num) {
+    var match = null;
+    document.querySelectorAll('.bth').forEach(function(b) {
+      if (parseInt(b.innerText.trim(), 10) === num) match = b;
+    });
+    if (!match) return null;
+    if (match.classList.contains('accepted')) return 'accepted';
+    if (match.classList.contains('charity')) return 'charity';
+    if (match.classList.contains('review')) return 'review';
+    return null;
+  }
+
+  // Live-checks the preferred-booth field against the map and shows a short note if it's taken.
+  // Returns true if the field is clear to submit (empty/unrecognized numbers pass through).
+  function checkPreferredBooth() {
+    var field = document.getElementById('preferred-booth');
+    var note = document.getElementById('booth-taken-note');
+    if (!field || !note) return true;
+    var match = field.value.trim().match(/\d+/);
+    var num = match ? parseInt(match[0], 10) : NaN;
+    if (isNaN(num)) {
+      field.classList.remove('taken');
+      note.style.display = 'none';
+      return true;
+    }
+    var status = getBoothStatus(num);
+    if (status) {
+      field.classList.add('taken');
+      note.textContent = 'Booth #' + num + ' is already ' + (status === 'review' ? 'spoken for' : 'taken') + ' — please choose a different booth.';
+      note.style.display = 'block';
+      return false;
+    }
+    field.classList.remove('taken');
+    note.style.display = 'none';
+    return true;
+  }
+
+  (function() {
+    var preferredBoothField = document.getElementById('preferred-booth');
+    if (preferredBoothField) {
+      preferredBoothField.addEventListener('input', checkPreferredBooth);
+      preferredBoothField.addEventListener('blur', checkPreferredBooth);
+    }
+  })();
+
   function submitForm() {
     var biz = document.getElementById('biz-name').value.trim();
     var name = document.getElementById('contact-name').value.trim();
@@ -1252,6 +1303,10 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
     var boothNum = boothNumMatch ? parseInt(boothNumMatch[0], 10) : NaN;
     if (!biz || !name || !email || !cat || !boothSize || !desc || isNaN(boothNum) || boothNum < 1 || boothNum > 140) {
       alert('Please fill in all required fields before submitting, including a specific preferred booth # (type a number or click a booth on the map above).');
+      return;
+    }
+    if (!checkPreferredBooth()) {
+      document.getElementById('preferred-booth').focus();
       return;
     }
 
