@@ -887,6 +887,17 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
 </section>
 <!-- END SITE MAP SECTION -->
 
+<section class="vendor-directory" id="vendor-directory">
+  <div class="section-inner">
+    <div class="section-label" style="color:var(--gold-light)">Meet the lineup</div>
+    <h2 class="section-title">Confirmed vendors, so far.</h2>
+    <p style="font-size:0.9rem;color:rgba(250,246,240,0.55);max-width:560px;line-height:1.8">Each profile includes what the vendor shared when they applied, so you know a little about who you're buying from before you even arrive. More are being added daily &mdash; check back often.</p>
+    <div class="vd-filters" id="vd-filters"></div>
+    <div class="vd-grid" id="vd-grid"></div>
+    <div class="vd-pager" id="vd-pager"></div>
+  </div>
+</section>
+
 <section class="featured-vendors" id="featured-vendors">
   <div class="section-inner">
     <div class="section-label" style="color:var(--gold-light)">Shop local</div>
@@ -1763,16 +1774,12 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
     return svg('<path d="M3 11V3h8l10 10-8 8z"/><circle cx="7.5" cy="7.5" r="1.5"/>'); // generic tag icon fallback
   }
 
-  // Build the "Confirmed vendors" directory directly from vendorData.
-  // #vd-count-badge, #vd-filters, #vd-grid and #vd-pager are intentionally left out
-  // of index.html for now -- the card design, category icons, and pagination are all
-  // built and drafted (Concept 4), just waiting on the go-ahead to publish. This
-  // block safely no-ops (vdGrid is null) until those containers are added back and
-  // SHOW_VENDOR_DIRECTORY is flipped to true.
+  // Build the "Confirmed vendors" directory directly from vendorData (Concept 4:
+  // card grid, category icons, pagination, on a green-tinted panel).
   // Add an optional "description" field to any vendor's entry above to show it on
   // their card — most don't have one yet since applications only email that text
-  // to us rather than saving it here, so it's left out of the entries for now.
-  const SHOW_VENDOR_DIRECTORY = false;
+  // to us rather than saving it here.
+  const SHOW_VENDOR_DIRECTORY = true;
   const vdGrid = document.getElementById('vd-grid');
   if (vdGrid) {
     const boothNums = Object.keys(vendorData).map(Number).sort((a, b) => a - b);
