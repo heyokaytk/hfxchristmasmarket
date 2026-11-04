@@ -136,6 +136,22 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
   .nav-cta:hover { background: var(--gold-light); opacity: 1 !important; }
   .nav-cta::after { content: ''; position: absolute; top: 0; left: -75%; width: 50%; height: 100%; background: linear-gradient(115deg, transparent, rgba(255,255,255,0.65), transparent); transform: skewX(-20deg); animation: navShimmer 3.2s ease-in-out infinite; pointer-events: none; }
   @keyframes navShimmer { 0% { left: -75%; } 22% { left: 130%; } 100% { left: 130%; } }
+
+  /* Tickets on sale — gold announcement bar pinned above the nav */
+  :root { --sale-bar-h: 2.6rem; }
+  .sale-bar { position: fixed; top: 0; left: 0; right: 0; z-index: 100; height: var(--sale-bar-h); display: flex; align-items: center; justify-content: center; gap: 0.9rem; padding: 0 1rem; background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 50%, var(--gold) 100%); background-size: 200% 100%; animation: saleSheen 6s linear infinite; color: var(--charcoal); text-decoration: none; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; white-space: nowrap; overflow: hidden; }
+  .sale-bar strong { font-weight: 700; }
+  .sale-bar-cta { background: var(--charcoal); color: var(--gold-light); padding: 0.3rem 0.85rem; border-radius: 2px; font-weight: 500; font-size: 0.7rem; }
+  .sale-bar:hover .sale-bar-cta { color: var(--white); }
+  @keyframes saleSheen { from { background-position: 0% 0; } to { background-position: 200% 0; } }
+  nav { top: var(--sale-bar-h) !important; }
+  .live-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--red); flex-shrink: 0; box-shadow: 0 0 0 0 rgba(184,50,50,0.7); animation: liveDot 1.6s ease-out infinite; }
+  @keyframes liveDot { 0% { box-shadow: 0 0 0 0 rgba(184,50,50,0.7); } 100% { box-shadow: 0 0 0 9px rgba(184,50,50,0); } }
+  @media (prefers-reduced-motion: reduce) { .sale-bar, .live-dot, .hero-onsale { animation: none; } }
+  @media (max-width: 700px) {
+    .sale-bar { font-size: 0.68rem; gap: 0.6rem; letter-spacing: 0.06em; }
+    .sale-bar-extra { display: none; }
+  }
   
   .hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; overflow: hidden; padding: 8rem 2rem 4rem; background: linear-gradient(160deg, rgba(14,31,23,0.9) 0%, rgba(28,58,43,0.84) 45%, rgba(15,26,16,0.94) 100%), url('IMAGES/wreath-bokeh.jpg') center/cover no-repeat; }
 
@@ -147,6 +163,10 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
   .snow-container { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
   .snowflake { position: absolute; top: -10px; color: rgba(255,255,255,0.6); animation: fall linear infinite; }
   @keyframes fall { to { transform: translateY(110vh) rotate(360deg); opacity: 0; } }
+  .hero-onsale { display: inline-flex; align-items: center; gap: 0.6rem; margin: 0 auto 1.5rem; padding: 0.5rem 1.15rem; border: 1px solid var(--gold); border-radius: 100px; background: rgba(200,151,58,0.14); color: var(--gold-light); font-size: 0.78rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; animation: fadeUp 0.9s ease both, goldPulse 2.5s ease-in-out 1s infinite; }
+  .hero-onsale-wrap { text-align: center; }
+  .btn-primary.btn-xl { padding: 1.15rem 2.8rem; font-size: 0.95rem; font-weight: 700; box-shadow: 0 6px 28px rgba(200,151,58,0.45); }
+  .btn-xl .btn-price { opacity: 0.7; font-weight: 500; margin-left: 0.4rem; }
   .hero-wordmark { text-align: center; margin-bottom: 0.5rem; animation: fadeUp 0.9s ease 0.1s both; }
   .hero-wordmark .the { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.6rem; color: var(--cream); opacity: 0.7; display: block; margin-bottom: -0.3rem; }
   .hero-wordmark h1 { font-family: 'Playfair Display', serif; font-size: clamp(3.2rem, 8vw, 6rem); font-weight: 700; color: var(--white); line-height: 1; }
@@ -567,7 +587,8 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
     <a href="#sponsors">Sponsors</a>
     <a href="#faq">FAQ</a>
     <a href="#contact">Contact</a>
-    <a href="#vendor-form" class="nav-cta">Apply as Vendor</a>
+    <a href="#vendor-form">Apply as Vendor</a>
+    <a href="https://hfx-christmas-market.bloomtickets.ca/event/4628" target="_blank" rel="noopener" class="nav-cta">Buy Tickets</a>
   </div>
   <button class="nav-hamburger" id="hamburger" onclick="toggleMobileNav()" aria-label="Open menu">
     <span></span><span></span><span></span>
@@ -583,13 +604,23 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
   <a href="#sponsors" onclick="toggleMobileNav()">Sponsors</a>
   <a href="#faq" onclick="toggleMobileNav()">FAQ</a>
   <a href="#contact" onclick="toggleMobileNav()">Contact</a>
-  <a href="#vendor-form" class="nav-cta" onclick="toggleMobileNav()">Apply as Vendor</a>
+  <a href="#vendor-form" onclick="toggleMobileNav()">Apply as Vendor</a>
+  <a href="https://hfx-christmas-market.bloomtickets.ca/event/4628" target="_blank" rel="noopener" class="nav-cta">Buy Tickets</a>
 </div>
+
+<a href="https://hfx-christmas-market.bloomtickets.ca/event/4628" target="_blank" rel="noopener" class="sale-bar">
+  <span class="live-dot" aria-hidden="true"></span>
+  <span><strong>Tickets on sale now</strong><span class="sale-bar-extra"> &middot; $7 founding-year rate &middot; Dec 4&ndash;6</span></span>
+  <span class="sale-bar-cta">Buy &rarr;</span>
+</a>
 
 <a href="https://hfx-christmas-market.bloomtickets.ca/event/4628" target="_blank" rel="noopener" class="float-ticket" id="float-ticket">&#127915; Buy Tickets</a>
 
 <section class="hero" id="hero">
   <div class="snow-container" id="snow"></div>
+  <div class="hero-onsale-wrap">
+    <a href="https://hfx-christmas-market.bloomtickets.ca/event/4628" target="_blank" rel="noopener" class="hero-onsale"><span class="live-dot" aria-hidden="true"></span>Tickets On Sale Now</a>
+  </div>
   <div class="hero-wordmark">
     <span class="the">The</span>
     <h1>Halifax <em>Christmas</em></h1>
@@ -604,7 +635,7 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
     Pavilion 22 &middot; Halifax Waterfront
   </div>
   <div class="hero-buttons">
-    <a href="https://hfx-christmas-market.bloomtickets.ca/event/4628" target="_blank" rel="noopener" class="btn-primary">Buy Tickets Now</a>
+    <a href="https://hfx-christmas-market.bloomtickets.ca/event/4628" target="_blank" rel="noopener" class="btn-primary btn-xl">Buy Tickets Now<span class="btn-price">&middot; $7</span></a>
     <a href="#vendor-form" class="btn-secondary">Apply as a Vendor</a>
   </div>
   <div class="hero-pills">
