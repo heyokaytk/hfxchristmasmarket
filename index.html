@@ -104,7 +104,7 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
       { "@type": "Question", "name": "Is there parking?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Pavilion 22 on the Halifax Waterfront has ample parking right on-site. No stress." } },
       { "@type": "Question", "name": "Is the event accessible?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. The layout is designed with wide aisles, clear turning radiuses for wheelchairs and strollers, and clutter-free pathways throughout." } },
       { "@type": "Question", "name": "How are vendors selected?", "acceptedAnswer": { "@type": "Answer", "text": "We review applications for product quality, originality, and category fit. Our first year is intentionally limited, with careful attention to variety and limited overlap between similar products. Applications are reviewed on a rolling basis." } },
-      { "@type": "Question", "name": "Do you offer booths for charities or nonprofits?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We set aside a limited number of complimentary booths for local charities and nonprofit organizations doing meaningful community work. If this is you, email us at info@hfxchristmasmarket.ca with a bit about your organization and we'll follow up." } },
+      { "@type": "Question", "name": "Do you offer booths for charities or nonprofits?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We set aside a limited number of complimentary booths for local charities and nonprofit organizations doing meaningful community work. If this is you, fill out the vendor application on this page (or email info@hfxchristmasmarket.ca) and we'll follow up." } },
       { "@type": "Question", "name": "How much does a vendor booth cost?", "acceptedAnswer": { "@type": "Answer", "text": "An 8x7 booth is $475 and an 8x8 booth is $525 for the full three-day market. Both prices include HST." } },
       { "@type": "Question", "name": "Do the new prices apply if I've already booked?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. The revised prices apply to existing and new vendors. Fully paid vendors will receive a refund of the difference, and vendors who have paid a deposit will receive an adjusted remaining balance. If you previously secured a lower rate, you keep it. We'll contact affected vendors directly." } },
       { "@type": "Question", "name": "Can I bring my kids?", "acceptedAnswer": { "@type": "Answer", "text": "Of course! Children are always free. We're also hoping to bring in a Meet Santa experience this year, so keep an eye on our socials closer to the date." } },
@@ -128,11 +128,13 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
   nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.2rem 3rem; background: rgba(26,26,26,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
   .nav-logo { display: flex; align-items: center; gap: 0.7rem; font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--gold); letter-spacing: 0.04em; }
   .nav-logo img { width: 34px; height: 34px; border-radius: 50%; flex-shrink: 0; }
-  .nav-logo span { display: block; font-size: 0.7rem; font-family: 'DM Sans', sans-serif; font-weight: 300; letter-spacing: 0.05em; color: var(--cream); opacity: 0.7; margin-top: 1px; }
-  .nav-links { display: flex; gap: 2rem; align-items: center; }
-  .nav-links a { font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--cream); text-decoration: none; opacity: 0.75; transition: opacity 0.2s; }
+  .nav-logo span { display: block; font-size: 0.78rem; font-family: 'DM Sans', sans-serif; font-weight: 300; letter-spacing: 0.05em; color: var(--cream); opacity: 0.7; margin-top: 1px; }
+  .nav-links { display: flex; gap: 1.6rem; align-items: center; }
+  .nav-links a { white-space: nowrap; }
+  @media (max-width: 1180px) { .nav-links { display: none; } .nav-hamburger { display: flex !important; } }
+  .nav-links a { font-size: 0.84rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--cream); text-decoration: none; opacity: 0.75; transition: opacity 0.2s; }
   .nav-links a:hover { opacity: 1; }
-  .nav-cta { position: relative; overflow: hidden; background: var(--gold); color: var(--charcoal); padding: 0.5rem 1.25rem; border-radius: 2px; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; transition: background 0.2s; }
+  .nav-cta { position: relative; overflow: hidden; background: var(--gold); color: var(--charcoal); padding: 0.5rem 1.25rem; border-radius: 2px; font-size: 0.84rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; transition: background 0.2s; }
   .nav-cta:hover { background: var(--gold-light); opacity: 1 !important; }
   .nav-cta::after { content: ''; position: absolute; top: 0; left: -75%; width: 50%; height: 100%; background: linear-gradient(115deg, transparent, rgba(255,255,255,0.65), transparent); transform: skewX(-20deg); animation: navShimmer 3.2s ease-in-out infinite; pointer-events: none; }
   @keyframes navShimmer { 0% { left: -75%; } 22% { left: 130%; } 100% { left: 130%; } }
@@ -163,9 +165,9 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
   .snow-container { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
   .snowflake { position: absolute; top: -10px; color: rgba(255,255,255,0.6); animation: fall linear infinite; }
   @keyframes fall { to { transform: translateY(110vh) rotate(360deg); opacity: 0; } }
-  .hero-onsale { display: inline-flex; align-items: center; gap: 0.6rem; margin: 0 auto 1.5rem; padding: 0.5rem 1.15rem; border: 1px solid var(--gold); border-radius: 100px; background: rgba(200,151,58,0.14); color: var(--gold-light); font-size: 0.78rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; animation: fadeUp 0.9s ease both, goldPulse 2.5s ease-in-out 1s infinite; }
+  .hero-onsale { display: inline-flex; align-items: center; gap: 0.6rem; margin: 0 auto 1.5rem; padding: 0.5rem 1.15rem; border: 1px solid var(--gold); border-radius: 100px; background: rgba(200,151,58,0.14); color: var(--gold-light); font-size: 0.87rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; animation: fadeUp 0.9s ease both, goldPulse 2.5s ease-in-out 1s infinite; }
   .hero-onsale-wrap { text-align: center; }
-  .btn-primary.btn-xl { padding: 1.15rem 2.8rem; font-size: 0.95rem; font-weight: 700; box-shadow: 0 6px 28px rgba(200,151,58,0.45); }
+  .btn-primary.btn-xl { padding: 1.15rem 2.8rem; font-size: 1.05rem; font-weight: 700; box-shadow: 0 6px 28px rgba(200,151,58,0.45); }
   .btn-xl .btn-price { opacity: 0.7; font-weight: 500; margin-left: 0.4rem; }
   .hero-wordmark { text-align: center; margin-bottom: 0.5rem; animation: fadeUp 0.9s ease 0.1s both; }
   .hero-wordmark .the { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.6rem; color: var(--cream); opacity: 0.7; display: block; margin-bottom: -0.3rem; }
@@ -175,19 +177,19 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
   .hero-divider { display: flex; align-items: center; justify-content: center; gap: 1rem; margin: 1.8rem 0; animation: fadeUp 1s ease 0.2s both; }
   .hero-divider span { color: var(--gold); }
   .hero-divider::before, .hero-divider::after { content: ''; flex: 1; max-width: 80px; height: 1px; background: var(--border); }
-  .hero-date { font-size: 0.95rem; letter-spacing: 0.04em; color: var(--cream); opacity: 0.8; text-align: center; line-height: 2; animation: fadeUp 1s ease 0.25s both; }
+  .hero-date { font-size: 1.05rem; letter-spacing: 0.04em; color: var(--cream); opacity: 0.8; text-align: center; line-height: 2; animation: fadeUp 1s ease 0.25s both; }
   .hero-date strong { color: var(--gold-light); font-weight: 500; }
   .hero-buttons { display: flex; gap: 1rem; margin-top: 2.5rem; flex-wrap: wrap; justify-content: center; animation: fadeUp 1s ease 0.4s both; }
-  .btn-primary { position: relative; overflow: hidden; background: var(--gold); color: var(--charcoal); padding: 0.9rem 2.2rem; border-radius: 2px; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; transition: all 0.2s; border: none; cursor: pointer; display: inline-block; }
+  .btn-primary { position: relative; overflow: hidden; background: var(--gold); color: var(--charcoal); padding: 0.9rem 2.2rem; border-radius: 2px; font-size: 0.9rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; transition: all 0.2s; border: none; cursor: pointer; display: inline-block; }
   .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
   .btn-primary::after { content: ''; position: absolute; top: 0; left: -75%; width: 50%; height: 100%; background: linear-gradient(115deg, transparent, rgba(255,255,255,0.65), transparent); transform: skewX(-20deg); animation: navShimmer 3.2s ease-in-out infinite; pointer-events: none; }
-  .btn-secondary { position: relative; overflow: hidden; background: transparent; color: var(--cream); padding: 0.9rem 2.2rem; border-radius: 2px; font-size: 0.8rem; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; transition: all 0.2s; border: 1px solid rgba(250,246,240,0.25); cursor: pointer; display: inline-block; }
+  .btn-secondary { position: relative; overflow: hidden; background: transparent; color: var(--cream); padding: 0.9rem 2.2rem; border-radius: 2px; font-size: 0.9rem; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; transition: all 0.2s; border: 1px solid rgba(250,246,240,0.25); cursor: pointer; display: inline-block; }
   .btn-secondary:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-1px); }
   .btn-secondary::after { content: ''; position: absolute; top: 0; left: -75%; width: 50%; height: 100%; background: linear-gradient(115deg, transparent, rgba(255,255,255,0.65), transparent); transform: skewX(-20deg); animation: navShimmer 3.2s ease-in-out infinite; pointer-events: none; }
   .hero-pills { display: flex; gap: 0.75rem; margin-top: 2rem; flex-wrap: wrap; justify-content: center; animation: fadeUp 1s ease 0.5s both; }
-  .pill { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 100px; padding: 0.35rem 1rem; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--cream); opacity: 0.8; }
+  .pill { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 100px; padding: 0.35rem 1rem; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--cream); opacity: 0.8; }
   @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-  .scroll-hint { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 0.5rem; font-size: 0.6875rem; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.4; }
+  .scroll-hint { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 0.5rem; font-size: 0.77rem; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.4; }
   .scroll-hint::after { content: ''; display: block; width: 1px; height: 30px; background: var(--cream); animation: pulse 2s ease infinite; }
   @keyframes pulse { 0%,100%{opacity:0.3} 50%{opacity:1} }
   
@@ -203,10 +205,10 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
   .why-card:hover { border-color: var(--gold); background: #fdfaf4; transform: translateY(-5px); box-shadow: 0 14px 28px rgba(0,0,0,0.12); z-index: 2; }
   .why-icon { font-size: 1.6rem; margin-bottom: 1rem; display: inline-block; transition: transform 0.35s ease; }
   .why-card:hover .why-icon { transform: scale(1.18) rotate(-6deg); }
-  .why-card::after { content: '\2726'; position: absolute; top: 1rem; right: 1.1rem; font-size: 0.85rem; color: var(--gold); opacity: 0; transform: scale(0.3) rotate(-20deg); transition: opacity 0.5s ease, transform 0.5s ease; pointer-events: none; }
+  .why-card::after { content: '\2726'; position: absolute; top: 1rem; right: 1.1rem; font-size: 0.95rem; color: var(--gold); opacity: 0; transform: scale(0.3) rotate(-20deg); transition: opacity 0.5s ease, transform 0.5s ease; pointer-events: none; }
   .why-card:hover::after { opacity: 1; transform: scale(1) rotate(0deg); }
   .why-card h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--charcoal); }
-  .why-card p { font-size: 0.85rem; line-height: 1.7; color: #555; }
+  .why-card p { font-size: 0.95rem; line-height: 1.7; color: #555; }
   @media (max-width: 960px) { .why-grid { grid-template-columns: repeat(2, 1fr); } }
   
   .experience { background: var(--deep-green); }
@@ -214,44 +216,44 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
   .exp-list { list-style: none; display: flex; flex-direction: column; gap: 1.25rem; }
   .exp-list li { display: flex; gap: 1rem; align-items: flex-start; }
   .exp-bullet { color: var(--gold); font-size: 1rem; margin-top: 2px; flex-shrink: 0; }
-  .exp-list h3 { font-size: 0.95rem; font-weight: 500; margin-bottom: 0.2rem; }
-  .exp-list p { font-size: 0.8rem; color: rgba(250,246,240,0.6); line-height: 1.6; }
+  .exp-list h3 { font-size: 1.05rem; font-weight: 500; margin-bottom: 0.2rem; }
+  .exp-list p { font-size: 0.9rem; color: rgba(250,246,240,0.6); line-height: 1.6; }
   .exp-visual { background: rgba(0,0,0,0.25); border: 1px solid var(--border); border-radius: 4px; padding: 2.5rem; text-align: center; font-family: 'Playfair Display', serif; }
   .exp-visual .big-num { font-size: clamp(2.2rem, 7vw, 4rem); font-weight: 700; color: var(--gold); line-height: 1; }
-  .exp-visual .big-label { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.6; margin-top: 0.25rem; }
+  .exp-visual .big-label { font-size: 0.78rem; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.6; margin-top: 0.25rem; }
   .exp-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; margin-top: 1px; }
   .exp-stat { background: rgba(0,0,0,0.2); padding: 1.25rem; text-align: center; }
   .exp-stat .num { font-size: 1.8rem; font-weight: 700; color: var(--gold-light); font-family: 'Playfair Display', serif; }
-  .exp-stat .lbl { font-size: 0.6875rem; letter-spacing: 0.15em; text-transform: uppercase; opacity: 0.55; margin-top: 0.2rem; }
+  .exp-stat .lbl { font-size: 0.77rem; letter-spacing: 0.15em; text-transform: uppercase; opacity: 0.55; margin-top: 0.2rem; }
   
   .tickets { background: var(--charcoal); }
   .tickets-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
   .ticket-card { background: #222; border: 1px solid #333; border-radius: 4px; padding: 2rem; position: relative; overflow: hidden; transition: transform 0.2s, border-color 0.2s; }
   .ticket-card:hover { transform: translateY(-3px); border-color: var(--gold); }
-  .ticket-day { font-size: 0.6875rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
+  .ticket-day { font-size: 0.77rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
   .ticket-price { font-family: 'Playfair Display', serif; font-size: 2.8rem; font-weight: 700; line-height: 1; }
   .ticket-price sup { font-size: 1.2rem; vertical-align: super; margin-right: 2px; }
   .ticket-was { font-size: 1.15rem; font-weight: 400; opacity: 0.4; text-decoration: line-through; margin-right: 0.55rem; vertical-align: middle; }
-  .ticket-sub { font-size: 0.75rem; color: rgba(250,246,240,0.5); margin-top: 0.35rem; margin-bottom: 1.5rem; }
+  .ticket-sub { font-size: 0.84rem; color: rgba(250,246,240,0.5); margin-top: 0.35rem; margin-bottom: 1.5rem; }
   .ticket-slots { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.75rem; }
-  .ticket-slot { display: flex; justify-content: space-between; font-size: 0.78rem; padding: 0.5rem 0; border-bottom: 1px solid #333; }
+  .ticket-slot { display: flex; justify-content: space-between; font-size: 0.87rem; padding: 0.5rem 0; border-bottom: 1px solid #333; }
   .ticket-slot:last-child { border: none; }
   .slot-time { color: var(--cream); opacity: 0.7; }
-  .slot-avail { color: var(--gold); font-size: 0.6875rem; letter-spacing: 0.08em; }
-  .btn-ticket { display: block; text-align: center; background: var(--gold); color: var(--charcoal); padding: 0.75rem; border-radius: 2px; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; transition: background 0.2s; }
+  .slot-avail { color: var(--gold); font-size: 0.77rem; letter-spacing: 0.08em; }
+  .btn-ticket { display: block; text-align: center; background: var(--gold); color: var(--charcoal); padding: 0.75rem; border-radius: 2px; font-size: 0.84rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; transition: background 0.2s; }
   .btn-ticket:hover { background: var(--gold-light); }
-  .ticket-note { text-align: center; margin-top: 2rem; font-size: 0.78rem; color: rgba(250,246,240,0.6); line-height: 1.8; }
+  .ticket-note { text-align: center; margin-top: 2rem; font-size: 0.87rem; color: rgba(250,246,240,0.6); line-height: 1.8; }
   /* Tickets on sale — live banner above the day cards */
   .tickets-live-banner { display: flex; align-items: center; justify-content: space-between; gap: 1.25rem; flex-wrap: wrap; margin-top: 2rem; padding: 1.1rem 1.5rem; background: var(--gold); border-radius: 4px; text-decoration: none; animation: goldPulse 2.5s ease-in-out infinite; transition: background 0.2s; }
   .tickets-live-banner:hover { background: var(--gold-light); }
-  .tickets-live-text { color: var(--charcoal); font-size: 0.9rem; line-height: 1.5; }
-  .tickets-live-cta { color: var(--charcoal); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; white-space: nowrap; }
+  .tickets-live-text { color: var(--charcoal); font-size: 1.01rem; line-height: 1.5; }
+  .tickets-live-cta { color: var(--charcoal); font-size: 0.84rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; white-space: nowrap; }
 
   /* CSS SITE MAP */
   .sitemap { background: #111; border-top: 1px solid #1a1a1a; }
   .sitemap-legend { display: flex; gap: 1.5rem; flex-wrap: wrap; }
   .sitemap-legend + .sitemap-legend { margin-top: 0.75rem; margin-bottom: 2rem; }
-  .legend-item { display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; color: var(--cream); letter-spacing: 0.02em; }
+  .legend-item { display: flex; align-items: center; gap: 0.5rem; font-size: 1.01rem; color: var(--cream); letter-spacing: 0.02em; }
   @keyframes goldPulse { 0%, 100% { box-shadow: 0 0 6px rgba(200,151,58,0.25); } 50% { box-shadow: 0 0 20px rgba(200,151,58,0.65); } }
   .legend-item-pulse { padding: 0.35rem 0.7rem; border-radius: 4px; animation: goldPulse 2.5s ease-in-out infinite; }
   .legend-box { width: 14px; height: 14px; border-radius: 2px; }
@@ -341,7 +343,7 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
     padding: 12px;
     border-radius: 4px;
     color: #FAF6F0;
-    font-size: 0.75rem;
+    font-size: 0.84rem;
     pointer-events: none;
     z-index: 1000;
     display: none;
@@ -371,94 +373,84 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
   .vendors { background: #1a1a1a; }
   .vendors-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
   .vendor-cats { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-top: 2.5rem; }
-  .vcat { background: #222; border: 1px solid #333; border-radius: 3px; padding: 0.75rem 1rem; font-size: 0.78rem; color: rgba(250,246,240,0.7); display: flex; align-items: center; gap: 0.6rem; }
+  .vcat { background: #222; border: 1px solid #333; border-radius: 3px; padding: 0.75rem 1rem; font-size: 0.87rem; color: rgba(250,246,240,0.7); display: flex; align-items: center; gap: 0.6rem; }
   .vcat-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
   .vendor-apply { background: #222; border: 1px solid #333; border-radius: 4px; padding: 2.5rem; }
   .vendor-apply h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 0.75rem; }
-  .vendor-apply p { font-size: 0.83rem; line-height: 1.8; color: rgba(250,246,240,0.6); margin-bottom: 1.5rem; }
+  .vendor-apply p { font-size: 0.93rem; line-height: 1.8; color: rgba(250,246,240,0.6); margin-bottom: 1.5rem; }
   .vendor-includes { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 2rem; }
-  .vi { font-size: 0.78rem; color: rgba(250,246,240,0.6); display: flex; align-items: center; gap: 0.6rem; }
+  .vi { font-size: 0.87rem; color: rgba(250,246,240,0.6); display: flex; align-items: center; gap: 0.6rem; }
   .vi::before { content: '✓'; color: var(--gold); font-weight: 700; }
   .price-row { display: flex; gap: 1rem; margin-bottom: 1.5rem; }
   .price-tag { flex: 1; background: #111; border: 1px solid rgba(200,151,58,0.45); border-radius: 3px; padding: 1rem; text-align: center; box-shadow: 0 0 20px rgba(200,151,58,0.25); }
-  .price-tag .sz { font-size: 0.6875rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.3rem; }
+  .price-tag .sz { font-size: 0.77rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.3rem; }
   .price-tag .pr { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 600; }
-  .price-tag .sub { font-size: 0.68rem; color: rgba(250,246,240,0.5); margin-top: 0.3rem; }
-  .vendor-urgency { font-size: 0.78rem; letter-spacing: 0.03em; color: var(--gold-light); margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.5rem; }
+  .price-tag .sub { font-size: 0.76rem; color: rgba(250,246,240,0.5); margin-top: 0.3rem; }
+  .vendor-urgency { font-size: 0.87rem; letter-spacing: 0.03em; color: var(--gold-light); margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.5rem; }
 
   /* Reusable "new lower pricing" badge + strikethrough old price — used on every booth price display */
-  .price-badge { display: inline-block; background: var(--gold); color: var(--charcoal); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.25rem 0.65rem; border-radius: 100px; }
-  .price-tag .price-badge, .vp-card .price-badge { margin-bottom: 0.6rem; }
-  .year-alert { display: inline-block; border: 1px solid var(--gold); color: var(--gold-light); background: transparent; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.2rem 0.55rem; border-radius: 100px; }
+  .price-badge { display: inline-block; background: var(--gold); color: var(--charcoal); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.25rem 0.65rem; border-radius: 100px; }
+  .price-tag .price-badge { margin-bottom: 0.6rem; }
+  .year-alert { display: inline-block; border: 1px solid var(--gold); color: var(--gold-light); background: transparent; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.2rem 0.55rem; border-radius: 100px; }
   .price-old { text-decoration: line-through; opacity: 0.5; font-size: 0.6em; font-weight: 400; margin-right: 0.4em; }
 
   /* Bigger vendor pricing block, placed above the floor plan section */
-  .vendor-pricing { background: var(--charcoal); }
-  .vp-heading { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 600; color: var(--cream); margin-bottom: 0.75rem; }
-  .vp-body { font-size: 0.88rem; line-height: 1.9; color: rgba(250,246,240,0.6); max-width: 640px; }
-  .vp-body + .vp-body { margin-top: 0.75rem; }
-  .vp-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; margin: 2rem 0 1.5rem; }
-  .vp-card { background: #111; border: 1px solid rgba(200,151,58,0.45); border-radius: 4px; padding: 2rem 1.5rem; text-align: center; animation: goldPulse 2.5s ease-in-out infinite; }
-  .vp-card h4 { font-family: 'Playfair Display', serif; font-size: 1.1rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--gold); margin: 0 0 0.75rem; }
-  .vp-price { font-family: 'Playfair Display', serif; font-weight: 700; font-size: clamp(2rem, 5vw, 3.2rem); color: var(--cream); line-height: 1.1; margin-bottom: 0.5rem; }
-  .vp-sub { font-size: 0.78rem; color: rgba(250,246,240,0.55); }
-  .vp-footnote { font-size: 0.8rem; color: rgba(250,246,240,0.5); margin-top: 0.5rem; }
   .deposit-note { background: rgba(200,151,58,0.08); border-radius: 3px; padding: 1rem 1.25rem; margin-bottom: 1.5rem; box-shadow: 0 0 20px rgba(200,151,58,0.25); }
-  .deposit-note p { font-size: 0.78rem; line-height: 1.75; color: rgba(250,246,240,0.75); margin: 0; }
+  .deposit-note p { font-size: 0.87rem; line-height: 1.75; color: rgba(250,246,240,0.75); margin: 0; }
   .deposit-note strong { color: var(--gold-light); }
   .security-note { background: rgba(184,50,50,0.08); border: 1px solid rgba(184,50,50,0.25); border-radius: 3px; padding: 1rem 1.25rem; margin-bottom: 1.5rem; box-shadow: 0 0 20px rgba(184,50,50,0.25); }
-  .security-note p { font-size: 0.78rem; line-height: 1.75; color: rgba(250,246,240,0.75); margin: 0; }
+  .security-note p { font-size: 0.87rem; line-height: 1.75; color: rgba(250,246,240,0.75); margin: 0; }
   .security-note strong { color: var(--cream); }
   .charity-note { background: rgba(45,94,69,0.2); border: 1px solid rgba(45,94,69,0.45); border-radius: 3px; padding: 1rem 1.25rem; margin-bottom: 1.5rem; box-shadow: 0 0 20px rgba(45,94,69,0.35); }
-  .charity-note p { font-size: 0.78rem; line-height: 1.75; color: rgba(250,246,240,0.75); margin: 0; }
+  .charity-note p { font-size: 0.87rem; line-height: 1.75; color: rgba(250,246,240,0.75); margin: 0; }
   .charity-note strong { color: var(--cream); }
   .form-group { margin-bottom: 1rem; }
   #preferred-booth.filled { border-color: var(--gold); color: var(--gold-light); }
   #preferred-booth.taken { border-color: var(--red) !important; }
-  .booth-taken-note { font-size: 0.75rem; color: var(--red); margin-top: 0.4rem; line-height: 1.5; }
-  .form-group input, .form-group select, .form-group textarea { width: 100%; background: #111; border: 1px solid #333; border-radius: 2px; padding: 0.75rem 1rem; color: var(--cream); font-family: 'DM Sans', sans-serif; font-size: 0.83rem; outline: none; transition: border-color 0.2s; }
+  .booth-taken-note { font-size: 0.84rem; color: var(--red); margin-top: 0.4rem; line-height: 1.5; }
+  .form-group input, .form-group select, .form-group textarea { width: 100%; background: #111; border: 1px solid #333; border-radius: 2px; padding: 0.75rem 1rem; color: var(--cream); font-family: 'DM Sans', sans-serif; font-size: 0.93rem; outline: none; transition: border-color 0.2s; }
   .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(250,246,240,0.3); }
   .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--gold); }
   .form-group textarea { resize: vertical; min-height: 90px; }
   .form-group select option { background: #222; }
   .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
-  .btn-submit { width: 100%; background: var(--gold); color: var(--charcoal); border: none; padding: 0.9rem; border-radius: 2px; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; transition: background 0.2s; font-family: 'DM Sans', sans-serif; }
+  .btn-submit { width: 100%; background: var(--gold); color: var(--charcoal); border: none; padding: 0.9rem; border-radius: 2px; font-size: 0.9rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; transition: background 0.2s; font-family: 'DM Sans', sans-serif; }
   .btn-submit:hover { background: var(--gold-light); }
   .form-success { display: none; text-align: center; padding: 2rem; color: var(--gold); opacity: 0; transform: translateY(10px); transition: opacity 0.45s ease, transform 0.45s ease; }
   .form-success.visible { opacity: 1; transform: translateY(0); }
   .form-success p { font-family: 'Playfair Display', serif; font-size: 1.2rem; margin-bottom: 0.5rem; }
-  .form-success small { font-size: 0.78rem; opacity: 0.6; }
+  .form-success small { font-size: 0.87rem; opacity: 0.6; }
   
   .faq { background: var(--deep-green); }
   .faq-list { margin-top: 2.5rem; display: flex; flex-direction: column; gap: 1px; }
   .faq-item { background: rgba(0,0,0,0.2); }
-  .faq-q { padding: 1.25rem 1.5rem; font-size: 0.9rem; font-weight: 500; cursor: pointer; display: flex; justify-content: space-between; align-items: center; user-select: none; }
+  .faq-q { padding: 1.25rem 1.5rem; font-size: 1.01rem; font-weight: 500; cursor: pointer; display: flex; justify-content: space-between; align-items: center; user-select: none; }
   .faq-q::after { content: '+'; color: var(--gold); font-size: 1.2rem; font-weight: 300; transition: transform 0.3s; }
   .faq-item.open .faq-q::after { transform: rotate(45deg); }
   .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
   .faq-item.open .faq-a { max-height: 500px; }
-  .faq-a-inner { padding: 0 1.5rem 1.25rem; font-size: 0.83rem; line-height: 1.8; color: rgba(250,246,240,0.65); }
+  .faq-a-inner { padding: 0 1.5rem 1.25rem; font-size: 0.93rem; line-height: 1.8; color: rgba(250,246,240,0.65); }
 
   .contact { background: #1a1a1a; }
   .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1px; margin-top: 2.5rem; background: rgba(0,0,0,0.2); }
   .contact-item { background: rgba(0,0,0,0.18); padding: 1.75rem 1.5rem; }
-  .contact-label { font-size: 0.6875rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
+  .contact-label { font-size: 0.77rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
   .contact-value { font-size: 1rem; color: var(--cream); }
   .contact-value a { color: var(--cream); text-decoration: none; border-bottom: 1px solid rgba(250,246,240,0.25); transition: border-color 0.2s, color 0.2s; }
   .contact-value a:hover { color: var(--gold-light); border-color: var(--gold-light); }
-  .contact-note { font-size: 0.75rem; color: rgba(250,246,240,0.5); margin-top: 0.5rem; line-height: 1.6; }
-  .contact-footnote { margin-top: 2rem; font-size: 0.82rem; color: rgba(250,246,240,0.5); }
+  .contact-note { font-size: 0.84rem; color: rgba(250,246,240,0.5); margin-top: 0.5rem; line-height: 1.6; }
+  .contact-footnote { margin-top: 2rem; font-size: 0.92rem; color: rgba(250,246,240,0.5); }
   .contact-footnote a { color: var(--gold-light); text-decoration: none; border-bottom: 1px solid rgba(200,151,58,0.35); }
   .contact-footnote a:hover { border-color: var(--gold-light); }
 
   footer { background: #0a0a0a; padding: 3rem 2rem; text-align: center; border-top: 1px solid #1a1a1a; }
   .footer-logo-mark { width: 56px; height: 56px; border-radius: 50%; margin: 0 auto 1rem; display: block; }
   .footer-logo { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--gold); margin-bottom: 0.5rem; }
-  .footer-sub { font-size: 0.8rem; letter-spacing: 0.04em; opacity: 0.4; margin-bottom: 1.5rem; }
+  .footer-sub { font-size: 0.9rem; letter-spacing: 0.04em; opacity: 0.4; margin-bottom: 1.5rem; }
   .footer-links { display: flex; justify-content: center; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap; }
-  .footer-links a { font-size: 0.75rem; color: var(--cream); opacity: 0.45; text-decoration: none; letter-spacing: 0.1em; text-transform: uppercase; transition: opacity 0.2s; }
+  .footer-links a { font-size: 0.84rem; color: var(--cream); opacity: 0.45; text-decoration: none; letter-spacing: 0.1em; text-transform: uppercase; transition: opacity 0.2s; }
   .footer-links a:hover { opacity: 0.9; }
-  .footer-copy { font-size: 0.7rem; opacity: 0.25; }
+  .footer-copy { font-size: 0.78rem; opacity: 0.25; }
   
   /* Hamburger button */
   .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
@@ -467,7 +459,7 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
     nav { padding: 1rem 1.25rem; }
     .nav-links { display: none; }
     .nav-hamburger { display: flex; }
-    .nav-logo { font-size: 0.9rem; }
+    .nav-logo { font-size: 1.01rem; }
     .nav-logo img { width: 28px; height: 28px; }
     .nav-logo span { display: none; }
     .exp-grid, .vendors-intro, .form-row, .why-grid { grid-template-columns: 1fr; }
@@ -484,13 +476,13 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
   .mobile-nav.open { display: flex; }
   .mobile-nav a { font-size: 1.2rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--cream); text-decoration: none; opacity: 0.75; transition: color 0.2s, opacity 0.2s; }
   .mobile-nav a:hover { color: var(--gold); opacity: 1; }
-  .mobile-nav .nav-cta { background: var(--gold); color: var(--charcoal); padding: 0.8rem 2rem; border-radius: 2px; font-size: 0.9rem; opacity: 1; margin-top: 0.5rem; }
+  .mobile-nav .nav-cta { background: var(--gold); color: var(--charcoal); padding: 0.8rem 2rem; border-radius: 2px; font-size: 1.01rem; opacity: 1; margin-top: 0.5rem; }
   .mobile-nav .nav-cta:hover { background: var(--gold-light); color: var(--charcoal); }
   .mobile-nav-close { position: absolute; top: 1.5rem; right: 1.5rem; background: none; border: none; color: var(--cream); font-size: 1.8rem; cursor: pointer; opacity: 0.6; line-height: 1; }
   .mobile-nav-close:hover { opacity: 1; }
 
   /* Floating ticket button */
-  .float-ticket { position: fixed; bottom: 1.5rem; right: 1.5rem; background: var(--gold); color: var(--charcoal); padding: 1rem 1.75rem; border-radius: 2px; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; z-index: 88; box-shadow: 0 4px 20px rgba(0,0,0,0.4); transition: opacity 0.3s, transform 0.3s, background 0.2s; opacity: 0; pointer-events: none; transform: translateY(8px); animation: goldPulse 2.5s ease-in-out infinite; }
+  .float-ticket { position: fixed; bottom: 1.5rem; right: 1.5rem; background: var(--gold); color: var(--charcoal); padding: 1rem 1.75rem; border-radius: 2px; font-size: 0.95rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; z-index: 88; box-shadow: 0 4px 20px rgba(0,0,0,0.4); transition: opacity 0.3s, transform 0.3s, background 0.2s; opacity: 0; pointer-events: none; transform: translateY(8px); animation: goldPulse 2.5s ease-in-out infinite; }
   .float-ticket.visible { opacity: 1; pointer-events: auto; transform: translateY(0); }
   .float-ticket:hover { background: var(--gold-light); }
 
@@ -500,20 +492,10 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
 
 
   /* FEATURED VENDORS (category preview — real vendor lineup TBA) */
-  .featured-vendors { background: #1a1a1a; }
-  .fv-badge { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(200,151,58,0.1); border: 1px solid rgba(200,151,58,0.3); border-radius: 100px; padding: 0.4rem 1rem 0.4rem 0.6rem; font-size: 0.78rem; letter-spacing: 0.03em; color: var(--gold-light); margin: 1.5rem 0 0; }
+  .fv-badge { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(200,151,58,0.1); border: 1px solid rgba(200,151,58,0.3); border-radius: 100px; padding: 0.4rem 1rem 0.4rem 0.6rem; font-size: 0.87rem; letter-spacing: 0.03em; color: var(--gold-light); margin: 1.5rem 0 0; }
   .fv-badge-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
-  .fv-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1px; margin-top: 3rem; background: #2a2a2a; }
-  .fv-tile { background: #1a1a1a; padding: 1.75rem 1.5rem; transition: background 0.25s ease; }
-  .fv-tile:hover { background: #222; }
-  .fv-icon { font-size: 1.5rem; margin-bottom: 0.85rem; line-height: 1; }
-  .fv-tile h3 { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 600; margin-bottom: 0.4rem; color: var(--cream); }
-  .fv-tile p { font-size: 0.8rem; line-height: 1.65; color: rgba(250,246,240,0.55); }
-  .fv-footnote { margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid #2a2a2a; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; }
-  .fv-footnote p { font-size: 0.85rem; color: rgba(250,246,240,0.5); line-height: 1.7; max-width: 480px; }
-  .fv-footnote strong { color: var(--cream); font-weight: 500; }
   .vd-filters { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1.75rem; }
-  .vd-filter { background: transparent; border: 1px solid rgba(250,246,240,0.2); color: rgba(250,246,240,0.65); font-size: 0.78rem; letter-spacing: 0.03em; padding: 0.45rem 1rem; border-radius: 100px; cursor: pointer; transition: all 0.2s ease; font-family: 'DM Sans', sans-serif; }
+  .vd-filter { background: transparent; border: 1px solid rgba(250,246,240,0.2); color: rgba(250,246,240,0.65); font-size: 0.87rem; letter-spacing: 0.03em; padding: 0.45rem 1rem; border-radius: 100px; cursor: pointer; transition: all 0.2s ease; font-family: 'DM Sans', sans-serif; }
   .vd-filter:hover { border-color: var(--gold); color: var(--gold-light); }
   .vd-filter.active { background: var(--gold); border-color: var(--gold); color: var(--charcoal); font-weight: 600; }
   .vendor-directory { background: linear-gradient(160deg, #0e1f17 0%, #1C3A2B 55%, #14261c 100%); }
@@ -524,17 +506,17 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
   .vd-head { display: flex; align-items: center; gap: 0.75rem; }
   .vd-icon { width: 44px; height: 44px; flex-shrink: 0; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 1.5px solid var(--gold-light); background: rgba(200,151,58,0.1); color: var(--gold-light); }
   .vd-card h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--cream); }
-  .vd-cat { font-size: 0.68rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--gold-light); margin-top: 0.15rem; }
-  .vd-desc { font-size: 0.8rem; line-height: 1.7; color: rgba(250,246,240,0.65); }
+  .vd-cat { font-size: 0.76rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--gold-light); margin-top: 0.15rem; }
+  .vd-desc { font-size: 0.9rem; line-height: 1.7; color: rgba(250,246,240,0.65); }
   .vd-links { display: flex; flex-wrap: wrap; gap: 0.5rem 0.9rem; margin-top: 0.2rem; padding-top: 0.75rem; border-top: 1px solid rgba(255,255,255,0.08); }
-  .vd-links a { font-size: 0.75rem; color: var(--gold-light); text-decoration: none; display: inline-flex; align-items: center; }
+  .vd-links a { font-size: 0.84rem; color: var(--gold-light); text-decoration: none; display: inline-flex; align-items: center; }
   .vd-links a:hover { text-decoration: underline; }
   .vd-pager { display: flex; align-items: center; justify-content: center; gap: 1.1rem; margin-top: 2rem; }
   .vd-pager-btn { width: 38px; height: 38px; border-radius: 50%; border: 1px solid rgba(250,246,240,0.25); background: transparent; color: var(--cream); font-size: 1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s ease; }
   .vd-pager-btn:hover:not(:disabled) { border-color: var(--gold-light); color: var(--gold-light); }
   .vd-pager-btn:disabled { opacity: 0.3; cursor: not-allowed; }
-  .vd-pager-info { font-size: 0.78rem; letter-spacing: 0.04em; color: rgba(250,246,240,0.55); min-width: 54px; text-align: center; }
-  .vd-empty { font-size: 0.8rem; color: rgba(250,246,240,0.4); font-style: italic; }
+  .vd-pager-info { font-size: 0.87rem; letter-spacing: 0.04em; color: rgba(250,246,240,0.55); min-width: 54px; text-align: center; }
+  .vd-empty { font-size: 0.9rem; color: rgba(250,246,240,0.4); font-style: italic; }
 
   /* SPONSORS */
   .sponsors { position: relative; background: linear-gradient(160deg, #0e1f17 0%, #1C3A2B 55%, #14261c 100%); overflow: hidden; }
@@ -543,35 +525,33 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
   .sponsor-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1px; margin: 3rem 0 3.5rem; background: rgba(0,0,0,0.2); }
   .sponsor-stat { background: rgba(0,0,0,0.18); padding: 1.5rem 1rem; text-align: center; }
   .sponsor-stat .num { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700; color: var(--gold-light); line-height: 1; }
-  .sponsor-stat .lbl { font-size: 0.6875rem; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.6; margin-top: 0.4rem; }
-  .sponsor-spots-label { font-size: 0.9rem; color: rgba(250,246,240,0.85); margin-bottom: 0.5rem; font-weight: 500; }
-  .sponsor-spots-note { font-size: 0.82rem; color: rgba(250,246,240,0.55); max-width: 500px; line-height: 1.8; margin-bottom: 1.5rem; }
+  .sponsor-stat .lbl { font-size: 0.77rem; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.6; margin-top: 0.4rem; }
+  .sponsor-spots-label { font-size: 1.01rem; color: rgba(250,246,240,0.85); margin-bottom: 0.5rem; font-weight: 500; }
+  .sponsor-spots-note { font-size: 0.92rem; color: rgba(250,246,240,0.55); max-width: 500px; line-height: 1.8; margin-bottom: 1.5rem; }
   .sponsor-spots { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem; margin-bottom: 3.5rem; }
-  .sponsor-spot { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem; aspect-ratio: 1; border: 1.5px dashed rgba(200,151,58,0.4); border-radius: 4px; color: rgba(250,246,240,0.5); text-decoration: none; font-size: 0.6875rem; letter-spacing: 0.06em; text-transform: uppercase; text-align: center; transition: all 0.25s ease; padding: 0.5rem; }
+  .sponsor-spot { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem; aspect-ratio: 1; border: 1.5px dashed rgba(200,151,58,0.4); border-radius: 4px; color: rgba(250,246,240,0.5); text-decoration: none; font-size: 0.77rem; letter-spacing: 0.06em; text-transform: uppercase; text-align: center; transition: all 0.25s ease; padding: 0.5rem; }
   .sponsor-spot .plus { font-size: 1.6rem; color: var(--gold); line-height: 1; font-weight: 300; }
   .sponsor-spot:hover { border-color: var(--gold); border-style: solid; background: rgba(200,151,58,0.07); color: var(--gold-light); transform: translateY(-3px); }
   @media (max-width: 700px) { .sponsor-spots { grid-template-columns: repeat(2, 1fr); } }
   .sponsor-tiers { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; align-items: stretch; }
   .sponsor-tier { background: rgba(0,0,0,0.22); border: 1px solid rgba(250,246,240,0.1); border-radius: 4px; padding: 2rem 1.75rem; display: flex; flex-direction: column; transition: transform 0.2s ease, border-color 0.2s ease; position: relative; }
   .sponsor-tier:hover { transform: translateY(-3px); border-color: rgba(200,151,58,0.35); }
-  .sponsor-tier::after { content: '\2726'; position: absolute; top: 1.1rem; right: 1.25rem; font-size: 0.85rem; color: var(--gold); opacity: 0; transform: scale(0.3) rotate(-20deg); transition: opacity 0.5s ease, transform 0.5s ease; pointer-events: none; }
+  .sponsor-tier::after { content: '\2726'; position: absolute; top: 1.1rem; right: 1.25rem; font-size: 0.95rem; color: var(--gold); opacity: 0; transform: scale(0.3) rotate(-20deg); transition: opacity 0.5s ease, transform 0.5s ease; pointer-events: none; }
   .sponsor-tier:hover::after { opacity: 1; transform: scale(1) rotate(0deg); }
   .sponsor-tier.featured { border-color: var(--gold); background: rgba(200,151,58,0.07); position: relative; }
-  .sponsor-tier.featured::before { content: 'Suggested Fit'; position: absolute; top: -0.7rem; left: 1.75rem; background: var(--gold); color: var(--charcoal); font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.25rem 0.7rem; border-radius: 100px; }
+  .sponsor-tier.featured::before { content: 'Suggested Fit'; position: absolute; top: -0.7rem; left: 1.75rem; background: var(--gold); color: var(--charcoal); font-size: 0.77rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.25rem 0.7rem; border-radius: 100px; }
   .sponsor-tier-name { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; color: var(--cream); margin-bottom: 0.35rem; }
-  .sponsor-tier-tagline { font-size: 0.78rem; color: rgba(250,246,240,0.5); margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid rgba(250,246,240,0.1); }
+  .sponsor-tier-tagline { font-size: 0.87rem; color: rgba(250,246,240,0.5); margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid rgba(250,246,240,0.1); }
   .sponsor-tier-list { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; flex: 1; }
-  .sponsor-tier-list li { font-size: 0.82rem; color: rgba(250,246,240,0.75); line-height: 1.5; display: flex; gap: 0.6rem; align-items: flex-start; }
+  .sponsor-tier-list li { font-size: 0.92rem; color: rgba(250,246,240,0.75); line-height: 1.5; display: flex; gap: 0.6rem; align-items: flex-start; }
   .sponsor-tier-list li::before { content: '\2713'; color: var(--gold); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
-  .sponsor-note { text-align: center; margin-top: 3rem; font-size: 0.82rem; color: rgba(250,246,240,0.6); line-height: 1.8; }
+  .sponsor-note { text-align: center; margin-top: 3rem; font-size: 0.92rem; color: rgba(250,246,240,0.6); line-height: 1.8; }
   .sponsor-cta { text-align: center; margin-top: 1.5rem; }
   .sponsor-inquiry { background: rgba(0,0,0,0.22); border: 1px solid rgba(250,246,240,0.1); border-radius: 4px; padding: 2.5rem; max-width: 560px; margin: 3rem auto 0; }
   .sponsor-inquiry h3 { font-family: 'Playfair Display', serif; font-size: 1.4rem; margin-bottom: 0.5rem; text-align: center; }
   .sponsor-inquiry .sponsor-note { margin: 0 0 1.75rem; }
 
   @media (max-width: 700px) {
-    .fv-footnote, .sponsor-cta { text-align: left; }
-    .fv-footnote { flex-direction: column; align-items: flex-start; }
   }
 </style>
 </head>
@@ -652,7 +632,7 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
   <div class="section-inner">
     <div class="section-label">Why Halifax Christmas Market</div>
     <h2 class="section-title" style="color:var(--charcoal)">A Christmas experience<br><em style="color:var(--mid-green)">done right!</em></h2>
-    <p style="font-size:0.9rem;color:#555;max-width:560px;line-height:1.8">We listened to what Halifax shoppers and vendors have been asking for: more space, less stress, and room to breathe.</p>
+    <p style="font-size:1.01rem;color:#555;max-width:560px;line-height:1.8">We listened to what Halifax shoppers and vendors have been asking for: more space, less stress, and room to breathe.</p>
     <div class="why-grid">
       <div class="why-card"><div class="why-icon">&#9200;</div><h3>Timed arrival slots</h3><p>Choose your 3-hour session and arrive when it suits you.</p></div>
       <div class="why-card"><div class="why-icon">&#129528;</div><h3>Kids are always free</h3><p>Bring the whole family. Children get in at no cost, always, because Christmas is for everyone.</p></div>
@@ -673,7 +653,7 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
     <div class="exp-grid">
       <ul class="exp-list">
         <li><span class="exp-bullet">&#10022;</span><div><h3>Free vendor map at entry</h3><p>Grab a printed map on your way in so you can plan your route and find your favourite categories fast.</p></div></li>
-        <li><span class="exp-bullet">&#10022;</span><div><h3>Christmas d&eacute;cor throughout</h3><p>The full venue gets transformed with LED lighting, festive signage, themed zones, and a warm immersive atmosphere.</p></div></li>
+        <li><span class="exp-bullet">&#10022;</span><div><h3>Room to move</h3><p>Wide aisles, clear turning space for wheelchairs and strollers, and clutter-free pathways throughout.</p></div></li>
       </ul>
       <div>
         <div class="exp-visual">
@@ -696,7 +676,7 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
   <div class="section-inner">
     <div class="section-label">Tickets</div>
     <h2 class="section-title">Pick your session.<br>Shop at your pace.</h2>
-    <p style="font-size:0.85rem;color:rgba(250,246,240,0.5);max-width:500px;line-height:1.8;margin-bottom:0">Each session runs 3 hours, plenty of time to browse the market, grab a drink, and soak in the atmosphere. We never oversell a timeslot, so there's always room to shop comfortably.</p>
+    <p style="font-size:0.95rem;color:rgba(250,246,240,0.5);max-width:500px;line-height:1.8;margin-bottom:0">Each session runs 3 hours, plenty of time to browse the market, grab a drink, and soak in the atmosphere. We never oversell a timeslot, so there's always room to shop comfortably.</p>
     <a href="https://hfx-christmas-market.bloomtickets.ca/event/4628" target="_blank" rel="noopener" class="tickets-live-banner">
       <span class="tickets-live-text"><strong>Tickets are officially on sale.</strong> Pick your day and session on Bloom.</span>
       <span class="tickets-live-cta">Get Tickets &rarr;</span>
@@ -739,36 +719,13 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
   </div>
 </section>
 
-<section class="vendor-pricing" id="vendor-pricing">
-  <div class="section-inner">
-    <div class="section-label" style="color:var(--gold)">For vendors</div>
-    <h3 class="vp-heading">We've listened to our vendors</h3>
-    <p class="vp-body">Taking part in a three-day market is a real investment, especially in an event's first year. Following vendor feedback, we've reduced our full-weekend booth fees to $475 for an 8x7 space and $525 for an 8x8 space, including HST.</p>
-    <p class="vp-body">These rates apply to new and existing vendors. If you've already paid in full, we'll refund the difference. If you've paid a deposit, we'll adjust your remaining balance and contact you directly with the updated details.</p>
-    <div class="vp-grid">
-      <div class="vp-card">
-        <span class="price-badge">New lower pricing</span>
-        <h4>8x7 Booth</h4>
-        <div class="vp-price"><span class="price-old">$625</span>$475</div>
-        <p class="vp-sub">HST included &middot; Full three-day weekend</p>
-      </div>
-      <div class="vp-card">
-        <span class="price-badge">New lower pricing</span>
-        <h4>8x8 Booth</h4>
-        <div class="vp-price"><span class="price-old">$675</span>$525</div>
-        <p class="vp-sub">HST included &middot; Full three-day weekend</p>
-      </div>
-    </div>
-    <p class="vp-footnote">The price shown is your total booth fee, including HST.</p>
-  </div>
-</section>
 
 <!-- NUMBERED BLUEPRINT SITE MAP SECTION -->
 <section class="sitemap" id="sitemap">
   <div class="section-inner">
     <div class="section-label" style="color:var(--gold-light)">Floor plan</div>
     <h2 class="section-title">Navigate Pavilion 22</h2>
-    <p style="font-size:0.85rem;color:rgba(250,246,240,0.5);max-width:550px;line-height:1.8;margin-bottom:2rem">Explore our hand-picked vendor booths and find all amenities marked below.</p>
+    <p style="font-size:0.95rem;color:rgba(250,246,240,0.5);max-width:550px;line-height:1.8;margin-bottom:2rem">Explore our hand-picked vendor booths and find all amenities marked below.</p>
 
     <div class="sitemap-legend">
         <div class="legend-item legend-item-pulse"><div class="legend-box" style="background:#3D6B8C;"></div> 8&times;7 Booth &middot; <span class="price-badge">New lower pricing</span> <span class="price-old">$625</span>$475 &middot; <span class="year-alert">1-Year Pricing</span> &middot; #1&ndash;58, 88&ndash;90</div>
@@ -908,39 +865,14 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
   <div class="section-inner">
     <div class="section-label" style="color:var(--gold-light)">Meet the lineup</div>
     <h2 class="section-title">Confirmed vendors, so far.</h2>
-    <p style="font-size:0.9rem;color:rgba(250,246,240,0.55);max-width:560px;line-height:1.8">Each profile includes what the vendor shared when they applied, so you know a little about who you're buying from before you even arrive. More are being added daily &mdash; check back often.</p>
+    <p style="font-size:1.01rem;color:rgba(250,246,240,0.55);max-width:560px;line-height:1.8">Each profile includes what the vendor shared when they applied, so you know a little about who you're buying from before you even arrive. More are being added daily &mdash; check back often.</p>
+    <div class="fv-badge" id="vd-count-badge"></div>
     <div class="vd-filters" id="vd-filters"></div>
     <div class="vd-grid" id="vd-grid"></div>
     <div class="vd-pager" id="vd-pager"></div>
   </div>
 </section>
 
-<section class="featured-vendors" id="featured-vendors">
-  <div class="section-inner">
-    <div class="section-label" style="color:var(--gold-light)">Shop local</div>
-    <h2 class="section-title">Every booth.<br>Hand-picked.</h2>
-    <p style="font-size:0.9rem;color:rgba(250,246,240,0.55);max-width:560px;line-height:1.8">The full vendor lineup gets revealed as booths are confirmed. Here's what you can expect to find under one roof.</p>
-    <div class="fv-badge"><span class="fv-badge-dot"></span>Lineup announced closer to the event</div>
-    <div class="fv-grid">
-      <div class="fv-tile"><div class="fv-icon">&#127850;</div><h3>Bakery &amp; Sweets</h3><p>Fresh-baked treats, gingerbread, and holiday sweets.</p></div>
-      <div class="fv-tile"><div class="fv-icon">&#129387;</div><h3>Specialty Foods</h3><p>Small-batch sauces, spice blends, and gourmet snacks.</p></div>
-      <div class="fv-tile"><div class="fv-icon">&#127863;</div><h3>Alcohol &amp; Spirits</h3><p>Nova Scotia wineries, breweries, and distilleries.</p></div>
-      <div class="fv-tile"><div class="fv-icon">&#128141;</div><h3>Jewelry &amp; Accessories</h3><p>Handmade jewelry and one-of-a-kind pieces.</p></div>
-      <div class="fv-tile"><div class="fv-icon">&#127968;</div><h3>Home &amp; Decor</h3><p>Festive decor and everyday pieces for the home.</p></div>
-      <div class="fv-tile"><div class="fv-icon">&#127912;</div><h3>Art &amp; Photography</h3><p>Original art and photography from local creators.</p></div>
-      <div class="fv-tile"><div class="fv-icon">&#128367;</div><h3>Candles &amp; Scents</h3><p>Hand-poured candles and seasonal scents.</p></div>
-      <div class="fv-tile"><div class="fv-icon">&#129524;</div><h3>Health &amp; Beauty</h3><p>Natural skincare, soaps, and self-care essentials.</p></div>
-      <div class="fv-tile"><div class="fv-icon">&#129507;</div><h3>Apparel &amp; Textiles</h3><p>Cozy knits, apparel, and handmade textiles.</p></div>
-      <div class="fv-tile"><div class="fv-icon">&#129717;</div><h3>Woodworking</h3><p>Handcrafted woodwork and heirloom furniture.</p></div>
-      <div class="fv-tile"><div class="fv-icon">&#129528;</div><h3>Toys &amp; Books</h3><p>Toys, books, and hobbies for every age.</p></div>
-      <div class="fv-tile"><div class="fv-icon">&#127873;</div><h3>Gifts &amp; More</h3><p>The stuff that doesn't fit in a box, but makes the best kind of gift.</p></div>
-    </div>
-    <div class="fv-footnote">
-      <p><strong>Make one of your own goods.</strong> If you sell it, grow it, bake it, or craft it in Nova Scotia, there's likely a spot for you.</p>
-      <a href="#vendor-form" class="btn-primary">Apply for a Booth</a>
-    </div>
-  </div>
-</section>
 
 
 <section class="vendors" id="vendors">
@@ -949,7 +881,7 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
     <h2 class="section-title">Be part of Halifax's<br>newest Christmas show.</h2>
     <div class="vendors-intro">
       <div>
-        <p style="font-size:0.88rem;line-height:1.9;color:rgba(250,246,240,0.6);margin-bottom:2rem">Our first year is intentionally limited, with careful attention to product quality, variety, and category balance. If you make it, grow it, bake it, or craft it in Nova Scotia, we'd love to hear from you.</p>
+        <p style="font-size:0.99rem;line-height:1.9;color:rgba(250,246,240,0.6);margin-bottom:2rem">Our first year is intentionally limited, with careful attention to product quality, variety, and category balance. If you make it, grow it, bake it, or craft it in Nova Scotia, we'd love to hear from you.</p>
         <div class="section-label" style="margin-bottom:1rem">Categories we're looking for</div>
         <div class="vendor-cats">
           <div class="vcat"><span class="vcat-dot"></span>Bakery &amp; Sweets</div>
@@ -1047,7 +979,7 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
   <div class="section-inner">
     <div class="section-label" style="color:var(--gold)">Partner with us</div>
     <h2 class="section-title">Meet Halifax's holiday shoppers<br>in one weekend.</h2>
-    <p style="font-size:0.9rem;color:rgba(250,246,240,0.6);max-width:580px;line-height:1.8">Three days, eight ticketed sessions, and a crowd shopping for the whole family, with an on-site lounge &amp; bar designed to keep people browsing longer. Sponsorship gets your brand in front of all of it.</p>
+    <p style="font-size:1.01rem;color:rgba(250,246,240,0.6);max-width:580px;line-height:1.8">Three days, eight ticketed sessions, and a crowd shopping for the whole family, with an on-site lounge &amp; bar designed to keep people browsing longer. Sponsorship gets your brand in front of all of it.</p>
     <div class="sponsor-stats">
       <div class="sponsor-stat"><div class="num">3</div><div class="lbl">Event Days</div></div>
       <div class="sponsor-stat"><div class="num">8</div><div class="lbl">Ticketed Sessions</div></div>
@@ -1137,7 +1069,7 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
       <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Is there parking?</div><div class="faq-a"><div class="faq-a-inner">Yes. Pavilion 22 on the Halifax Waterfront has ample parking right on-site. No stress.</div></div></div>
       <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Is the event accessible?</div><div class="faq-a"><div class="faq-a-inner">Yes. The layout is designed with wide aisles, clear turning radiuses for wheelchairs and strollers, and clutter-free pathways throughout.</div></div></div>
       <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How are vendors selected?</div><div class="faq-a"><div class="faq-a-inner">We review applications for product quality, originality, and category fit. Our first year is intentionally limited, with careful attention to variety and limited overlap between similar products. Applications are reviewed on a rolling basis.</div></div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Do you offer booths for charities or nonprofits?</div><div class="faq-a"><div class="faq-a-inner">Yes. We set aside a limited number of complimentary booths for local charities and nonprofit organizations doing meaningful community work. If this is you, email us at info@hfxchristmasmarket.ca with a bit about your organization and we'll follow up.</div></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Do you offer booths for charities or nonprofits?</div><div class="faq-a"><div class="faq-a-inner">Yes. We set aside a limited number of complimentary booths for local charities and nonprofit organizations doing meaningful community work. If this is you, fill out the vendor application on this page (or email info@hfxchristmasmarket.ca) and we'll follow up.</div></div></div>
       <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How much does a vendor booth cost?</div><div class="faq-a"><div class="faq-a-inner">An 8x7 booth is $475 and an 8x8 booth is $525 for the full three-day market. Both prices include HST.</div></div></div>
       <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Do the new prices apply if I've already booked?</div><div class="faq-a"><div class="faq-a-inner">Yes. The revised prices apply to existing and new vendors. Fully paid vendors will receive a refund of the difference, and vendors who have paid a deposit will receive an adjusted remaining balance. If you previously secured a lower rate, you keep it. We'll contact affected vendors directly.</div></div></div>
       <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Can I bring my kids?</div><div class="faq-a"><div class="faq-a-inner">Of course! Children are always free. We're also hoping to bring in a Meet Santa experience this year, so keep an eye on our socials closer to the date.</div></div></div>
@@ -1152,7 +1084,7 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
   <div class="section-inner">
     <div class="section-label" style="color:var(--gold-light)">Contact</div>
     <h2 class="section-title">Real people. Real answers.</h2>
-    <p style="font-size:0.9rem;color:rgba(250,246,240,0.55);max-width:560px;line-height:1.8">This is a first-year event run by a small local team. We are more than happy to answer anything before you buy a ticket or apply for a booth. Here's every way you can reach us.</p>
+    <p style="font-size:1.01rem;color:rgba(250,246,240,0.55);max-width:560px;line-height:1.8">This is a first-year event run by a small local team. We are more than happy to answer anything before you buy a ticket or apply for a booth. Here's every way you can reach us.</p>
     <div class="contact-grid">
       <div class="contact-item">
         <div class="contact-label">Phone</div>
@@ -1878,10 +1810,10 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
         var accentColor = isCharity ? '#2F9E8F' : '#E8B85A';
         tooltip.innerHTML = `
           <div class="tooltip-title">Booth #${boothNum}</div>
-          ${isCharity ? `<div style="color: ${accentColor}; font-weight: 700; font-size: 0.62rem; letter-spacing: 0.06em; text-transform: uppercase; margin-top: 4px;">Community &amp; Charity Partner</div>` : ''}
+          ${isCharity ? `<div style="color: ${accentColor}; font-weight: 700; font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; margin-top: 4px;">Community &amp; Charity Partner</div>` : ''}
           <div style="color: ${accentColor}; font-weight: 700; margin-top: 4px;">${v.name}</div>
           <div style="opacity: 0.75; margin-bottom: 8px;">${v.category}</div>
-          <div style="font-size: 0.68rem; line-height: 1.7;">
+          <div style="font-size: 0.76rem; line-height: 1.7;">
             ${v.instagram ? `<div>${igIcon}@${v.instagram}</div>` : ''}
             ${v.facebook ? `<div>${fbIcon}Facebook</div>` : ''}
             ${v.website ? `<div style="opacity:0.85">${v.website}</div>` : ''}
@@ -1902,7 +1834,7 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
         tooltip.innerHTML = `
           <div class="tooltip-title">Booth #${boothNum}</div>
           <div style="color: ${statusColor}; font-weight: 600; margin-top: 4px;">${statusLabel}</div>
-          <div style="opacity: 0.7; font-size: 0.68rem; margin-top: 4px;">${statusNote}</div>
+          <div style="opacity: 0.7; font-size: 0.76rem; margin-top: 4px;">${statusNote}</div>
         `;
         tooltip.style.display = 'block';
         tooltip.style.left = (e.pageX + 15) + 'px';
@@ -1932,7 +1864,7 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
         <div><span class="price-badge">New lower pricing</span></div>
         <div class="tooltip-price"><span class="price-old">${oldPrice}</span>${price}</div>
         <div style="opacity: 0.8; margin-bottom: 8px;">Size: ${size} &middot; HST included</div>
-        <div style="font-size: 0.65rem; color: #E8B85A; line-height: 1.4;">
+        <div style="font-size: 0.73rem; color: #E8B85A; line-height: 1.4;">
           • Table with draping<br>
           • 2 chairs &amp; power<br>
           • Vendor-protected Wi-Fi<br>
