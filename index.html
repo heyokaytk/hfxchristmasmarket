@@ -77,7 +77,7 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
     "description": "Indoor Christmas market featuring a curated lineup of Nova Scotia vendors, timed entry sessions, and an on-site lounge. Kids always free.",
     "image": "https://hfxchristmasmarket.ca/IMAGES/HFXCHRISTMASMARKET-SOCIAL.jpg",
     "startDate": "2026-12-04T09:00:00-04:00",
-    "endDate": "2026-12-06T20:00:00-04:00",
+    "endDate": "2026-12-06T16:00:00-04:00",
     "eventStatus": "https://schema.org/EventScheduled",
     "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
     "location": {
@@ -88,7 +88,7 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
     "organizer": { "@type": "Organization", "name": "Halifax Christmas Market", "url": "https://hfxchristmasmarket.ca/" },
     "offers": {
       "@type": "Offer",
-      "url": "https://hfxchristmasmarket.ca/#tickets",
+      "url": "https://hfx-christmas-market.bloomtickets.ca/event/4628",
       "price": "7",
       "priceCurrency": "CAD",
       "availability": "https://schema.org/InStock",
@@ -100,7 +100,7 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
     "@type": "FAQPage",
     "mainEntity": [
       { "@type": "Question", "name": "What does my ticket include?", "acceptedAnswer": { "@type": "Answer", "text": "Your $7 adult ticket includes access to our full vendor lineup, a printed vendor map at entry, and the on-site lounge area. Kids are always free." } },
-      { "@type": "Question", "name": "How does timed entry work?", "acceptedAnswer": { "@type": "Answer", "text": "Each ticket covers a 3-hour session: 9am–12pm, 1pm–4pm, or 5pm–8pm. You choose your window when you buy. Three hours is more than enough time to browse the market and grab a drink. We cap each timeslot well below capacity, so the crowd stays comfortable and there's always room to shop." } },
+      { "@type": "Question", "name": "How does timed entry work?", "acceptedAnswer": { "@type": "Answer", "text": "Each ticket covers a 3-hour session: 9am–12pm, 1pm–4pm, or 5pm–8pm on Friday and Saturday, or 9am–12pm and 1pm–4pm on Sunday. You choose your window when you buy. Three hours is more than enough time to browse the market and grab a drink. We cap each timeslot well below capacity, so the crowd stays comfortable and there's always room to shop." } },
       { "@type": "Question", "name": "Is there parking?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Pavilion 22 on the Halifax Waterfront has ample parking right on-site. No stress." } },
       { "@type": "Question", "name": "Is the event accessible?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. The layout is designed with wide aisles, clear turning radiuses for wheelchairs and strollers, and clutter-free pathways throughout." } },
       { "@type": "Question", "name": "How are vendors selected?", "acceptedAnswer": { "@type": "Answer", "text": "We review applications for product quality, originality, and category fit. Our first year is intentionally limited, with careful attention to variety and limited overlap between similar products. Applications are reviewed on a rolling basis." } },
@@ -221,22 +221,11 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
   .btn-ticket { display: block; text-align: center; background: var(--gold); color: var(--charcoal); padding: 0.75rem; border-radius: 2px; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; transition: background 0.2s; }
   .btn-ticket:hover { background: var(--gold-light); }
   .ticket-note { text-align: center; margin-top: 2rem; font-size: 0.78rem; color: rgba(250,246,240,0.6); line-height: 1.8; }
-  .notify-form { max-width: 420px; margin: 1.5rem auto 0; }
-  .notify-fields { display: flex; gap: 0.75rem; }
-  .notify-fields input { flex: 1; min-width: 0; background: rgba(255,255,255,0.05); border: 1px solid rgba(250,246,240,0.15); border-radius: 2px; padding: 0.75rem 1rem; color: var(--cream); font-family: 'DM Sans', sans-serif; font-size: 0.85rem; }
-  .notify-fields input::placeholder { color: rgba(250,246,240,0.4); }
-  .notify-fields input:focus { outline: none; border-color: var(--gold); }
-  .notify-fields button { background: var(--gold); color: var(--charcoal); border: none; padding: 0.75rem 1.5rem; border-radius: 2px; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; white-space: nowrap; transition: background 0.2s; font-family: 'DM Sans', sans-serif; }
-  .notify-fields button:hover { background: var(--gold-light); }
-  .notify-fields button:disabled { opacity: 0.6; cursor: not-allowed; }
-  .notify-success { display: none; text-align: center; color: var(--gold-light); font-size: 0.85rem; padding: 0.6rem; opacity: 0; transform: translateY(10px); transition: opacity 0.45s ease, transform 0.45s ease; }
-  .notify-success.visible { opacity: 1; transform: translateY(0); }
-  @media (max-width: 700px) { .notify-fields { flex-direction: column; } }
-
-  /* Tickets not yet on sale — disabled CTA state */
-  .btn-disabled { background: #3a3a3a !important; color: rgba(250,246,240,0.4) !important; cursor: not-allowed !important; pointer-events: none; box-shadow: none !important; }
-  .btn-disabled:hover { background: #3a3a3a !important; transform: none !important; }
-  a.btn-ticket.btn-disabled { background: #2a2a2a !important; color: rgba(250,246,240,0.3) !important; }
+  /* Tickets on sale — live banner above the day cards */
+  .tickets-live-banner { display: flex; align-items: center; justify-content: space-between; gap: 1.25rem; flex-wrap: wrap; margin-top: 2rem; padding: 1.1rem 1.5rem; background: var(--gold); border-radius: 4px; text-decoration: none; animation: goldPulse 2.5s ease-in-out infinite; transition: background 0.2s; }
+  .tickets-live-banner:hover { background: var(--gold-light); }
+  .tickets-live-text { color: var(--charcoal); font-size: 0.9rem; line-height: 1.5; }
+  .tickets-live-cta { color: var(--charcoal); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; white-space: nowrap; }
 
   /* CSS SITE MAP */
   .sitemap { background: #111; border-top: 1px solid #1a1a1a; }
@@ -481,7 +470,7 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
   .mobile-nav-close:hover { opacity: 1; }
 
   /* Floating ticket button */
-  .float-ticket { position: fixed; bottom: 1.5rem; right: 1.5rem; background: var(--gold); color: var(--charcoal); padding: 0.75rem 1.4rem; border-radius: 2px; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; z-index: 88; box-shadow: 0 4px 20px rgba(0,0,0,0.4); transition: opacity 0.3s, transform 0.3s, background 0.2s; opacity: 0; pointer-events: none; transform: translateY(8px); }
+  .float-ticket { position: fixed; bottom: 1.5rem; right: 1.5rem; background: var(--gold); color: var(--charcoal); padding: 1rem 1.75rem; border-radius: 2px; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; z-index: 88; box-shadow: 0 4px 20px rgba(0,0,0,0.4); transition: opacity 0.3s, transform 0.3s, background 0.2s; opacity: 0; pointer-events: none; transform: translateY(8px); animation: goldPulse 2.5s ease-in-out infinite; }
   .float-ticket.visible { opacity: 1; pointer-events: auto; transform: translateY(0); }
   .float-ticket:hover { background: var(--gold-light); }
 
@@ -597,7 +586,7 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
   <a href="#vendor-form" class="nav-cta" onclick="toggleMobileNav()">Apply as Vendor</a>
 </div>
 
-<a href="#tickets" class="float-ticket btn-disabled" id="float-ticket">Tickets Coming Soon</a>
+<a href="https://hfx-christmas-market.bloomtickets.ca/event/4628" target="_blank" rel="noopener" class="float-ticket" id="float-ticket">&#127915; Buy Tickets</a>
 
 <section class="hero" id="hero">
   <div class="snow-container" id="snow"></div>
@@ -610,11 +599,12 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
   <div class="hero-date">
     <strong>December 4th, 5th, &amp; 6th, 2026</strong><br>
     Friday &middot; Saturday &middot; Sunday<br>
-    Timed Entry: 9am &ndash; 12pm &nbsp;|&nbsp; 1pm &ndash; 4pm &nbsp;|&nbsp; 5pm &ndash; 8pm<br>
+    Timed Entry (Fri &amp; Sat): 9am &ndash; 12pm &nbsp;|&nbsp; 1pm &ndash; 4pm &nbsp;|&nbsp; 5pm &ndash; 8pm<br>
+    Timed Entry (Sun): 9am &ndash; 12pm &nbsp;|&nbsp; 1pm &ndash; 4pm<br>
     Pavilion 22 &middot; Halifax Waterfront
   </div>
   <div class="hero-buttons">
-    <a href="#tickets" class="btn-primary btn-disabled">Tickets Coming Soon</a>
+    <a href="https://hfx-christmas-market.bloomtickets.ca/event/4628" target="_blank" rel="noopener" class="btn-primary">Buy Tickets Now</a>
     <a href="#vendor-form" class="btn-secondary">Apply as a Vendor</a>
   </div>
   <div class="hero-pills">
@@ -660,7 +650,7 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
           <div class="big-label">Vendor Selection</div>
           <div class="exp-stats">
             <div class="exp-stat"><div class="num">3</div><div class="lbl">Days</div></div>
-            <div class="exp-stat"><div class="num">9</div><div class="lbl">Time Slots</div></div>
+            <div class="exp-stat"><div class="num">8</div><div class="lbl">Time Slots</div></div>
             <div class="exp-stat"><div class="num">$7</div><div class="lbl">Adult Ticket</div></div>
             <div class="exp-stat"><div class="num">Free</div><div class="lbl">Kids Admission</div></div>
           </div>
@@ -676,6 +666,10 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
     <div class="section-label">Tickets</div>
     <h2 class="section-title">Pick your session.<br>Shop at your pace.</h2>
     <p style="font-size:0.85rem;color:rgba(250,246,240,0.5);max-width:500px;line-height:1.8;margin-bottom:0">Each session runs 3 hours, plenty of time to browse the market, grab a drink, and soak in the atmosphere. We never oversell a timeslot, so there's always room to shop comfortably.</p>
+    <a href="https://hfx-christmas-market.bloomtickets.ca/event/4628" target="_blank" rel="noopener" class="tickets-live-banner">
+      <span class="tickets-live-text"><strong>Tickets are officially on sale.</strong> Pick your day and session on Bloom.</span>
+      <span class="tickets-live-cta">Get Tickets &rarr;</span>
+    </a>
     <div class="tickets-grid">
       <div class="ticket-card">
         <div class="ticket-day">Friday, December 4</div>
@@ -686,7 +680,7 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
           <div class="ticket-slot"><span class="slot-time">1:00 pm &ndash; 4:00 pm</span><span class="slot-avail">Afternoon</span></div>
           <div class="ticket-slot"><span class="slot-time">5:00 pm &ndash; 8:00 pm</span><span class="slot-avail">Evening</span></div>
         </div>
-        <a href="#" class="btn-ticket btn-disabled">Coming Soon</a>
+        <a href="https://hfx-christmas-market.bloomtickets.ca/event/4628" target="_blank" rel="noopener" class="btn-ticket">Get Tickets</a>
       </div>
       <div class="ticket-card">
         <div class="ticket-day">Saturday, December 5</div>
@@ -697,7 +691,7 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
           <div class="ticket-slot"><span class="slot-time">1:00 pm &ndash; 4:00 pm</span><span class="slot-avail">Afternoon</span></div>
           <div class="ticket-slot"><span class="slot-time">5:00 pm &ndash; 8:00 pm</span><span class="slot-avail">Evening</span></div>
         </div>
-        <a href="#" class="btn-ticket btn-disabled">Coming Soon</a>
+        <a href="https://hfx-christmas-market.bloomtickets.ca/event/4628" target="_blank" rel="noopener" class="btn-ticket">Get Tickets</a>
       </div>
       <div class="ticket-card">
         <div class="ticket-day">Sunday, December 6</div>
@@ -706,19 +700,11 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
         <div class="ticket-slots">
           <div class="ticket-slot"><span class="slot-time">9:00 am &ndash; 12:00 pm</span><span class="slot-avail">Morning</span></div>
           <div class="ticket-slot"><span class="slot-time">1:00 pm &ndash; 4:00 pm</span><span class="slot-avail">Afternoon</span></div>
-          <div class="ticket-slot"><span class="slot-time">5:00 pm &ndash; 8:00 pm</span><span class="slot-avail">Evening</span></div>
         </div>
-        <a href="#" class="btn-ticket btn-disabled">Coming Soon</a>
+        <a href="https://hfx-christmas-market.bloomtickets.ca/event/4628" target="_blank" rel="noopener" class="btn-ticket">Get Tickets</a>
       </div>
     </div>
-    <p class="ticket-note">Ticket sales opening soon.<br>All tickets available via Bloom &middot; No gate sales guaranteed</p>
-    <div class="notify-form">
-      <div class="notify-success" id="notify-success">You're on the list. We'll email you the moment tickets go live.</div>
-      <div class="notify-fields" id="notify-fields">
-        <input type="email" id="notify-email" placeholder="Your email address">
-        <button onclick="submitNotify()">Notify Me</button>
-      </div>
-    </div>
+    <p class="ticket-note">All tickets sold exclusively via Bloom &middot; No gate sales guaranteed</p>
   </div>
 </section>
 
@@ -1030,10 +1016,10 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
   <div class="section-inner">
     <div class="section-label" style="color:var(--gold)">Partner with us</div>
     <h2 class="section-title">Meet Halifax's holiday shoppers<br>in one weekend.</h2>
-    <p style="font-size:0.9rem;color:rgba(250,246,240,0.6);max-width:580px;line-height:1.8">Three days, nine ticketed sessions, and a crowd shopping for the whole family, with an on-site lounge &amp; bar designed to keep people browsing longer. Sponsorship gets your brand in front of all of it.</p>
+    <p style="font-size:0.9rem;color:rgba(250,246,240,0.6);max-width:580px;line-height:1.8">Three days, eight ticketed sessions, and a crowd shopping for the whole family, with an on-site lounge &amp; bar designed to keep people browsing longer. Sponsorship gets your brand in front of all of it.</p>
     <div class="sponsor-stats">
       <div class="sponsor-stat"><div class="num">3</div><div class="lbl">Event Days</div></div>
-      <div class="sponsor-stat"><div class="num">9</div><div class="lbl">Ticketed Sessions</div></div>
+      <div class="sponsor-stat"><div class="num">8</div><div class="lbl">Ticketed Sessions</div></div>
       <div class="sponsor-stat"><div class="num">Curated</div><div class="lbl">Vendor Lineup</div></div>
       <div class="sponsor-stat"><div class="num">4,000+</div><div class="lbl">Target Weekend Guests</div></div>
     </div>
@@ -1116,7 +1102,7 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
     <h2 class="section-title">Good questions.<br>Honest answers.</h2>
     <div class="faq-list">
       <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What does my ticket include?</div><div class="faq-a"><div class="faq-a-inner">Your $7 adult ticket includes access to our full vendor lineup, a printed vendor map at entry, and the on-site lounge area. Kids are always free.</div></div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How does timed entry work?</div><div class="faq-a"><div class="faq-a-inner">Each ticket covers a 3-hour session: 9am–12pm, 1pm–4pm, or 5pm–8pm. You choose your window when you buy. Three hours is more than enough time to browse the market and grab a drink. We cap each timeslot well below capacity, so the crowd stays comfortable and there's always room to shop.</div></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How does timed entry work?</div><div class="faq-a"><div class="faq-a-inner">Each ticket covers a 3-hour session: 9am–12pm, 1pm–4pm, or 5pm–8pm on Friday and Saturday, or 9am–12pm and 1pm–4pm on Sunday. You choose your window when you buy. Three hours is more than enough time to browse the market and grab a drink. We cap each timeslot well below capacity, so the crowd stays comfortable and there's always room to shop.</div></div></div>
       <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Is there parking?</div><div class="faq-a"><div class="faq-a-inner">Yes. Pavilion 22 on the Halifax Waterfront has ample parking right on-site. No stress.</div></div></div>
       <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Is the event accessible?</div><div class="faq-a"><div class="faq-a-inner">Yes. The layout is designed with wide aisles, clear turning radiuses for wheelchairs and strollers, and clutter-free pathways throughout.</div></div></div>
       <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How are vendors selected?</div><div class="faq-a"><div class="faq-a-inner">We review applications for product quality, originality, and category fit. Our first year is intentionally limited, with careful attention to variety and limited overlap between similar products. Applications are reviewed on a rolling basis.</div></div></div>
@@ -1354,42 +1340,6 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
       submitBtn.disabled = false;
       submitBtn.textContent = 'Submit Application';
       alert('Something went wrong submitting your application. Please email us directly at info@hfxchristmasmarket.ca.');
-    });
-  }
-
-  function submitNotify() {
-    var email = document.getElementById('notify-email').value.trim();
-    if (!email || email.indexOf('@') === -1) {
-      alert('Please enter a valid email address.');
-      return;
-    }
-
-    var btn = document.querySelector('#notify-fields button');
-    btn.disabled = true;
-    btn.textContent = 'Submitting...';
-
-    fetch('https://api.web3forms.com/submit', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-      body: JSON.stringify({
-        access_key: '769ab91c-f7a6-4e96-bfd6-65999765179b',
-        subject: 'Ticket Notify Signup - Halifax Christmas Market',
-        from_name: 'Halifax Christmas Market Website',
-        email: email,
-        message: 'New "notify me when tickets go on sale" signup: ' + email
-      })
-    }).then(function(res) { return res.json(); }).then(function(data) {
-      if (data.success) {
-        swapToSuccess(document.getElementById('notify-fields'), document.getElementById('notify-success'));
-      } else {
-        btn.disabled = false;
-        btn.textContent = 'Notify Me';
-        alert('Something went wrong. Please try again or email us at info@hfxchristmasmarket.ca.');
-      }
-    }).catch(function() {
-      btn.disabled = false;
-      btn.textContent = 'Notify Me';
-      alert('Something went wrong. Please try again or email us at info@hfxchristmasmarket.ca.');
     });
   }
 
