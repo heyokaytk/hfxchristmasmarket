@@ -732,7 +732,7 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
         <div class="legend-item legend-item-pulse"><div class="legend-box" style="background:var(--mid-green);"></div> 8&times;8 Booth &middot; <span class="price-badge">New lower pricing</span> <span class="price-old">$675</span>$525 &middot; <span class="year-alert">1-Year Pricing</span> &middot; #59&ndash;87, 91, 94&ndash;115, 131, 134&ndash;140</div>
     </div>
     <div class="sitemap-legend">
-        <div class="legend-item"><div class="legend-box" style="background:#D97706;"></div> Spoken For</div>
+        <div class="legend-item"><div class="legend-box" style="background:#D97706;"></div> Under Review</div>
         <div class="legend-item"><div class="legend-box" style="background:var(--gold);"></div> Accepted</div>
         <div class="legend-item"><div class="legend-box" style="background:#2F9E8F;"></div> Community &amp; Charity</div>
         <div class="legend-item"><div class="legend-box" style="background:#C97B84;"></div> Lounge</div>
@@ -1225,7 +1225,7 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
       field.classList.add('taken');
       note.textContent = status === 'missing'
         ? 'Booth #' + num + " isn't on the floor plan — please choose a booth from the map."
-        : 'Booth #' + num + ' is already ' + (status === 'review' ? 'spoken for' : 'taken') + ' — please choose a different booth.';
+        : 'Booth #' + num + ' is already ' + (status === 'review' ? 'under review' : 'taken') + ' — please choose a different booth.';
       note.style.display = 'block';
       return false;
     }
@@ -1889,7 +1889,7 @@ src="https://www.facebook.com/tr?id=1743894850181910&ev=PageView&noscript=1"
       }
 
       if (booth.classList.contains('review') || booth.classList.contains('accepted') || booth.classList.contains('charity')) {
-        var statusLabel = booth.classList.contains('charity') ? 'Community &amp; Charity' : (booth.classList.contains('accepted') ? 'Accepted' : 'Spoken For');
+        var statusLabel = booth.classList.contains('charity') ? 'Community &amp; Charity' : (booth.classList.contains('accepted') ? 'Accepted' : 'Under Review');
         var statusColor = booth.classList.contains('charity') ? '#2F9E8F' : '#E8B85A';
         var statusNote = (booth.classList.contains('accepted') || booth.classList.contains('charity'))
           ? 'This booth is confirmed. Check other open booths on the map.'
